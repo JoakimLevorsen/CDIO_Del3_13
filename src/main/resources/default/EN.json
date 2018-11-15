@@ -1,0 +1,111 @@
+{
+    "gameTitle": "Monopoly Junior",
+    "spaces": [
+        {
+          "name": "Start",
+          "message": "Receive M2 when you pass start"
+        },
+        {
+          "name": "Burger Bar",
+          "cost": 1,
+          "costString": "M1"
+        },
+        {
+          "name": "Pizzaria",
+          "cost": 1,
+          "costString": "-100"
+        },
+        {
+            "name": "Chance"
+        },
+        {
+            "name": "Candy Store",
+            "cost": 1,
+            "costString": "M1"
+        },
+        {
+            "name": "Ice Cream Shop",
+            "cost": 1,
+            "costString": "M1"
+        },
+        {
+            "name": "Jail",
+            "message": "På besøg"
+        },
+        {
+            "name": "Museum",
+            "cost": 2,
+            "costString": "M2"
+        },
+        {
+            "name": "Library",
+            "cost": 2,
+            "costString": "M2"
+        },
+        {
+            "name": "Chance"
+        },
+        {
+            "name": "Skater Park",
+            "cost": 2,
+            "costString": "M2"
+        },
+        {
+            "name": "Swimming Pool",
+            "cost": 2,
+            "costString": "M2"
+        },
+        {
+            "name": "Free Parking"
+        },
+        {
+            "name": "Casino",
+            "cost": 3,
+            "costString": "M3"
+        },
+        {
+            "name": "Cinema",
+            "cost": 3,
+            "costString": "M3"
+        },
+        {
+            "name": "Chance"
+        },
+        {
+            "name": "Toy Store",
+            "cost": 3,
+            "costString": "M3"
+        },
+        {
+            "name": "Pet Store",
+            "cost": 3,
+            "costString": "M3"
+        },
+        {
+            "name": "Go to jail"
+        },
+        {
+            "name": "Bowling Alley",
+            "cost": 4,
+            "costString": "M4"
+        },
+        {
+            "name": "Zoo",
+            "cost": 4,
+            "costString": "M4"
+        },
+        {
+            "name": "Chance"
+        },
+        {
+            "name": "Water Park",
+            "cost": 5,
+            "costString": "M5"
+        },
+        {
+            "name": "Boardwalk",
+            "cost": 5,
+            "costString": "M5"
+        }
+    ]
+}
