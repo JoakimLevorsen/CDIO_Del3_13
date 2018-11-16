@@ -1,0 +1,118 @@
+{
+    "gameTitle": "Monopoly Junior",
+    "choosePlayerNum": "Angiv antallet af spillere mellem 2 og 4 (begge inkl.).",
+    "invalidPlayerNum": "Du har indtastet et ugyldigt antal spillere. Antallet af spillere er begrænset til mellem 2 og 4 (begge inkl.).",
+    "rollDice": "Kast terningerne, ",
+    "winMessage": "Fantastisk! Vinderen af dette episke eventyr er ",
+    "playAgainMessage": "Vil du spille igen?",
+    "quit": "Afslut",
+    "playAgainButton": "Spil igen!",
+    "spaces": [
+        {
+          "name": "Start",
+          "message": "Modtag M2 når du passerer start"
+        },
+        {
+          "name": "Burgerbaren",
+          "cost": 1,
+          "costString": "M1"
+        },
+        {
+          "name": "Pizzariaet",
+          "cost": 1,
+          "costString": "-100"
+        },
+        {
+            "name": "Chance"
+        },
+        {
+            "name": "Slikbutikken",
+            "cost": 1,
+            "costString": "M1"
+        },
+        {
+            "name": "Iskiosken",
+            "cost": 1,
+            "costString": "M1"
+        },
+        {
+            "name": "Fængsel",
+            "message": "På besøg"
+        },
+        {
+            "name": "Museet",
+            "cost": 2,
+            "costString": "M2"
+        },
+        {
+            "name": "Biblioteket",
+            "cost": 2,
+            "costString": "M2"
+        },
+        {
+            "name": "Chance"
+        },
+        {
+            "name": "Skaterparken",
+            "cost": 2,
+            "costString": "M2"
+        },
+        {
+            "name": "Swimmingpoolen",
+            "cost": 2,
+            "costString": "M2"
+        },
+        {
+            "name": "Gratis Parkering"
+        },
+        {
+            "name": "Spillehallen",
+            "cost": 3,
+            "costString": "M3"
+        },
+        {
+            "name": "Biografen",
+            "cost": 3,
+            "costString": "M3"
+        },
+        {
+            "name": "Chance"
+        },
+        {
+            "name": "Legetøjsbutikken",
+            "cost": 3,
+            "costString": "M3"
+        },
+        {
+            "name": "Dyrehandlen",
+            "cost": 3,
+            "costString": "M3"
+        },
+        {
+            "name": "Gå i fængsel"
+        },
+        {
+            "name": "Bowlinghallen",
+            "cost": 4,
+            "costString": "M4"
+        },
+        {
+            "name": "Zoologisk Have",
+            "cost": 4,
+            "costString": "M4"
+        },
+        {
+            "name": "Chance"
+        },
+        {
+            "name": "Vandlandet",
+            "cost": 5,
+            "costString": "M5"
+        },
+        {
+            "name": "Strandpromenaden",
+            "cost": 5,
+            "costString": "M5"
+        }
+    ]
+}
