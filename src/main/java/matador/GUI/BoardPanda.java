@@ -34,7 +34,7 @@ public class BoardPanda {
             board[15] = new GUI_Chance("?", "Prøv lykken","Tag et chancekort.", new Color(204, 204, 204), Color.BLACK);
             board[16] = new GUI_Street("Legetøjsbutik", "Pris: 3 M","Flot legetøjsbutik med masser af aktiviteter for de mindste.","3", Color.YELLOW, Color.black);
             board[17] = new GUI_Street("Dyrehandel", "Pris: 3 M","Kæledyr i alle prisklasser.", "3", Color.YELLOW, Color.BLACK);
-            board[18] = new GUI_Jail("default", "Gå i fængsel", "Gå i fængsel","Du fængsles.\nFlyt til feltet \"fængsel\". Du skal slå to ens for at komme ud!", new Color(125, 125, 125), Color.BLACK);
+            board[18] = new GUI_Jail("default", "Gå i fængsel", "Gå i fængsel","Du fængsles.\nFlyt til feltet \"fængsel\".", new Color(125, 125, 125), Color.BLACK);
             board[19] = new GUI_Street("Bowling", "Pris: 4 M","Bowling går aldri helt af mode.", "4", Color.GREEN, Color.BLACK);
             board[20] = new GUI_Street("Zoo", "Pris: 4 M","Zoo er en af de helt store turistattraktioner i byen.", "4", Color.GREEN, Color.black);
             board[21] = new GUI_Chance("?", "Prøv lykken","Tag et chancekort.", new Color(204, 204, 204), Color.BLACK);
