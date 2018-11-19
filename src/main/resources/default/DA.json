@@ -10,12 +10,13 @@
     "spaces": [
         {
           "name": "Start",
-          "message": "Modtag M2 når du passerer start"
+          "message": "Modtag M̶2 når du passerer start",
+          "type": 0
         },
         {
           "name": "Burgerbaren",
           "cost": 1,
-          "costString": "M1"
+          "costString": "M̶1"
         },
         {
           "name": "Pizzariaet",
@@ -28,12 +29,12 @@
         {
             "name": "Slikbutikken",
             "cost": 1,
-            "costString": "M1"
+            "costString": "M̶1"
         },
         {
             "name": "Iskiosken",
             "cost": 1,
-            "costString": "M1"
+            "costString": "M̶1"
         },
         {
             "name": "Fængsel",
@@ -42,12 +43,12 @@
         {
             "name": "Museet",
             "cost": 2,
-            "costString": "M2"
+            "costString": "M̶2"
         },
         {
             "name": "Biblioteket",
             "cost": 2,
-            "costString": "M2"
+            "costString": "M̶2"
         },
         {
             "name": "Chance"
@@ -55,12 +56,12 @@
         {
             "name": "Skaterparken",
             "cost": 2,
-            "costString": "M2"
+            "costString": "M̶2"
         },
         {
             "name": "Swimmingpoolen",
             "cost": 2,
-            "costString": "M2"
+            "costString": "M̶2"
         },
         {
             "name": "Gratis Parkering"
@@ -68,12 +69,12 @@
         {
             "name": "Spillehallen",
             "cost": 3,
-            "costString": "M3"
+            "costString": "M̶3"
         },
         {
             "name": "Biografen",
             "cost": 3,
-            "costString": "M3"
+            "costString": "M̶3"
         },
         {
             "name": "Chance"
@@ -81,12 +82,12 @@
         {
             "name": "Legetøjsbutikken",
             "cost": 3,
-            "costString": "M3"
+            "costString": "M̶3"
         },
         {
             "name": "Dyrehandlen",
             "cost": 3,
-            "costString": "M3"
+            "costString": "M̶3"
         },
         {
             "name": "Gå i fængsel"
@@ -94,12 +95,12 @@
         {
             "name": "Bowlinghallen",
             "cost": 4,
-            "costString": "M4"
+            "costString": "M̶4"
         },
         {
             "name": "Zoologisk Have",
             "cost": 4,
-            "costString": "M4"
+            "costString": "M̶4"
         },
         {
             "name": "Chance"
@@ -107,12 +108,12 @@
         {
             "name": "Vandlandet",
             "cost": 5,
-            "costString": "M5"
+            "costString": "M̶5"
         },
         {
             "name": "Strandpromenaden",
             "cost": 5,
-            "costString": "M5"
+            "costString": "M̶5"
         }
     ]
 }

@@ -10,12 +10,12 @@
     "spaces": [
         {
           "name": "Start",
-          "message": "Receive M2 when you pass start"
+          "message": "Receive M̶2 when you pass start"
         },
         {
           "name": "Burger Bar",
           "cost": 1,
-          "costString": "M1"
+          "costString": "M̶1"
         },
         {
           "name": "Pizzaria",
@@ -28,12 +28,12 @@
         {
             "name": "Candy Store",
             "cost": 1,
-            "costString": "M1"
+            "costString": "M̶1"
         },
         {
             "name": "Ice Cream Shop",
             "cost": 1,
-            "costString": "M1"
+            "costString": "M̶1"
         },
         {
             "name": "Jail",
@@ -42,12 +42,12 @@
         {
             "name": "Museum",
             "cost": 2,
-            "costString": "M2"
+            "costString": "M̶2"
         },
         {
             "name": "Library",
             "cost": 2,
-            "costString": "M2"
+            "costString": "M̶2"
         },
         {
             "name": "Chance"
@@ -55,12 +55,12 @@
         {
             "name": "Skater Park",
             "cost": 2,
-            "costString": "M2"
+            "costString": "M̶2"
         },
         {
             "name": "Swimming Pool",
             "cost": 2,
-            "costString": "M2"
+            "costString": "M̶2"
         },
         {
             "name": "Free Parking"
@@ -68,12 +68,12 @@
         {
             "name": "Casino",
             "cost": 3,
-            "costString": "M3"
+            "costString": "M̶3"
         },
         {
             "name": "Cinema",
             "cost": 3,
-            "costString": "M3"
+            "costString": "M̶3"
         },
         {
             "name": "Chance"
@@ -81,12 +81,12 @@
         {
             "name": "Toy Store",
             "cost": 3,
-            "costString": "M3"
+            "costString": "M̶3"
         },
         {
             "name": "Pet Store",
             "cost": 3,
-            "costString": "M3"
+            "costString": "M̶3"
         },
         {
             "name": "Go to jail"
@@ -94,12 +94,12 @@
         {
             "name": "Bowling Alley",
             "cost": 4,
-            "costString": "M4"
+            "costString": "M̶4"
         },
         {
             "name": "Zoo",
             "cost": 4,
-            "costString": "M4"
+            "costString": "M̶4"
         },
         {
             "name": "Chance"
@@ -107,12 +107,12 @@
         {
             "name": "Water Park",
             "cost": 5,
-            "costString": "M5"
+            "costString": "M̶5"
         },
         {
             "name": "Boardwalk",
             "cost": 5,
-            "costString": "M5"
+            "costString": "M̶5"
         }
     ]
 }
