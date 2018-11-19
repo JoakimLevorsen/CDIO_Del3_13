@@ -7,113 +7,135 @@
     "playAgainMessage": "Vil du spille igen?",
     "quit": "Afslut",
     "playAgainButton": "Spil igen!",
-    "spaces": [
-        {
-          "name": "Start",
-          "message": "Modtag M̶2 når du passerer start",
-          "type": 0
+    "spaces": [{
+            "name": "Start",
+            "message": "Modtag M̶2 når du passerer start",
+            "type": 1
         },
         {
-          "name": "Burgerbaren",
-          "cost": 1,
-          "costString": "M̶1"
+            "name": "Burgerbaren",
+            "cost": 1,
+            "costString": "M̶1",
+            "type": 2
         },
         {
-          "name": "Pizzariaet",
-          "cost": 1,
-          "costString": "-100"
+            "name": "Pizzariaet",
+            "cost": 1,
+            "costString": "-100",
+            "type": 2
         },
         {
-            "name": "Chance"
+            "name": "Chance",
+            "type": 5
         },
         {
             "name": "Slikbutikken",
             "cost": 1,
-            "costString": "M̶1"
+            "costString": "M̶1",
+            "type": 2
         },
         {
             "name": "Iskiosken",
             "cost": 1,
-            "costString": "M̶1"
+            "costString": "M̶1",
+            "type": 2
         },
         {
             "name": "Fængsel",
-            "message": "På besøg"
+            "message": "På besøg",
+            "type": 3
         },
         {
             "name": "Museet",
             "cost": 2,
-            "costString": "M̶2"
+            "costString": "M̶2",
+            "type": 2
         },
         {
             "name": "Biblioteket",
             "cost": 2,
-            "costString": "M̶2"
+            "costString": "M̶2",
+            "type": 2
         },
         {
-            "name": "Chance"
+            "name": "Chance",
+            "type": 5
         },
         {
             "name": "Skaterparken",
             "cost": 2,
-            "costString": "M̶2"
+            "costString": "M̶2",
+            "type": 2
         },
         {
             "name": "Swimmingpoolen",
             "cost": 2,
-            "costString": "M̶2"
+            "costString": "M̶2",
+            "type": 2
         },
         {
-            "name": "Gratis Parkering"
+            "name": "Gratis Parkering",
+            "type": 1
         },
         {
             "name": "Spillehallen",
             "cost": 3,
-            "costString": "M̶3"
+            "costString": "M̶3",
+            "type": 2
         },
         {
             "name": "Biografen",
             "cost": 3,
-            "costString": "M̶3"
+            "costString": "M̶3",
+            "type": 2
         },
         {
-            "name": "Chance"
+            "name": "Chance",
+            "type": 5
         },
         {
             "name": "Legetøjsbutikken",
             "cost": 3,
-            "costString": "M̶3"
+            "costString": "M̶3",
+            "type": 2
         },
         {
             "name": "Dyrehandlen",
             "cost": 3,
-            "costString": "M̶3"
+            "costString": "M̶3",
+            "type": 2
         },
         {
-            "name": "Gå i fængsel"
+            "name": "Gå i fængsel",
+            "type": 4
         },
         {
             "name": "Bowlinghallen",
             "cost": 4,
-            "costString": "M̶4"
+            "costString": "M̶4",
+            "type": 2
         },
         {
             "name": "Zoologisk Have",
             "cost": 4,
-            "costString": "M̶4"
+            "costString": "M̶4",
+            "type": 2
         },
         {
-            "name": "Chance"
+            "name": "Chance",
+            "type": 5
         },
         {
             "name": "Vandlandet",
             "cost": 5,
-            "costString": "M̶5"
+            "costString": "M̶5",
+            "type": 2
         },
         {
             "name": "Strandpromenaden",
             "cost": 5,
-            "costString": "M̶5"
+            "costString": "M̶5",
+            "type": 2
         }
     ]
 }
