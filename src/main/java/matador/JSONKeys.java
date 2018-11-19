@@ -17,7 +17,6 @@ public class JSONKeys {
     public static final String VALUE = "value";
     public static final String COLOUR = "colour";
     public static final String TITLE = "title";
-
-
+    public static final String OWNED_BY = "ownedBy";
 
 }
