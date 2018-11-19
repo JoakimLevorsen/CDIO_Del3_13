@@ -14,4 +14,5 @@ public class JSONKeys {
     public static final String COST = "cost";
     public static final String COST_STRING = "costString";
     public static final String MESSAGE = "message";
+    public static final String OWNED_BY = "ownedBy";
 }
