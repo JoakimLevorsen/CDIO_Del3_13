@@ -43,10 +43,10 @@ public class UIManager {
             kirk = new SpaceManager(jsonData);
 
             // Get number of players between 2 and 4 (both incl.)
-            numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.choosePlayerNum));
+            numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
             if (numberOfPlayers > 4 || numberOfPlayers < 2) {
-                gooey.showMessage(jsonData.getString(JSONKeys.invalidPlayerNum));
-                numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.choosePlayerNum));
+                gooey.showMessage(jsonData.getString(JSONKeys.INVALID_PLAYER_NUM));
+                numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
             }
 
         } catch (Exception e) {
@@ -72,16 +72,16 @@ public class UIManager {
 
         addPlayers(game.players);
 
-        gooey.showMessage(jsonData.getString(JSONKeys.rollDice));
+        gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
         game.executeTurn();
     }
 
     public void updateUI(int dice, Player currentPlayer) {}
 
     public void playerDidLose(Player player) {
-        gooey.displayChanceCard(jsonData.getString(JSONKeys.winMessage));
-        boolean quit = gooey.getUserLeftButtonPressed(jsonData.getString(JSONKeys.playAgainMessage),
-                jsonData.getString(JSONKeys.quit),jsonData.getString(JSONKeys.playAgainButton));
+        gooey.displayChanceCard(jsonData.getString(JSONKeys.WIN_MESSAGE));
+        boolean quit = gooey.getUserLeftButtonPressed(jsonData.getString(JSONKeys.PLAY_AGAIN_MESSAGE),
+                jsonData.getString(JSONKeys.QUIT),jsonData.getString(JSONKeys.PLAY_AGAIN_BUTTON));
         if (quit){
             System.exit(0);
         } else {

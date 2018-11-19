@@ -17,9 +17,9 @@ class BoardBuilder {
             JSONArray spaces = content.getJSONArray("spaces");
             // GUI_Street(TITLE, SUBTEXT, DESCRIPTION, RENT, BG_COLOR, FG_COLOR);
             for (int i = 0; i < 12; i++) {
-                String name = spaces.getJSONObject(i).getString(JSONKeys.name);
-                String cost = spaces.getJSONObject(i).getString(JSONKeys.costString);
-                String message = spaces.getJSONObject(i).getString(JSONKeys.message);
+                String name = spaces.getJSONObject(i).getString(JSONKeys.NAME);
+                String cost = spaces.getJSONObject(i).getString(JSONKeys.COST_STRING);
+                String message = spaces.getJSONObject(i).getString(JSONKeys.MESSAGE);
                 board[i] = new GUI_Street(name, "", message, cost, Color.white, Color.black);
             }
             return board;

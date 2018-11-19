@@ -1,17 +1,17 @@
 package matador;
 
 public class JSONKeys {
-    public static final String gameTitle = "gameTitle";
-    public static final String choosePlayerNum = "choosePlayerNum";
-    public static final String invalidPlayerNum = "invalidPlayerNum";
-    public static final String rollDice = "rollDice";
-    public static final String winMessage = "winMessage";
-    public static final String playAgainMessage = "playAgainMessage";
-    public static final String quit = "quit";
-    public static final String playAgainButton = "playAgainButton";
-    public static final String spaces = "spaces";
-    public static final String name = "name";
-    public static final String cost = "cost";
-    public static final String costString = "costString";
-    public static final String message = "message";
+    public static final String GAME_TITLE = "gameTitle";
+    public static final String CHOOSE_PLAYER_NUM = "choosePlayerNum";
+    public static final String INVALID_PLAYER_NUM = "invalidPlayerNum";
+    public static final String ROLL_DICE = "rollDice";
+    public static final String WIN_MESSAGE = "winMessage";
+    public static final String PLAY_AGAIN_MESSAGE = "playAgainMessage";
+    public static final String PLAY_AGAIN_BUTTON = "playAgainButton";
+    public static final String QUIT = "quit";
+    public static final String SPACES = "spaces";
+    public static final String NAME = "name";
+    public static final String COST = "cost";
+    public static final String COST_STRING = "costString";
+    public static final String MESSAGE = "message";
 }
