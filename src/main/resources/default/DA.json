@@ -137,5 +137,33 @@
             "costString": "M̶5",
             "type": 2
         }
+    ],
+    "cards": [{
+            "title": "Ryk frem til start og modtag M̶2.",
+            "type": 0
+        }, 
+        {
+            "title": "Ryk 5 felter frem.",
+            "type": 1
+        },
+        {
+            "title": "Ryk frem til Vandlandet og tag en dukkert du.",
+            "type": 2,
+            "property": 22
+        },
+        {
+            "amount": -2,
+            "title": "Du har spist for meget slik, betal M̶2 til banken.",
+            "type": 3
+        },
+        {
+            "amount": 1,
+            "title": "Det er din fødselsdag, tillykke og tag fra de andre.",
+            "type": 4
+        },
+        {
+            "title": "ud plz",
+            "type": 5
+        }
     ]
 }
