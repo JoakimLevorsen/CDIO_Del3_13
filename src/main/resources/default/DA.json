@@ -23,8 +23,8 @@
         {
             "name": "Pizzeriaet",
             "cost": 1,
+            "costString": "M̶1",
             "message": "Ægte italiensk pizza for næsten ingen penge.",
-            "costString": "-100",
             "type": 2
         },
         {
@@ -156,10 +156,9 @@
             "message": "Byens fineste gade. Frisk luft, hav og økologisk kaffe.",
             "costString": "M̶5",
             "type": 2
-        }
-    ],
+        }],
     "cards": [{
-            "title": "Ryk frem til start og modtag M̶2.",
+            "title": "Ryk frem til Start og modtag M̶2.",
             "type": 0
         }, 
         {
@@ -167,23 +166,88 @@
             "type": 1
         },
         {
-            "title": "Ryk frem til Vandlandet og tag en dukkert du.",
+            "title": "Ryk frem til Vandlandet og tag en dukkert. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 22
         },
         {
-            "amount": -2,
-            "title": "Du har spist for meget slik, betal M̶2 til banken.",
-            "type": 3
+            "title": "Du har spist for meget slik. Betal M̶2 til banken.",
+            "type": 3,
+            "amount": -2
         },
         {
-            "amount": 1,
-            "title": "Det er din fødselsdag, tillykke og tag fra de andre.",
-            "type": 4
+            "title": "Det er din fødselsdag! Alle andre spillere giver dig M̶1. Tillykke!",
+            "type": 4,
+            "amount": 1
         },
         {
-            "title": "ud plz",
+            "title": "Du løslades fra fængslet uden omkostninger! Behold dette kort indtil du får brug for det.",
             "type": 5
-        }
-    ]
+        },
+        {
+            "title": "Ryk frem til Burgerbaren og stil din sult. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 1
+        },
+        {
+            "title": "Ryk frem til Biblioteket og find din yndlingsbog. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 8
+        },
+        {
+            "title": "Ryk frem til Legetøjsbutikken og vælg den bamse du helst vil have. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 16
+        },
+        {
+            "title": "Ryk frem til Zoologisk Have og kig på alle dyrene. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 20
+        },
+        {
+            "title": "Ryk 2 felter frem.",
+            "type": 1
+        },
+        {
+            "title": "Din hund er blevet fundet efter den var løbet væk. Betal M̶1 til banken som løsesum.",
+            "type": 3,
+            "amount": -1
+        },
+        {
+            "title": "Du får ekstra lommepenge! Banken betaler dig M̶1.",
+            "type": 3,
+            "amount": 1
+        },
+        {
+            "title": "Ryk frem til Biografen og se en god film.",
+            "type": 2
+        },
+        {
+            "title": "Ryk frem til Iskiosken og spis den største is de har!",
+            "type": 2
+        },
+        {
+            "title": "Du har købt slik til alle i Slikbutikken. Alle andre spillere betaler M̶1 tilbage til dig.",
+            "type": 4,
+            "amount": 1
+        },
+        {
+            "title": "Du har købt en ny legetøjsbil. Betal banken M̶3.",
+            "type": 3,
+            "amount": -3
+        },
+        {
+            "title": "Du har mistet din madpakke. Betal banken M̶2 for en ny.",
+            "type": 3,
+            "amount": -2
+        },
+        {
+            "title": "Du vinder i bingo! Banken betaler dig M̶5.",
+            "type": 3,
+            "amount": 5
+        },
+        {
+            "title": "Ryk 1 felt frem.",
+            "type": 1
+        }]
 }

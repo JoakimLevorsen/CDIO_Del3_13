@@ -9,12 +9,17 @@ public class JSONKeys {
     public static final String PLAY_AGAIN_MESSAGE = "playAgainMessage";
     public static final String PLAY_AGAIN_BUTTON = "playAgainButton";
     public static final String QUIT = "quit";
+    public static final String OWNED_BY = "ownedBy";
+    public static final String TYPE = "type";
     public static final String SPACES = "spaces";
     public static final String NAME = "name";
     public static final String COST = "cost";
     public static final String COST_STRING = "costString";
     public static final String MESSAGE = "message";
     public static final String COLOUR = "colour";
-    public static final String OWNED_BY = "ownedBy";
+    public static final String CARDS = "cards";
+    public static final String TITLE = "title";
+    public static final String PROPERTY = "property";
+    public static final String AMOUNT = "amount";
 
 }
