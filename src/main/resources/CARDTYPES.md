@@ -1,8 +1,8 @@
 Types of cards:
 0 - Go to start
-1 - Go # forward
-2 - Go To Space
-3 - GetTheMoneyOrnotmabyeloos¿
-4 - AllPlayersPayYaMonetos
-5 - GetOutofJail
-6 - GoToJail
+1 - Go # spaces forward
+2 - Go to a specifik space
+3 - Get or lose money
+4 - Other players pay you money
+5 - Get out of Jail
+6 - Go to Jail

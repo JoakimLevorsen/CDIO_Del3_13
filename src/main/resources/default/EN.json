@@ -30,13 +30,13 @@
             "type": 5
         },
         {
-            "name": "Candy Store",
+            "name": "Sweet Shop",
             "cost": 1,
             "costString": "M̶1",
             "type": 2
         },
         {
-            "name": "Ice Cream Shop",
+            "name": "Ice Cream Parlour",
             "cost": 1,
             "costString": "M̶1",
             "type": 2
@@ -137,6 +137,100 @@
             "cost": 5,
             "costString": "M̶5",
             "type": 2
+        }
+    ],
+    "cards": [{
+            "title": "Move to Start and receive M̶2.",
+            "type": 0
+        },
+        {
+            "title": "Move forward 5 spaces.",
+            "type": 1
+        },
+        {
+            "title": "Move to the Water Park and have a swim. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "type": 2,
+            "property": 22
+        },
+        {
+            "title": "You have eaten way too many sweets. Pay the bank M̶2.",
+            "type": 3,
+            "amount": -2
+        },
+        {
+            "title": "It is your birthday! All other players pay you M̶1. Congratulations!",
+            "type": 4,
+            "amount": 1
+        },
+        {
+            "title": "You are released from Jail for free! Keep this card until you need it.",
+            "type": 5
+        },
+        {
+            "title": "Move to the Burger Bar and ease your hunger. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "type": 2,
+            "property": 1
+        },
+        {
+            "title": "Move to the Library and find your favourite book. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "type": 2,
+            "property": 8
+        },
+        {
+            "title": "Move to the Toy Store and pick the teddy bear you want. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "type": 2,
+            "property": 16
+        },
+        {
+            "title": "Move to the Zoo and have a look at all the animals. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "type": 2,
+            "property": 20
+        },
+        {
+            "title": "Move forward 2 spaces.",
+            "type": 1
+        },
+        {
+            "title": "Your dog has been found after it ran away. Pay the bank M̶1 as a finder's fee.",
+            "type": 3,
+            "amount": -1
+        },
+        {
+            "title": "You get extra pocket money! The bank pays you M̶1.",
+            "type": 3,
+            "amount": 1
+        },
+        {
+            "title": "Move to the Cinema and watch a good film.",
+            "type": 2
+        },
+        {
+            "title": "Move to the Ice Cream Parlour and eat the largest ice cream they have!",
+            "type": 2
+        },
+        {
+            "title": "You bought sweets for everyone in the Sweet Shop. All other players pay you back M̶1.",
+            "type": 4,
+            "amount": 1
+        },
+        {
+            "title": "You bought a new toy car. Pay the bank M̶3.",
+            "type": 3,
+            "amount": -3
+        },
+        {
+            "title": "You lost your packed lunch. Pay the bank M̶2 for a new one.",
+            "type": 3,
+            "amount": -2
+        },
+        {
+            "title": "You win bingo! The bank pays you M̶5.",
+            "type": 3,
+            "amount": 5
+        },
+        {
+            "title": "Move forward 1 space.",
+            "type": 1
         }
     ]
 }
