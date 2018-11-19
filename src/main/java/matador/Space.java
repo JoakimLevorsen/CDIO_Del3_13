@@ -10,7 +10,7 @@ public class Space {
     {
         try
         {
-            title = data.getString(JSONKeys.TITLE);
+            title = data.getString(JSONKeys.NAME);
         }
         catch (Exception e)
         {
