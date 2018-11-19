@@ -15,7 +15,7 @@ public class PropertySpace extends Space
     {
         super(data);
         try {
-            value = data.getInt(JSONKeys.VALUE);
+            value = data.getInt(JSONKeys.COST);
             colour = data.getString(JSONKeys.COLOUR);
             this.owner = Optional.empty();
             }
