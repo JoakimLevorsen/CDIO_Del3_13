@@ -3,14 +3,16 @@ package matador.GUI;
 import matador.*;
 import gui_fields.*;
 import gui_main.GUI;
+
 import java.io.*;
-import java.util.Optional;
+
 import org.json.*;
 import org.apache.commons.io.IOUtils;
 
 public class UIManager {
     private GUI gooey;
-    private GUI_Player[] players;
+    private GUI_Player[] guiPlayers;
+    private Player[] players;
     private Game game;
     private SpaceManager kirk;
     private JSONObject jsonData;
@@ -42,7 +44,7 @@ public class UIManager {
             gooey = new GUI(board);
             kirk = new SpaceManager(jsonData);
 
-            // Get number of players between 2 and 4 (both incl.)
+            // Get number of guiPlayers between 2 and 4 (both incl.)
             numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
             if (numberOfPlayers > 4 || numberOfPlayers < 2) {
                 gooey.showMessage(jsonData.getString(JSONKeys.INVALID_PLAYER_NUM));
@@ -69,8 +71,8 @@ public class UIManager {
         gooey = new GUI(board);
 
         game = new Game(numberOfPlayers, diceMax);
-
-        addPlayers(game.players);
+        players = game.players;
+        addPlayers(players);
 
         gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
         game.executeTurn();
@@ -92,6 +94,18 @@ public class UIManager {
         }
     }
 
+    public void setOwned(int ownedSpace, Player player){
+        // Puts a house on it, updates "label" with playername, and sets a border in the guiPlayers color.
+        try {
+        ((GUI_Street)board[ownedSpace]).setHouses(1);
+        ((GUI_Ownable)board[ownedSpace]).setOwnableLabel(jsonData.getString(JSONKeys.OWNED_BY));
+        ((GUI_Ownable)board[ownedSpace]).setOwnerName(player.getName());
+        ((GUI_Ownable)board[ownedSpace]).setBorder(PlayerAdder.getColors(game.getTurnCounter()));
+        } catch (ClassCastException ownableException){
+            System.out.println("Problem with casting space subclasses.");
+        }
+    }
+
     public String readFile(String fileName) {
         // Helper method for reading json files
         String result = "";
@@ -107,7 +121,7 @@ public class UIManager {
     }
 
     private void addPlayers(Player[] players) {
-        // Puts 2 - 4 players on the board and stores an array of players
-        this.players = PlayerAdder.add(numberOfPlayers, gooey, players[0].balance.getBalance());
+        // Puts 2 - 4 guiPlayers on the board and stores an array of guiPlayers
+        this.guiPlayers = PlayerAdder.add(numberOfPlayers, gooey, players[0].balance.getBalance());
     }
 }

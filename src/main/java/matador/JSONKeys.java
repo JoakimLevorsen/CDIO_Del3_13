@@ -16,8 +16,10 @@ public class JSONKeys {
     public static final String COST = "cost";
     public static final String COST_STRING = "costString";
     public static final String MESSAGE = "message";
+    public static final String COLOUR = "colour";
     public static final String CARDS = "cards";
     public static final String TITLE = "title";
     public static final String PROPERTY = "property";
     public static final String AMOUNT = "amount";
+
 }

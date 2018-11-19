@@ -7,7 +7,7 @@ import org.json.JSONObject;
 import java.awt.*;
 
 public class BoardPanda {
-    // Magic panda that can build an array of Junior Monopoly Fields
+    // Special panda that can build an array of Junior Monopoly Fields
 
     // TODO: Insert JSON as argument and link to JSON text instead of text below.
     static GUI_Field[] build() {
