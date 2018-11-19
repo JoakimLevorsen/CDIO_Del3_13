@@ -16,45 +16,52 @@
         {
             "name": "Burger Bar",
             "cost": 1,
+            "message": "En god burger til en god pris.",
             "costString": "M̶1",
             "type": 2
         },
         {
-            "name": "Pizzaria",
+            "name": "Pizzeria",
             "cost": 1,
+            "message": "Great pizza for cheap.",
             "costString": "-100",
             "type": 2
         },
         {
             "name": "Chance",
+            "message": "Pick a card!",
             "type": 5
         },
         {
             "name": "Candy Store",
             "cost": 1,
+            "message": "Amazing candystore. Open 24/7.",
             "costString": "M̶1",
             "type": 2
         },
         {
             "name": "Ice Cream Shop",
             "cost": 1,
+            "message": "Good ol'fashioned ice cream.",
             "costString": "M̶1",
             "type": 2
         },
         {
             "name": "Jail",
-            "message": "På besøg",
+            "message": "Just visiting.",
             "type": 3
         },
         {
             "name": "Museum",
             "cost": 2,
+            "message":"Dinos and mummies are always hot.",
             "costString": "M̶2",
             "type": 2
         },
         {
             "name": "Library",
             "cost": 2,
+            "message": "An oasis of knowledge and ps2 games.",
             "costString": "M̶2",
             "type": 2
         },
@@ -65,28 +72,33 @@
         {
             "name": "Skater Park",
             "cost": 2,
+            "message": "Kick flips are free, sodas cost.",
             "costString": "M̶2",
             "type": 2
         },
         {
             "name": "Swimming Pool",
             "cost": 2,
+            "message": "Get a refreshing swim!",
             "costString": "M̶2",
             "type": 2
         },
         {
             "name": "Free Parking",
+            "message": "Relax with a Red Bull read Stack Overflow!",
             "type": 1
         },
         {
             "name": "Casino",
             "cost": 3,
+            "message": "Any game imaginable is here.",
             "costString": "M̶3",
             "type": 2
         },
         {
             "name": "Cinema",
             "cost": 3,
+            "message": "The old cinema has the best popcorn in town.",
             "costString": "M̶3",
             "type": 2
         },
@@ -97,28 +109,33 @@
         {
             "name": "Toy Store",
             "cost": 3,
+            "message": "7 floors of madness and fun.",
             "costString": "M̶3",
             "type": 2
         },
         {
             "name": "Pet Store",
             "cost": 3,
+            "message": "Adoreable pets in all shapes.",
             "costString": "M̶3",
             "type": 2
         },
         {
             "name": "Go to jail",
+            "message": "You got caught cheating!",
             "type": 4
         },
         {
             "name": "Bowling Alley",
             "cost": 4,
+            "message": "Fun for everybody!",
             "costString": "M̶4",
             "type": 2
         },
         {
             "name": "Zoo",
             "cost": 4,
+            "message": "Everything from lions to polar bears.",
             "costString": "M̶4",
             "type": 2
         },
@@ -129,12 +146,14 @@
         {
             "name": "Water Park",
             "cost": 5,
+            "message": "Water slides everywhere you go!",
             "costString": "M̶5",
             "type": 2
         },
         {
             "name": "Boardwalk",
             "cost": 5,
+            "message": "The best place for a romantic walk.",
             "costString": "M̶5",
             "type": 2
         }
