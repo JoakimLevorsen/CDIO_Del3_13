@@ -7,6 +7,7 @@
     "playAgainMessage": "Vil du spille igen?",
     "quit": "Afslut",
     "playAgainButton": "Spil igen!",
+    "ownedBy": "Ejet af ",
     "spaces": [{
             "name": "Start",
             "message": "Modtag M̶2 når du passerer start",
