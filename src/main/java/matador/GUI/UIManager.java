@@ -33,7 +33,7 @@ public class UIManager {
         langChooseGui.close();
 
         // Set language and start the wGui GUI for the main game.
-        String fileContents = readFile(langChoice ? "EN.json" : "DA.json");
+        String fileContents = readFile(langChoice ? "default/EN.json" : "default/DA.json");
         System.out.println("Got file contents" + fileContents);
         try {
             jsonData = new JSONObject(fileContents);
