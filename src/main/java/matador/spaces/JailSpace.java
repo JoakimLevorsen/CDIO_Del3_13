@@ -1,5 +1,6 @@
-package matador;
+package matador.spaces;
 
+import matador.Player;
 import org.json.JSONObject;
 
 import java.util.ArrayList;

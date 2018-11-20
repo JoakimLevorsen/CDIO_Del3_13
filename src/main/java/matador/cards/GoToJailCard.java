@@ -1,4 +1,4 @@
-package matador;
+package matador.cards;
 
 public class GoToJailCard extends ChanceCard {
     

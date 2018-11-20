@@ -1,4 +1,4 @@
-package matador;
+package matador.spaces;
 
 import org.json.JSONException;
 import org.json.JSONObject;

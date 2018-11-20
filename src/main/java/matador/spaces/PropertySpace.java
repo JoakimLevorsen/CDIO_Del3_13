@@ -1,5 +1,7 @@
-package matador;
+package matador.spaces;
 
+import matador.JSONKeys;
+import matador.Player;
 import org.json.JSONException;
 import org.json.JSONObject;
 
