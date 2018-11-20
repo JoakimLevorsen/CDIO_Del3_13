@@ -7,9 +7,8 @@ import org.json.JSONObject;
 import java.awt.*;
 
 public class BoardPanda {
-    // Special panda that can build an array of Junior Monopoly Fields
+    // Special panda that can build an array of Junior Monopoly Fields. Not used in the CDIO 3 project
 
-    // TODO: Insert JSON as argument and link to JSON text instead of text below.
     static GUI_Field[] build() {
         //public GUI_Street(TITLE, SUBTEXT, DESCRIPTION, RENT, BG_COLOR, FG_COLOR);
         try {

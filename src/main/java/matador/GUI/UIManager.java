@@ -102,7 +102,7 @@ public class UIManager {
         ((GUI_Ownable)board[ownedSpace]).setOwnerName(player.getName());
         ((GUI_Ownable)board[ownedSpace]).setBorder(PlayerAdder.getColors(game.getTurnCounter()));
         } catch (ClassCastException ownableException){
-            System.out.println("Problem with casting space subclasses.");
+            System.out.println("Problem with casting Space subclasses.");
         }
     }
 
