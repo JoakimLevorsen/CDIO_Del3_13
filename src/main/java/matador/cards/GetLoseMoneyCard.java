@@ -4,10 +4,12 @@ import org.json.*;
 
 public class GetLoseMoneyCard extends ChanceCard {
     
-    public final int value;
+    public final int value = 0;
 
     // TODO: Fix constructor
-    public GetLoseMoneyCard(JSONObject cardData) {}
+    public GetLoseMoneyCard(JSONObject JSONCardKey){
+
+    }
 
     // TODO: Implementer process
 }
