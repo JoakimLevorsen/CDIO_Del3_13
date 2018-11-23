@@ -11,14 +11,14 @@ public class PropertySpace extends Space
 {
     private Optional<Player> owner;
     private final int value;
-    private String colour;
+    private String color;
 
     public PropertySpace(JSONObject data) throws JSONException
     {
         super(data);
         try {
             value = data.getInt(JSONKeys.COST);
-            colour = data.getString(JSONKeys.COLOUR);
+            color = data.getString(JSONKeys.COLOR);
             this.owner = Optional.empty();
             }
             catch (Exception e)
