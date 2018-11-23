@@ -1,6 +1,7 @@
 package matador.cards;
 
 import matador.*;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,36 +12,21 @@ import java.util.Collections;
     public class CardManager {
         ArrayList<ChanceCard> drawPile = new ArrayList<ChanceCard>();
         ArrayList<ChanceCard> discardPile = new ArrayList<ChanceCard>();
-        JSONObject cards;
+        JSONArray cards;
 
         public CardManager(JSONObject jsonData) throws JSONException {
             // Constructor makes the deck and shuffles it to a draw pile.
-            cards = jsonData;
-            int i = 0;
-            drawPile.addAll(
-                // TODO: the arguments here are pseudocode! Get info from json-file!
-                // Cards that move or pay probably get an copy of diceroll or price?
-                new GoToStartCard(type 0, cards.getJSONObject(i).getString(JSONKeys.CARDS),
-                new MoveSpacesCard(type 1, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GoToSpaceCard(type 2, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GetLoseMoneyCard(type 3, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new PlayersPayMoneyCard(type 4, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GetOutOfJailCard(type 5, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GoToJailCard(type 2, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GoToSpaceCard(type 2, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GoToSpaceCard(type 2, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GoToSpaceCard(type 2, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new MoveSpacesCard(type 1, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GetLoseMoneyCard(type 3, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GetLoseMoneyCard(type 3, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GoToSpaceCard(type 2, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GoToSpaceCard(type 2, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new PlayersPayMoneyCard(type 4, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GetLoseMoneyCard(type 3, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GetLoseMoneyCard(type 3, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new GetLoseMoneyCard(type 3, cards.getJSONObject(i++).getString(JSONKeys.CARDS),
-                new MoveSpacesCard(type 1, cards.getJSONObject(i++).getString(JSONKeys.CARDS)
-                );
+            JSONArray cards = jsonData.getJSONArray(JSONKeys.CARDS);
+
+            for (int i; i < cards.length(); i++){
+                ChanceCard newCard;
+                switch(cards.getJSONObject(i).getInt("type")){
+                    case 0:
+                        newCard = new GoToStartCard(cards.getJSONObject(i));
+                }
+                drawPile.add(newCard);
+
+            }
             shuffleCards();
 
         }
@@ -57,7 +43,7 @@ import java.util.Collections;
 
             // Move card to discard if not "Get out of jail" (Remember to add back to discard when played)
             // TODO: Pseudocode!, get the TYPE from json
-            if (NOT TYPE 5){
+            if (){
                 discardPile.add(drawPile.get(0));
             }
             // Removing the card from drawPile

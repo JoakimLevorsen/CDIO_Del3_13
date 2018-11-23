@@ -3,8 +3,11 @@ package matador.cards;
 import matador.game.*;
 
 public class GetOutOfJailCard extends ChanceCard {
+
     
-    public GetOutOfJailCard(Player owner) {}
+    public GetOutOfJailCard(JSONObject JSONCardKey){
+
+    }
 
     // TODO: Implementer process
 }
