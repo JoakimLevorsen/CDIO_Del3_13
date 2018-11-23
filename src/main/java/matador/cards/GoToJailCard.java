@@ -1,8 +1,12 @@
 package matador.cards;
 
+import org.json.JSONObject;
+
 public class GoToJailCard extends ChanceCard {
 
-    // TODO: Lav en tom constructor
+    public GoToJailCard(JSONObject JSONCardKey){
+
+    }
 
     // TODO: Implementer process
 }
