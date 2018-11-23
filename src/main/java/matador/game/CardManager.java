@@ -19,7 +19,7 @@ import java.util.Collections;
             // Constructor makes the deck and shuffles it to a draw pile.
             JSONArray cards = jsonData.getJSONArray(JSONKeys.CARDS);
 
-            for (int i; i < cards.length(); i++){
+            for (int i = 0; i < cards.length(); i++){
                 ChanceCard newCard;
                 switch(cards.getJSONObject(i).getInt("type")){
                     case 0:
@@ -44,8 +44,7 @@ import java.util.Collections;
                         newCard = new GoToJailCard(cards.getJSONObject(i));
                         break;
                     default:
-                        newCard = new ChanceCard();
-                        System.out.println("ERROR: Could not get card type index from JSON");
+                        new JSONException("Could not interpret card.\"type\" index from JSON");
                 }
                 drawPile.add(newCard);
 
@@ -66,7 +65,7 @@ import java.util.Collections;
 
             // Move card to discard if not "Get out of jail" (Remember to add back to discard when played)
             // TODO: Pseudocode!, get the TYPE from json
-            if (){
+            if (cardPickedUp instanceof GetOutOfJailCard){
                 discardPile.add(drawPile.get(0));
             }
             // Removing the card from drawPile
