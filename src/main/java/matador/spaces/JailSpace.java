@@ -18,7 +18,7 @@ public class JailSpace extends Space
         prisoners.add(jailee);
     }
 
-    public void releasePlayer(Player jailee)
+    public void releasePlayer (Player jailee) throws PlayerNotInJailException
     {
         try
         {
@@ -26,6 +26,7 @@ public class JailSpace extends Space
         }
         catch (Exception e)
         {
+            throw new PlayerNotInJailException("This player is not in jail");
         }
     }
 }
