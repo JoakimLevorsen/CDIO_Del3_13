@@ -18,6 +18,7 @@ public class JSONKeys {
     public static final String MESSAGE = "message";
     public static final String COLOR = "color";
     public static final String TEXT_COLOR = "textColor";
+    public static final String IMAGE = "image";
     public static final String CARDS = "cards";
     public static final String TITLE = "title";
     public static final String PROPERTY = "property";
