@@ -13,7 +13,7 @@ public class Game {
 
         players = new Player[withPlayers];
         for(int i = 0; i < withPlayers; i++) {
-            players[i] = new Player();
+            //players[i] = new Player();
         }
         this.dice = new Dice(diceMax);
         this.turnCounter = 0;

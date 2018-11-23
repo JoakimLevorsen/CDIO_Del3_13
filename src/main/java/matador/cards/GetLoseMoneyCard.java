@@ -7,7 +7,7 @@ public class GetLoseMoneyCard extends ChanceCard {
     private int amount;
 
     public GetLoseMoneyCard(JSONObject JSONCardKey){
-        this.title = JSONCardKey.getString("type");
+        this.title = JSONCardKey.getString("title");
         this.amount = JSONCardKey.getInt("amount");
 
     }

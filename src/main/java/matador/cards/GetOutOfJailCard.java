@@ -9,7 +9,7 @@ public class GetOutOfJailCard extends ChanceCard {
 
     
     public GetOutOfJailCard(JSONObject JSONCardKey){
-        this.title = JSONCardKey.getString("type");
+        this.title = JSONCardKey.getString("title");
     }
 
     public Player getOwner() {

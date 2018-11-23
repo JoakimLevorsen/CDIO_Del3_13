@@ -6,7 +6,7 @@ public class GoToJailCard extends ChanceCard {
     private String title; // Title er en beskrivelse!
 
     public GoToJailCard(JSONObject JSONCardKey){
-        this.title = JSONCardKey.getString("type");
+        this.title = JSONCardKey.getString("title");
     }
 
     // TODO: Implementer process

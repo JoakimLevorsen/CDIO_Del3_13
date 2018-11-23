@@ -7,7 +7,7 @@ public class MoveSpacesCard extends ChanceCard {
     private int amount; // Amount of spaces moved
     
     public MoveSpacesCard(JSONObject JSONCardKey){
-        this.title = JSONCardKey.getString("type");
+        this.title = JSONCardKey.getString("title");
         this.amount = JSONCardKey.getInt("amount");
     }
 

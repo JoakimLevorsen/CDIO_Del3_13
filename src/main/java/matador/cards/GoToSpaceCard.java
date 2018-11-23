@@ -8,7 +8,7 @@ public class GoToSpaceCard extends ChanceCard {
     private int property;
 
     public GoToSpaceCard(JSONObject JSONCardKey){
-        this.title = JSONCardKey.getString("type");
+        this.title = JSONCardKey.getString("title");
         this.property = JSONCardKey.getInt("property");
     }
 

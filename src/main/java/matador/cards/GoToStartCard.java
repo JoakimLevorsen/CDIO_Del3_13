@@ -7,7 +7,7 @@ public class GoToStartCard extends ChanceCard {
     private int amount; // Reward for passing start.
 
     public GoToStartCard(JSONObject JSONCardKey){
-            this.title = JSONCardKey.getString("type");
+            this.title = JSONCardKey.getString("title");
             this.amount = JSONCardKey.getInt("amount");
 
     }

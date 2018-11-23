@@ -44,13 +44,13 @@ import java.util.Collections;
                         drawPile.add(newCard = new GoToJailCard(cards.getJSONObject(i)));
                         break;
                     default:
-                        new JSONException("Could not interpret card.\"type\" index from JSON");
+                        throw new JSONException("Could not interpret card.\"type\" index from JSON");
                 }
             }
             shuffleCards();
 
         }
-        private ChanceCard pickCard(){
+        public ChanceCard pickCard(){
             // Turn pile and shuffle if needed
             if (drawPile.isEmpty()){
                 drawPile.addAll(discardPile);
@@ -62,7 +62,7 @@ import java.util.Collections;
             ChanceCard cardPickedUp = drawPile.get(0);
 
             // Move card to discard if not "Get out of jail" (Remember to add back to discard when played)
-            if (cardPickedUp instanceof GetOutOfJailCard){
+            if (!(cardPickedUp instanceof GetOutOfJailCard)){
                 discardPile.add(drawPile.get(0));
             }
             // Removing the card from drawPile
@@ -71,7 +71,7 @@ import java.util.Collections;
             return cardPickedUp;  // Pick up card
 
         }
-        private void shuffleCards(){
+        public void shuffleCards(){
             Collections.shuffle(drawPile);
 
         }

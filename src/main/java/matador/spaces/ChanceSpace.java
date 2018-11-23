@@ -15,6 +15,6 @@ public class ChanceSpace extends Space
     }
     public ChanceCard draw()
     {
-        return manager.draw();
+      return null; // manager.draw();
     }
 }
