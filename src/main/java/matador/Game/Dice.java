@@ -1,4 +1,4 @@
-package matador.Game;
+package matador.game;
 
 public class Dice {
     public int maxFaceValue;

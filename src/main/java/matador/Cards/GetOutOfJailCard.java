@@ -1,6 +1,6 @@
-package matador.Cards;
+package matador.cards;
 
-import matador.Game.*;
+import matador.game.*;
 
 public class GetOutOfJailCard extends ChanceCard {
     

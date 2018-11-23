@@ -1,7 +1,7 @@
-package matador.Spaces;
+package matador.spaces;
 
 import org.json.JSONObject;
-import matador.Game.*;
+import matador.game.*;
 import java.util.ArrayList;
 
 public class JailSpace extends Space

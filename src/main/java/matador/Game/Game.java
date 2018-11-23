@@ -1,4 +1,4 @@
-package matador.Game;
+package matador.game;
 
 import java.util.Optional;
 import matador.GUI.*;

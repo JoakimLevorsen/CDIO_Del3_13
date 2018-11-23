@@ -1,4 +1,4 @@
-package matador.Cards;
+package matador.cards;
 
 public class MoveSpacesCard extends ChanceCard {
     
