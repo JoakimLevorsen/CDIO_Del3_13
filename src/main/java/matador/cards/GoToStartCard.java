@@ -3,10 +3,12 @@ package matador.cards;
 import org.json.JSONObject;
 
 public class GoToStartCard extends ChanceCard {
-    private int value
+    private String title; // Title is a description text!
+    private int amount; // Reward for passing start.
 
     public GoToStartCard(JSONObject JSONCardKey){
-
+            this.title = JSONCardKey.getString("type");
+            this.amount = JSONCardKey.getInt("amount");
 
     }
 

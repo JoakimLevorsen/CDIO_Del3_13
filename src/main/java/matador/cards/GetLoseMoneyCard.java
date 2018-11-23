@@ -3,11 +3,12 @@ package matador.cards;
 import org.json.*;
 
 public class GetLoseMoneyCard extends ChanceCard {
-    
-    public final int value = 0;
+    private String title; // Description
+    private int amount;
 
-    // TODO: Fix constructor
     public GetLoseMoneyCard(JSONObject JSONCardKey){
+        this.title = JSONCardKey.getString("type");
+        this.amount = JSONCardKey.getInt("amount");
 
     }
 

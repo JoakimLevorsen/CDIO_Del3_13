@@ -62,7 +62,6 @@ import java.util.Collections;
             ChanceCard cardPickedUp = drawPile.get(0);
 
             // Move card to discard if not "Get out of jail" (Remember to add back to discard when played)
-            // TODO: Pseudocode!, get the TYPE from json
             if (cardPickedUp instanceof GetOutOfJailCard){
                 discardPile.add(drawPile.get(0));
             }
@@ -78,7 +77,7 @@ import java.util.Collections;
         }
         public void draw(){
             // Run pickCard and do all the card's actions
-            //pickCard().doCardActions(); //or something like that
+            //pickCard().doCardActions(); // eller sådan noget!
         }
     }
 

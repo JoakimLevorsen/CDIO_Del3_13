@@ -211,11 +211,13 @@
         }],
     "cards": [{
             "title": "Ryk frem til Start og modtag M̶2.",
-            "type": 0
+            "type": 0,
+            "amount": 1
         }, 
         {
             "title": "Ryk 5 felter frem.",
-            "type": 1
+            "type": 1,
+            "amount": 5
         },
         {
             "title": "Ryk frem til Vandlandet og tag en dukkert. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
@@ -258,7 +260,8 @@
         },
         {
             "title": "Ryk 2 felter frem.",
-            "type": 1
+            "type": 1,
+            "amount": 2
         },
         {
             "title": "Din hund er blevet fundet efter den var løbet væk. Betal M̶1 til banken som løsesum.",
@@ -294,12 +297,13 @@
             "amount": -2
         },
         {
-            "title": "Du vinder i bingo! Banken betaler dig M̶5.",
-            "type": 3,
-            "amount": 5
+            "title": "Du snød i Bingo! Ryk til fængslet. Næste gang skal du betale for at komme ud, hvis du ikke har et \"Løslades fra fængsel\"-kort.!",
+            "type": 6,
+            "amount": 1
         },
         {
             "title": "Ryk 1 felt frem.",
-            "type": 1
+            "type": 1,
+            "amount": 1
         }]
 }
