@@ -21,7 +21,7 @@
             "message": "En god burger til en god pris.",
             "costString": "M̶1",
             "type": 2,
-            "color": "darkGrey",
+            "color": "darkGray",
             "textColor": "black"
 
         },
@@ -31,14 +31,14 @@
             "costString": "M̶1",
             "message": "Ægte italiensk pizza for næsten ingen penge.",
             "type": 2,
-            "color":"darkGrey",
+            "color":"darkGray",
             "textColor": "black"
         },
         {
             "name": "Chance",
             "message": "Tag et chancekort.",
             "type": 5,
-            "color":"lightGrey",
+            "color":"lightGray",
             "textColor": "black"
         },
         {
@@ -88,7 +88,7 @@
         {
             "name": "Chance",
             "type": 5,
-            "color":"lightGrey",
+            "color":"lightGray",
             "textColor": "black"
         },
         {
@@ -138,7 +138,7 @@
         {
             "name": "Chance",
             "type": 5,
-            "color":"lightGrey",
+            "color":"lightGray",
             "textColor": "black"
         },
         {
@@ -188,7 +188,7 @@
         {
             "name": "Chance",
             "type": 5,
-            "color":"lightGrey",
+            "color":"lightGray",
             "textColor": "black"
         },
         {
