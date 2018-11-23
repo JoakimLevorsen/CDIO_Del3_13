@@ -23,6 +23,9 @@ import java.util.Collections;
                 switch(cards.getJSONObject(i).getInt("type")){
                     case 0:
                         newCard = new GoToStartCard(cards.getJSONObject(i));
+                        break;
+                    case 1:
+                        newCard = new MoveSpacesCard(cards.getJSONObject(i));
                 }
                 drawPile.add(newCard);
 
