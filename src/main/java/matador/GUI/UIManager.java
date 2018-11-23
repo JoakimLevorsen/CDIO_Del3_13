@@ -1,6 +1,7 @@
 package matador.GUI;
 
 import matador.*;
+import matador.Game.*;
 import gui_fields.*;
 import gui_main.GUI;
 

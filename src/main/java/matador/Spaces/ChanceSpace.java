@@ -1,6 +1,8 @@
-package matador;
+package matador.Spaces;
 
 import org.json.JSONObject;
+import matador.Game.*;
+import matador.Cards.*;
 
 public class ChanceSpace extends Space
 {

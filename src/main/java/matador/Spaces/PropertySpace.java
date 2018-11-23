@@ -1,7 +1,9 @@
-package matador;
+package matador.Spaces;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import matador.*;
+import matador.Game.*;
 
 import java.util.Optional;
 

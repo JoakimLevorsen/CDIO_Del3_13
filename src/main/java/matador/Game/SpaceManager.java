@@ -1,7 +1,9 @@
-package matador;
+package matador.Game;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import matador.*;
+import matador.Spaces.*;
 
 public class SpaceManager {
     private Space[] fields;

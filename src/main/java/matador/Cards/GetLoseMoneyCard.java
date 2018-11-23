@@ -1,4 +1,4 @@
-package matador;
+package matador.Cards;
 
 import org.json.*;
 

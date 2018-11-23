@@ -1,4 +1,4 @@
-package matador;
+package matador.Game;
 
 public class Account {
     private int balance;

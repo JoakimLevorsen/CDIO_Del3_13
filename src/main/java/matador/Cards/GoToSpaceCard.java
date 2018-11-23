@@ -1,4 +1,6 @@
-package matador;
+package matador.Cards;
+
+import matador.Spaces.*;
 
 public class GoToSpaceCard extends ChanceCard {
     

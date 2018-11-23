@@ -1,7 +1,8 @@
-package matador;
+package matador.Spaces;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import matador.*;
 
 public class Space {
     public String title;
