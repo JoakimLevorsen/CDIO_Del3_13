@@ -27,6 +27,25 @@ import java.util.Collections;
                         break;
                     case 1:
                         newCard = new MoveSpacesCard(cards.getJSONObject(i));
+                        break;
+                    case 2:
+                        newCard = new GoToSpaceCard(cards.getJSONObject(i));
+                            break;
+                    case 3:
+                        newCard = new GetLoseMoneyCard(cards.getJSONObject(i));
+                        break;
+                    case 4:
+                        newCard = new PlayersPayMoneyCard(cards.getJSONObject(i));
+                        break;
+                    case 5:
+                        newCard = new GetOutOfJailCard(cards.getJSONObject(i));
+                        break;
+                    case 6:
+                        newCard = new GoToJailCard(cards.getJSONObject(i));
+                        break;
+                    default:
+                        newCard = new ChanceCard();
+                        System.out.println("ERROR: Could not get card type index from JSON");
                 }
                 drawPile.add(newCard);
 
