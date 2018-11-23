@@ -2,6 +2,7 @@ package matador.game;
 
 import java.util.Optional;
 import matador.GUI.*;
+import matador.game.*;
 
 public class Game {
     public Dice dice;
