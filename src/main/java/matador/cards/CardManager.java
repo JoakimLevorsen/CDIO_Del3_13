@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collections;
 
+
 public class CardManager {
     ArrayList<ChanceCard> drawPile = new ArrayList<ChanceCard>();
     ArrayList<ChanceCard> discardPile = new ArrayList<ChanceCard>();
