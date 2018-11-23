@@ -11,151 +11,202 @@
     "spaces": [{
             "name": "Start",
             "message": "Receive M̶2 when you pass start",
-            "type": 1
+            "type": 1,
+            "color": "white",
+            "textColor": "red"
         },
         {
             "name": "Burger Bar",
             "cost": 1,
             "message": "En god burger til en god pris.",
             "costString": "M̶1",
-            "type": 2
+            "type": 2,
+            "color": "darkGrey",
+            "textColor": "black"
         },
         {
             "name": "Pizzeria",
             "cost": 1,
             "message": "Great pizza for cheap.",
             "costString": "-100",
-            "type": 2
+            "type": 2,
+            "color": "darkGrey",
+            "textColor": "black"
         },
         {
             "name": "Chance",
             "message": "Pick a card!",
-            "type": 5
+            "type": 5,
+            "color": "lightGrey",
+            "textColor": "black"
         },
         {
             "name": "Sweet Shop",
             "cost": 1,
             "message": "Amazing candystore. Open 24/7.",
             "costString": "M̶1",
-            "type": 2
+            "type": 2,
+            "color": "cyan",
+            "textColor": "black"
         },
         {
             "name": "Ice Cream Parlour",
             "cost": 1,
             "message": "Good ol'fashioned ice cream.",
             "costString": "M̶1",
-            "type": 2
+            "type": 2,
+            "color": "cyan",
+            "textColor": "black"
         },
         {
             "name": "Jail",
             "message": "Just visiting.",
-            "type": 3
+            "type": 3,
+            "color": "white",
+            "textColor": "black",
+            "image": "default"
         },
         {
             "name": "Museum",
             "cost": 2,
             "message":"Dinos and mummies are always hot.",
             "costString": "M̶2",
-            "type": 2
+            "type": 2,
+            "color": "magenta",
+            "textColor": "black"
         },
         {
             "name": "Library",
             "cost": 2,
             "message": "An oasis of knowledge and ps2 games.",
             "costString": "M̶2",
-            "type": 2
+            "type": 2,
+            "color": "magenta",
+            "textColor": "black"
         },
         {
             "name": "Chance",
-            "type": 5
+            "type": 5,
+            "color": "lightGrey",
+            "textColor": "black"
         },
         {
             "name": "Skater Park",
             "cost": 2,
             "message": "Kick flips are free, sodas cost.",
             "costString": "M̶2",
-            "type": 2
+            "type": 2,
+            "color": "orange",
+            "textColor": "black"
         },
         {
             "name": "Swimming Pool",
             "cost": 2,
             "message": "Get a refreshing swim!",
             "costString": "M̶2",
-            "type": 2
+            "type": 2,
+            "color": "orange",
+            "textColor": "black"
         },
         {
             "name": "Free Parking",
             "message": "Relax with a Red Bull read Stack Overflow!",
-            "type": 1
+            "type": 1,
+            "color": "white",
+            "textColor": "black",
+            "image": "default"
         },
         {
             "name": "Casino",
             "cost": 3,
             "message": "Any game imaginable is here.",
             "costString": "M̶3",
-            "type": 2
+            "type": 2,
+            "color": "red",
+            "textColor": "black"
         },
         {
             "name": "Cinema",
             "cost": 3,
             "message": "The old cinema has the best popcorn in town.",
             "costString": "M̶3",
-            "type": 2
+            "type": 2,
+            "color": "red",
+            "textColor": "black"
         },
         {
             "name": "Chance",
-            "type": 5
+            "type": 5,
+            "color": "lightGrey",
+            "textColor": "black"
         },
         {
             "name": "Toy Store",
             "cost": 3,
             "message": "7 floors of madness and fun.",
             "costString": "M̶3",
-            "type": 2
+            "type": 2,
+            "color": "yellow",
+            "textColor": "black"
         },
         {
             "name": "Pet Store",
             "cost": 3,
             "message": "Adoreable pets in all shapes.",
             "costString": "M̶3",
-            "type": 2
+            "type": 2,
+            "color": "yellow",
+            "textColor": "black"
         },
         {
             "name": "Go to jail",
             "message": "You got caught cheating!",
-            "type": 4
+            "type": 4,
+            "color": "white",
+            "textColor": "black",
+            "image": "default"
         },
         {
             "name": "Bowling Alley",
             "cost": 4,
             "message": "Fun for everybody!",
             "costString": "M̶4",
-            "type": 2
+            "type": 2,
+            "color": "green",
+            "textColor": "black"
         },
         {
             "name": "Zoo",
             "cost": 4,
             "message": "Everything from lions to polar bears.",
             "costString": "M̶4",
-            "type": 2
+            "type": 2,
+            "color": "green",
+            "textColor": "black"
         },
         {
             "name": "Chance",
-            "type": 5
+            "type": 5,
+            "color": "lightGrey",
+            "textColor": "black"
         },
         {
             "name": "Water Park",
             "cost": 5,
             "message": "Water slides everywhere you go!",
             "costString": "M̶5",
-            "type": 2
+            "type": 2,
+            "color": "blue",
+            "textColor": "black"
         },
         {
             "name": "Boardwalk",
             "cost": 5,
             "message": "The best place for a romantic walk.",
             "costString": "M̶5",
-            "type": 2
+            "type": 2,
+            "color": "blue",
+            "textColor": "black"
         }
     ],
     "cards": [{

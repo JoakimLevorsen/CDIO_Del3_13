@@ -11,151 +11,203 @@
     "spaces": [{
             "name": "Start",
             "message": "Modtag M̶2 når du passerer start",
-            "type": 1
+            "type": 1,
+            "color": "white",
+            "textColor": "red"
         },
         {
             "name": "Burgerbaren",
             "cost": 1,
             "message": "En god burger til en god pris.",
             "costString": "M̶1",
-            "type": 2
+            "type": 2,
+            "color": "darkGrey",
+            "textColor": "black"
+
         },
         {
             "name": "Pizzeriaet",
             "cost": 1,
             "costString": "M̶1",
             "message": "Ægte italiensk pizza for næsten ingen penge.",
-            "type": 2
+            "type": 2,
+            "color":"darkGrey",
+            "textColor": "black"
         },
         {
             "name": "Chance",
             "message": "Tag et chancekort.",
-            "type": 5
+            "type": 5,
+            "color":"lightGrey",
+            "textColor": "black"
         },
         {
             "name": "Slikbutikken",
             "cost": 1,
             "message": "Billigere slik fås ikke i byen.",
             "costString": "M̶1",
-            "type": 2
+            "type": 2,
+            "color":"cyan",
+            "textColor": "black"
         },
         {
             "name": "Iskiosken",
             "cost": 1,
             "message": "Gammeldaws is med det hele.",
             "costString": "M̶1",
-            "type": 2
+            "type": 2,
+            "color":"cyan",
+            "textColor": "black"
         },
         {
             "name": "Fængsel",
             "message": "På besøg",
-            "type": 3
+            "type": 3,
+            "color":"white",
+            "textColor": "black",
+            "image": "default"
         },
         {
             "name": "Museet",
             "cost": 2,
             "message":"Hold børnefødselsdag i museet og få kloge børn!",
             "costString": "M̶2",
-            "type": 2
+            "type": 2,
+            "color":"magenta",
+            "textColor": "black"
         },
         {
             "name": "Biblioteket",
             "cost": 2,
             "message": "Betal dine gebyrer, når du alligevel er forbi!",
             "costString": "M̶2",
-            "type": 2
+            "type": 2,
+            "color":"magenta",
+            "textColor": "black"
         },
         {
             "name": "Chance",
-            "type": 5
+            "type": 5,
+            "color":"lightGrey",
+            "textColor": "black"
         },
         {
             "name": "Skaterparken",
             "cost": 2,
             "message": "Skateparken er gratis, men sodavandet koster.",
             "costString": "M̶2",
-            "type": 2
+            "type": 2,
+            "color":"orange",
+            "textColor": "black"
         },
         {
             "name": "Swimmingpoolen",
             "cost": 2,
             "message": "Tag dig en svømmer for 2 M",
             "costString": "M̶2",
-            "type": 2
+            "type": 2,
+            "color":"orange",
+            "textColor": "black"
         },
         {
             "name": "Gratis Parkering",
             "message": "Tag dig en Red Bull og læs om Swing på Stack Overflow!",
-            "type": 1
+            "type": 1,
+            "color":"white",
+            "textColor": "black",
+            "image": "default"
         },
         {
             "name": "Spillehallen",
             "cost": 3,
             "message": "Her kan man spille de sidste spil, som eks DTU-matador!",
             "costString": "M̶3",
-            "type": 2
+            "type": 2,
+            "color":"red",
+            "textColor": "black"
         },
         {
             "name": "Biografen",
             "cost": 3,
             "message": "Biografen med 43 sale. Der er penge i de popcorn!",
             "costString": "M̶3",
-            "type": 2
+            "type": 2,
+            "color":"red",
+            "textColor": "black"
         },
         {
             "name": "Chance",
-            "type": 5
+            "type": 5,
+            "color":"lightGrey",
+            "textColor": "black"
         },
         {
             "name": "Legetøjsbutikken",
             "cost": 3,
             "message": "Flot legetøjsbutik med masser af aktiviteter for de mindste.",
             "costString": "M̶3",
-            "type": 2
+            "type": 2,
+            "color":"yellow",
+            "textColor": "black"
         },
         {
             "name": "Dyrehandlen",
             "cost": 3,
             "message": "Kæledyr i alle prisklasser.",
             "costString": "M̶3",
-            "type": 2
+            "type": 2,
+            "color":"yellow",
+            "textColor": "black"
         },
         {
             "name": "Gå i fængsel",
             "message": "Du rykker til fængslet. Det er alvor denne gang.",
-            "type": 4
+            "type": 4,
+            "color":"white",
+            "textColor": "black",
+            "image": "default"
         },
         {
             "name": "Bowlinghallen",
             "cost": 4,
             "message": "Bowling går aldri helt af mode.",
             "costString": "M̶4",
-            "type": 2
+            "type": 2,
+            "color":"green",
+            "textColor": "black"
         },
         {
             "name": "Zoologisk Have",
             "cost": 4,
             "message": "Zoo er en af de helt store turistattraktioner i byen.",
             "costString": "M̶4",
-            "type": 2
+            "type": 2,
+            "color":"green",
+            "textColor": "black"
         },
         {
             "name": "Chance",
-            "type": 5
+            "type": 5,
+            "color":"lightGrey",
+            "textColor": "black"
         },
         {
             "name": "Vandlandet",
             "cost": 5,
             "message": "Der er ikke sparet på noget i det nye vandland midt i København!",
             "costString": "M̶5",
-            "type": 2
+            "type": 2,
+            "color":"blue",
+            "textColor": "black"
         },
         {
             "name": "Strandpromenaden",
             "cost": 5,
             "message": "Byens fineste gade. Frisk luft, hav og økologisk kaffe.",
             "costString": "M̶5",
-            "type": 2
+            "type": 2,
+            "color":"blue",
+            "textColor": "black"
         }],
     "cards": [{
             "title": "Ryk frem til Start og modtag M̶2.",
