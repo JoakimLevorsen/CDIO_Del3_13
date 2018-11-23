@@ -8,132 +8,54 @@ import java.awt.*;
 import org.json.*;
 
 class BoardBuilder {
-    static GUI_Field[] build(JSONObject jsonData) throws JSONException {
+
+    private Color color;
+
+    public Color getColor(JSONArray spaces) throws JSONException {
+        String JSONColor = "";
+
+        switch (JSONColor) {
+            case "white": color = Color.WHITE; break;
+            case "black": color = Color.BLACK; break;
+            case "red": color = Color.RED; break;
+            case "darkGray": color = Color.DARK_GRAY; break;
+            case "lightGray": color = Color.LIGHT_GRAY; break;
+            case "cyan": color = Color.CYAN; break;
+            case "magenta": color = Color.MAGENTA; break;
+            case "orange": color = Color.ORANGE; break;
+            case "yellow": color = Color.YELLOW; break;
+            case "green": color = Color.GREEN; break;
+            case "blue": color = Color.BLUE; break;
+            default: throw new JSONException("Read from JSON failed, check formatting.");
+        }
+        return color;
+    }
+
+    public static GUI_Field[] build(JSONObject jsonData) throws JSONException {
         // Building a game board.
         try {
             GUI_Field[] board = new GUI_Field[24];
-            JSONArray spaces = jsonData.getJSONArray("spaces");
+            JSONArray spaces = jsonData.getJSONArray(JSONKeys.SPACES);
             // GUI_Street(TITLE, SUBTEXT, DESCRIPTION, RENT, BG_COLOR, FG_COLOR);
 
-            board[0] = new GUI_Start(spaces.getJSONObject(0).getString(JSONKeys.NAME),
-                spaces.getJSONObject(0).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(0).getString(JSONKeys.MESSAGE),
-                Color.LIGHT_GRAY, Color.RED);
+            for (int i = 0; i < spaces.length(); i++) {
+                int spaceType = spaces.getJSONObject(i).getInt(JSONKeys.TYPE);
+                String image = spaces.getJSONObject(i).getString(JSONKeys.IMAGE);
+                String title = spaces.getJSONObject(i).getString(JSONKeys.NAME);
+                String rent = spaces.getJSONObject(i).getString(JSONKeys.COST_STRING);
+                String description = spaces.getJSONObject(i).getString(JSONKeys.MESSAGE);
+                Color BG_COLOR = Color.getColor(spaces.getJSONObject(i).getString(JSONKeys.COLOR));
+                Color FG_COLOR = Color.getColor(spaces.getJSONObject(i).getString(JSONKeys.TEXT_COLOR));
 
-            board[1] = new GUI_Street(spaces.getJSONObject(1).getString(JSONKeys.NAME),
-                spaces.getJSONObject(1).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(1).getString(JSONKeys.MESSAGE), "1",
-                new Color(165, 42, 42), Color.BLACK);
-
-            board[2] = new GUI_Street(spaces.getJSONObject(2).getString(JSONKeys.NAME),
-                spaces.getJSONObject(2).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(2).getString(JSONKeys.MESSAGE), "1",
-                new Color(165, 42, 42), Color.BLACK);
-
-            board[3] = new GUI_Chance(spaces.getJSONObject(3).getString(JSONKeys.NAME),
-                spaces.getJSONObject(3).getString(JSONKeys.NAME),
-                spaces.getJSONObject(0).getString(JSONKeys.MESSAGE),
-                new Color(204, 204, 204), Color.BLACK);
-
-            board[4] = new GUI_Street(spaces.getJSONObject(4).getString(JSONKeys.NAME),
-                spaces.getJSONObject(4).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(4).getString(JSONKeys.MESSAGE), "1",
-                Color.CYAN, Color.BLACK);
-
-            board[5] = new GUI_Street(spaces.getJSONObject(5).getString(JSONKeys.NAME),
-                spaces.getJSONObject(5).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(5).getString(JSONKeys.MESSAGE), "1",
-                Color.CYAN, Color.BLACK);
-
-            board[6] = new GUI_Jail("default", spaces.getJSONObject(6).getString(JSONKeys.NAME),
-                "Fængsel",spaces.getJSONObject(6).getString(JSONKeys.MESSAGE),
-                new Color(125, 125, 125), Color.BLACK);
-
-            board[7] = new GUI_Street(spaces.getJSONObject(7).getString(JSONKeys.NAME),
-                spaces.getJSONObject(7).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(7).getString(JSONKeys.MESSAGE), "2",
-                Color.MAGENTA, Color.BLACK);
-
-            board[8] = new GUI_Street(spaces.getJSONObject(8).getString(JSONKeys.NAME),
-                spaces.getJSONObject(8).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(8).getString(JSONKeys.MESSAGE), "2",
-                Color.MAGENTA, Color.BLACK);
-
-            board[9] = new GUI_Chance(spaces.getJSONObject(9).getString(JSONKeys.NAME),
-                spaces.getJSONObject(4).getString(JSONKeys.NAME),
-                spaces.getJSONObject(4).getString(JSONKeys.MESSAGE),
-                new Color(204, 204, 204), Color.BLACK);
-
-            board[10] = new GUI_Street(spaces.getJSONObject(10).getString(JSONKeys.NAME),
-                spaces.getJSONObject(10).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(10).getString(JSONKeys.MESSAGE), "2",
-                Color.ORANGE, Color.BLACK);
-
-            board[11] = new GUI_Street(spaces.getJSONObject(11).getString(JSONKeys.NAME),
-                spaces.getJSONObject(11).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(11).getString(JSONKeys.MESSAGE), "2",
-                Color.ORANGE, Color.BLACK);
-
-            board[12] = new GUI_Refuge("default", spaces.getJSONObject(12).getString(JSONKeys.NAME),
-                spaces.getJSONObject(12).getString(JSONKeys.NAME),
-                spaces.getJSONObject(12).getString(JSONKeys.MESSAGE),
-                Color.WHITE, Color.BLACK);
-
-            board[13] = new GUI_Street(spaces.getJSONObject(13).getString(JSONKeys.NAME),
-                spaces.getJSONObject(13).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(13).getString(JSONKeys.MESSAGE), "3",
-                Color.RED, Color.BLACK);
-
-            board[14] = new GUI_Street(spaces.getJSONObject(14).getString(JSONKeys.NAME),
-                spaces.getJSONObject(14).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(14).getString(JSONKeys.MESSAGE), "3",
-                Color.RED, Color.BLACK);
-
-            board[15] = new GUI_Chance(spaces.getJSONObject(15).getString(JSONKeys.NAME),
-                spaces.getJSONObject(4).getString(JSONKeys.NAME),
-                spaces.getJSONObject(4).getString(JSONKeys.MESSAGE),
-                new Color(204, 204, 204), Color.BLACK);
-
-            board[16] = new GUI_Street(spaces.getJSONObject(16).getString(JSONKeys.NAME),
-                spaces.getJSONObject(16).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(16).getString(JSONKeys.MESSAGE),"3",
-                Color.YELLOW, Color.black);
-
-            board[17] = new GUI_Street(spaces.getJSONObject(17).getString(JSONKeys.NAME),
-                spaces.getJSONObject(17).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(17).getString(JSONKeys.MESSAGE), "3",
-                Color.YELLOW, Color.BLACK);
-
-            board[18] = new GUI_Jail("default", spaces.getJSONObject(18).getString(JSONKeys.NAME),
-                spaces.getJSONObject(18).getString(JSONKeys.NAME),
-                spaces.getJSONObject(18).getString(JSONKeys.MESSAGE),
-                new Color(125, 125, 125), Color.BLACK);
-
-            board[19] = new GUI_Street(spaces.getJSONObject(19).getString(JSONKeys.NAME),
-                spaces.getJSONObject(19).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(19).getString(JSONKeys.MESSAGE), "4",
-                Color.GREEN, Color.BLACK);
-
-            board[20] = new GUI_Street(spaces.getJSONObject(20).getString(JSONKeys.NAME),
-                spaces.getJSONObject(20).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(20).getString(JSONKeys.MESSAGE), "4",
-                Color.GREEN, Color.black);
-
-            board[21] = new GUI_Chance(spaces.getJSONObject(21).getString(JSONKeys.NAME),
-                spaces.getJSONObject(4).getString(JSONKeys.NAME),
-                spaces.getJSONObject(4).getString(JSONKeys.MESSAGE),
-                new Color(204, 204, 204), Color.BLACK);
-
-            board[22] = new GUI_Street(spaces.getJSONObject(22).getString(JSONKeys.NAME),
-                spaces.getJSONObject(22).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(22).getString(JSONKeys.MESSAGE),"5",
-                Color.BLUE, Color.BLACK);
-
-            board[23] = new GUI_Street(spaces.getJSONObject(23).getString(JSONKeys.NAME),
-                spaces.getJSONObject(23).getString(JSONKeys.COST_STRING),
-                spaces.getJSONObject(23).getString(JSONKeys.MESSAGE), "5",
-                Color.BLUE, Color.BLACK);
-
+                switch(spaceType) {
+                    case 0: board[i] = new GUI_Start(title, description, rent, BG_COLOR, FG_COLOR); break;
+                    case 1: board[i] = new GUI_Refuge(image, title, description, rent, BG_COLOR, FG_COLOR); break;
+                    case 2: board[i] = new GUI_Street(title, rent, description, rent, BG_COLOR, FG_COLOR); break;
+                    case 3: board[i] = new GUI_Jail(image, title, description, rent, BG_COLOR, FG_COLOR); break;
+                    case 4: board[i] = new GUI_Jail(image, title, description, rent, BG_COLOR, FG_COLOR); break;
+                    case 5: board[i] = new GUI_Chance(title, description, rent, BG_COLOR, FG_COLOR); break;
+                }
+            }
             return board;
         } catch (Exception e) {
             System.out.println("Read from JSON failed, check formatting");
@@ -142,4 +64,3 @@ class BoardBuilder {
         }
     }
 }
-
