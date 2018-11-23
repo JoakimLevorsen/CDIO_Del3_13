@@ -275,11 +275,13 @@
         },
         {
             "title": "Ryk frem til Biografen og se en god film.",
-            "type": 2
+            "type": 2,
+            "property": 14
         },
         {
             "title": "Ryk frem til Iskiosken og spis den største is de har!",
-            "type": 2
+            "type": 2,
+            "property": 5
         },
         {
             "title": "Du har købt slik til alle i Slikbutikken. Alle andre spillere betaler M̶1 tilbage til dig.",

@@ -211,8 +211,8 @@
     ],
     "cards": [{
             "title": "Move to Start and receive M̶2.",
-        "type": 0,
-        "amount": 1
+            "type": 0,
+            "amount": 1
         },
         {
             "title": "Move forward 5 spaces.",
@@ -275,11 +275,13 @@
         },
         {
             "title": "Move to the Cinema and watch a good film.",
-            "type": 2
+            "type": 2,
+            "property": 14
         },
         {
             "title": "Move to the Ice Cream Parlour and eat the largest ice cream they have!",
-            "type": 2
+            "type": 2,
+            "property": 5
         },
         {
             "title": "You bought sweets for everyone in the Sweet Shop. All other players pay you back M̶1.",
@@ -297,7 +299,7 @@
             "amount": -2
         },
         {
-            "title": "You cheated in Bingo! Next turn you must pay 1m, unless you have a \"Get out of jail\" card.",
+            "title": "You cheated in Bingo! Next turn you must pay to get out unless you have a \"Get out of jail\" card.",
             "type": 6,
             "amount": 1
         },
