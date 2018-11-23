@@ -19,36 +19,33 @@ import java.util.Collections;
             // Constructor makes the deck and shuffles it to a draw pile.
             JSONArray cards = jsonData.getJSONArray(JSONKeys.CARDS);
 
-            for (int i; i < cards.length(); i++){
+            for (int i = 0; i < cards.length(); i++){
                 ChanceCard newCard;
                 switch(cards.getJSONObject(i).getInt("type")){
                     case 0:
-                        newCard = new GoToStartCard(cards.getJSONObject(i));
+                        drawPile.add(new GoToStartCard(cards.getJSONObject(i)));
                         break;
                     case 1:
-                        newCard = new MoveSpacesCard(cards.getJSONObject(i));
+                        drawPile.add(newCard = new MoveSpacesCard(cards.getJSONObject(i)));
                         break;
                     case 2:
-                        newCard = new GoToSpaceCard(cards.getJSONObject(i));
+                        drawPile.add(newCard = new GoToSpaceCard(cards.getJSONObject(i)));
                             break;
                     case 3:
-                        newCard = new GetLoseMoneyCard(cards.getJSONObject(i));
+                        drawPile.add(newCard = new GetLoseMoneyCard(cards.getJSONObject(i)));
                         break;
                     case 4:
-                        newCard = new PlayersPayMoneyCard(cards.getJSONObject(i));
+                        drawPile.add(newCard = new PlayersPayMoneyCard(cards.getJSONObject(i)));
                         break;
                     case 5:
-                        newCard = new GetOutOfJailCard(cards.getJSONObject(i));
+                        drawPile.add(newCard = new GetOutOfJailCard(cards.getJSONObject(i)));
                         break;
                     case 6:
-                        newCard = new GoToJailCard(cards.getJSONObject(i));
+                        drawPile.add(newCard = new GoToJailCard(cards.getJSONObject(i)));
                         break;
                     default:
-                        newCard = new ChanceCard();
-                        System.out.println("ERROR: Could not get card type index from JSON");
+                        new JSONException("Could not interpret card.\"type\" index from JSON");
                 }
-                drawPile.add(newCard);
-
             }
             shuffleCards();
 
@@ -66,7 +63,7 @@ import java.util.Collections;
 
             // Move card to discard if not "Get out of jail" (Remember to add back to discard when played)
             // TODO: Pseudocode!, get the TYPE from json
-            if (){
+            if (cardPickedUp instanceof GetOutOfJailCard){
                 discardPile.add(drawPile.get(0));
             }
             // Removing the card from drawPile
@@ -86,4 +83,3 @@ import java.util.Collections;
     }
 
 
-}
