@@ -3,7 +3,7 @@ package matador.cards;
 import org.json.*;
 
 public class GetLoseMoneyCard extends ChanceCard {
-    private String title; // Description
+    private String title;
     private int amount;
 
     public GetLoseMoneyCard(JSONObject JSONCardKey){
@@ -12,5 +12,8 @@ public class GetLoseMoneyCard extends ChanceCard {
 
     }
 
-    // TODO: Implementer process
+    public void process() {
+        // TODO: Implementer process
+
+    }
 }

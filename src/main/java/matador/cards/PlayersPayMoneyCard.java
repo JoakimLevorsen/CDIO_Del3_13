@@ -3,12 +3,15 @@ package matador.cards;
 import org.json.JSONObject;
 
 public class PlayersPayMoneyCard extends ChanceCard {
-    private String title; // Description
+    private String title;
 
-    
-    public PlayersPayMoneyCard(JSONObject JSONCardKey){
+    public PlayersPayMoneyCard(JSONObject JSONCardKey) {
         this.title = JSONCardKey.getString("title");
+
     }
 
-    // TODO: Implementer process
+    public void process() {
+        // TODO: Implementer process
+
+    }
 }

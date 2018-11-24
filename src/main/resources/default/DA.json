@@ -217,7 +217,7 @@
         {
             "title": "Ryk 5 felter frem.",
             "type": 1,
-            "amount": 5
+            "spacesMoved": 5
         },
         {
             "title": "Ryk frem til Vandlandet og tag en dukkert. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
@@ -261,7 +261,7 @@
         {
             "title": "Ryk 2 felter frem.",
             "type": 1,
-            "amount": 2
+            "spacesMoved": 2
         },
         {
             "title": "Din hund er blevet fundet efter den var løbet væk. Betal M̶1 til banken som løsesum.",
@@ -274,12 +274,12 @@
             "amount": 1
         },
         {
-            "title": "Ryk frem til Biografen og se en god film.",
+            "title": "Ryk frem til Biografen og se en god film. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 14
         },
         {
-            "title": "Ryk frem til Iskiosken og spis den største is de har!",
+            "title": "Ryk frem til Iskiosken og spis den største is de har! Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 5
         },
@@ -301,11 +301,12 @@
         {
             "title": "Du snød i Bingo! Ryk til fængslet. Næste gang skal du betale for at komme ud, hvis du ikke har et \"Løslades fra fængsel\"-kort.!",
             "type": 6,
-            "amount": 1
+            "amount": 1,
+            "property": 6
         },
         {
             "title": "Ryk 1 felt frem.",
             "type": 1,
-            "amount": 1
+            "spacesMoved": 1
         }]
 }

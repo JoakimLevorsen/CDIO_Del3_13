@@ -12,6 +12,7 @@ public class SpaceManager {
     public SpaceManager(JSONObject data) throws JSONException {
         matador.game.CardManager manager = new matador.game.CardManager(data);
         fields = new Space[data.getJSONArray(JSONKeys.SPACES).length()];
+
         for (int i = 0; i < data.getJSONArray(JSONKeys.SPACES).length() ; i++){
             //fields[i] = new Space(data.getJSONArray(JSONKeys.TYPE).getJSONObject(i));
             data.getJSONArray(JSONKeys.TYPE).getJSONObject(i);

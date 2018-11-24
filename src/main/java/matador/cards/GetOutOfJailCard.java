@@ -4,11 +4,11 @@ import matador.game.*;
 import org.json.JSONObject;
 
 public class GetOutOfJailCard extends ChanceCard {
-    private String title; // Description!
+    private String title;
     private Player owner;
 
-    
-    public GetOutOfJailCard(JSONObject JSONCardKey){
+
+    public GetOutOfJailCard(JSONObject JSONCardKey) {
         this.title = JSONCardKey.getString("title");
     }
 
@@ -20,5 +20,8 @@ public class GetOutOfJailCard extends ChanceCard {
         this.owner = owner;
     }
 
-    // TODO: Implementer process
+    public void process() {
+        // TODO: Implementer process
+
+    }
 }

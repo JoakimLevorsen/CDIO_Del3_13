@@ -217,7 +217,7 @@
         {
             "title": "Move forward 5 spaces.",
             "type": 1,
-            "amount": 5
+            "spacesMoved": 5
         },
         {
             "title": "Move to the Water Park and have a swim. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
@@ -261,7 +261,7 @@
         {
             "title": "Move forward 2 spaces.",
             "type": 1,
-            "amount": 2
+            "spacesMoved": 2
         },
         {
             "title": "Your dog has been found after it ran away. Pay the bank M̶1 as a finder's fee.",
@@ -274,12 +274,12 @@
             "amount": 1
         },
         {
-            "title": "Move to the Cinema and watch a good film.",
+            "title": "Move to the Cinema and watch a good film. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 14
         },
         {
-            "title": "Move to the Ice Cream Parlour and eat the largest ice cream they have!",
+            "title": "Move to the Ice Cream Parlour and eat the largest ice cream they have! If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 5
         },
@@ -299,14 +299,15 @@
             "amount": -2
         },
         {
-            "title": "You cheated in Bingo! Next turn you must pay to get out unless you have a \"Get out of jail\" card.",
+            "title": "You cheated in Bingo! Move to jail! Next turn you must pay to get out unless you have a \"Get out of jail\" card.",
             "type": 6,
-            "amount": 1
+            "amount": 1,
+            "property": 6
         },
         {
             "title": "Move forward 1 space.",
             "type": 1,
-            "amount": 1
+            "spacesMoved": 1
         }
     ]
 }
