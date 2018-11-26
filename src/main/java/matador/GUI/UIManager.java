@@ -71,12 +71,16 @@ public class UIManager {
         gooey.close();
         gooey = new GUI(board);
 
-        game = new Game(numberOfPlayers, diceMax);
+        game = new Game(numberOfPlayers, diceMax, this);
         players = game.players;
         addPlayers(players);
 
         gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
         game.executeTurn();
+    }
+
+    public SpaceManager getSpaceManager() {
+        return kirk;
     }
 
     public void updateUI(int dice, Player currentPlayer) {}

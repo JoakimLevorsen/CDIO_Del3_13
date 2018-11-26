@@ -43,8 +43,22 @@ public class SpaceManager {
 
     public StartSpace getStartSpace() throws SpaceNotFoundException {
         for (Space s : fields) {
-            if (s instanceof StartSpace) return (StartSpace)s
+            if (s instanceof StartSpace) return (StartSpace)s;
         }
-        throw new SpaceNotFoundException("Startspace not found on this board")
+        throw new SpaceNotFoundException("Startspace not found on this board");
+    }
+
+    public JailSpace getJailSpace() throws SpaceNotFoundException {
+        for (Space s: fields) {
+            if (s instanceof JailSpace) return (JailSpace)s;
+        }
+        throw new SpaceNotFoundException("Jail space not found on this board"); 
+    }
+
+    public int getJailSpaceIndex() throws SpaceNotFoundException {
+        for (int i = 0; i < fields.length; i++) {
+            if (fields[i] instanceof JailSpace) return i;
+        }
+        throw new SpaceNotFoundException("Jail space not found on this board"); 
     }
 }
