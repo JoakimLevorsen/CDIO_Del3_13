@@ -47,6 +47,10 @@ import java.util.*;
             Collections.shuffle(drawPile);
         }
 
+        public void addCardToPile(ChanceCard card) {
+            discardPile.add(card);
+        }
+
         public void turnPile() {
             if (drawPile.isEmpty()){
                 drawPile.addAll(discardPile);
