@@ -26,11 +26,11 @@ class BoardBuilder {
         }
     }
 
-    public static GUI_Field[] build(JSONObject jsonData) throws JSONException {
+    public static GUI_Field[] build(JSONObject JSONData) throws JSONException {
         // Building a game board.
         try {
             GUI_Field[] board = new GUI_Field[24];
-            JSONArray spaces = jsonData.getJSONArray(JSONKeys.SPACES);
+            JSONArray spaces = JSONData.getJSONArray(JSONKeys.SPACES);
             // GUI_Street(TITLE, SUBTEXT, DESCRIPTION, RENT, BG_COLOR, FG_COLOR);
 
             for (int i = 0; i < spaces.length(); i++) {
