@@ -8,7 +8,7 @@ import org.json.*;
 class BoardBuilder {
 
     public static Color getColor(String JSONColor) throws JSONException {
-        switch (JSONColor) {
+        switch (JSONColor.toLowerCase()) {
             case "white": return Color.WHITE;
             case "black": return Color.BLACK;
             case "red": return Color.RED;
