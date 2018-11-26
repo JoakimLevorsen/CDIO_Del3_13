@@ -23,5 +23,6 @@ public class JSONKeys {
     public static final String TITLE = "title";
     public static final String PROPERTY = "property";
     public static final String AMOUNT = "amount";
+    public static final String SPACES_MOVED = "spacesMoved";
 
 }
