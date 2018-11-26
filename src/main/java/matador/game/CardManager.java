@@ -17,7 +17,6 @@ import java.util.*;
             for (int i = 0; i < cards.length(); i++){
 
                 switch(cards.getJSONObject(i).getInt(JSONKeys.TYPE)){
-                    case 0: drawPile.add(new GoToStartCard(cards.getJSONObject(i))); break;
                     case 1: drawPile.add(new MoveSpacesCard(cards.getJSONObject(i))); break;
                     case 2: drawPile.add(new GoToSpaceCard(cards.getJSONObject(i))); break;
                     case 3: drawPile.add(new GetLoseMoneyCard(cards.getJSONObject(i))); break;
