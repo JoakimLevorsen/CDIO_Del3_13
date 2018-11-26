@@ -7,17 +7,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class GetOutOfJailCard extends ChanceCard {
-    private String title;
     private Player owner;
 
 
     public GetOutOfJailCard(JSONObject cardData) throws JSONException {
         super(cardData);
-        try {
-            this.title = cardData.getString(JSONKeys.TITLE);
-        } catch (Exception e) {
-            throw new JSONException("Read from JSON failed, check formatting.");
-        }
     }
 
     public Player getOwner() {
