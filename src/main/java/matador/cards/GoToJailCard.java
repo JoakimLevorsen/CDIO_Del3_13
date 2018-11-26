@@ -1,6 +1,6 @@
 package matador.cards;
 
-import matador.game.*
+import matador.game.*;
 import matador.JSONKeys;
 import org.json.JSONException;
 import org.json.JSONObject;
