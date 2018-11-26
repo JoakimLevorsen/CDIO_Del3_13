@@ -2,33 +2,28 @@ package matador.GUI;
 
 import gui_fields.*;
 import matador.JSONKeys;
-
 import java.awt.*;
-
 import org.json.*;
 
 class BoardBuilder {
 
-    private Color color;
-
-    public Color getColor(JSONArray spaces) throws JSONException {
-        String JSONColor = "";
-
+    public static Color getColor(String JSONColor) throws JSONException {
         switch (JSONColor) {
-            case "white": color = Color.WHITE; break;
-            case "black": color = Color.BLACK; break;
-            case "red": color = Color.RED; break;
-            case "darkGray": color = Color.DARK_GRAY; break;
-            case "lightGray": color = Color.LIGHT_GRAY; break;
-            case "cyan": color = Color.CYAN; break;
-            case "magenta": color = Color.MAGENTA; break;
-            case "orange": color = Color.ORANGE; break;
-            case "yellow": color = Color.YELLOW; break;
-            case "green": color = Color.GREEN; break;
-            case "blue": color = Color.BLUE; break;
+            case "white": return Color.WHITE;
+            case "black": return Color.BLACK;
+            case "red": return Color.RED;
+            case "darkGray": return Color.DARK_GRAY;
+            case "lightGray": return Color.LIGHT_GRAY;
+            case "cyan": return Color.CYAN;
+            case "magenta": return Color.MAGENTA;
+            case "orange": return Color.ORANGE;
+            case "yellow": return Color.YELLOW;
+            case "green": return Color.GREEN;
+            case "blue": return Color.BLUE;
+            case "gray": return Color.GRAY;
+            case "pink": return Color.PINK;
             default: throw new JSONException("Read from JSON failed, check formatting.");
         }
-        return color;
     }
 
     public static GUI_Field[] build(JSONObject jsonData) throws JSONException {
@@ -44,16 +39,17 @@ class BoardBuilder {
                 String title = spaces.getJSONObject(i).getString(JSONKeys.NAME);
                 String rent = spaces.getJSONObject(i).getString(JSONKeys.COST_STRING);
                 String description = spaces.getJSONObject(i).getString(JSONKeys.MESSAGE);
-                Color BG_COLOR = Color.getColor(spaces.getJSONObject(i).getString(JSONKeys.COLOR));
-                Color FG_COLOR = Color.getColor(spaces.getJSONObject(i).getString(JSONKeys.TEXT_COLOR));
+                Color BG_COLOR = getColor(spaces.getJSONObject(i).getString(JSONKeys.COLOR));
+                Color FG_COLOR = getColor(spaces.getJSONObject(i).getString(JSONKeys.TEXT_COLOR));
 
-                switch(spaceType) {
+                switch (spaceType) {
                     case 0: board[i] = new GUI_Start(title, description, rent, BG_COLOR, FG_COLOR); break;
                     case 1: board[i] = new GUI_Refuge(image, title, description, rent, BG_COLOR, FG_COLOR); break;
                     case 2: board[i] = new GUI_Street(title, rent, description, rent, BG_COLOR, FG_COLOR); break;
                     case 3: board[i] = new GUI_Jail(image, title, description, rent, BG_COLOR, FG_COLOR); break;
                     case 4: board[i] = new GUI_Jail(image, title, description, rent, BG_COLOR, FG_COLOR); break;
                     case 5: board[i] = new GUI_Chance(title, description, rent, BG_COLOR, FG_COLOR); break;
+                    default: throw new JSONException("Read from JSON failed, check formatting.");
                 }
             }
             return board;
