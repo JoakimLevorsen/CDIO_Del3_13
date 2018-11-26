@@ -1,5 +1,5 @@
 Types of cards:
-0 - GoToStartCard
+0 - GoToStartCard <- Removed do not use
 1 - MoveSpacesCard
 2 - GoToSpaceCard
 3 - GetLoseMoneyCard

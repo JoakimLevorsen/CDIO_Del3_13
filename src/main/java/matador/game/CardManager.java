@@ -50,7 +50,7 @@ import java.util.Collections;
 
         }
 
-        public ChanceCard pickCard(){
+        public ChanceCard pickCard() {
             // turn pile if needed
             turnPile();
             // Pick up a card
@@ -66,12 +66,12 @@ import java.util.Collections;
 
         }
 
-        public void shuffleCards(){
+        public void shuffleCards() {
             Collections.shuffle(drawPile);
 
         }
 
-        public void turnPile(){
+        public void turnPile() {
             if (drawPile.isEmpty()){
                 drawPile.addAll(discardPile);
                 discardPile.clear();
@@ -80,8 +80,8 @@ import java.util.Collections;
 
         }
 
-        public void draw(){
-            pickCard().process(); // eller sådan noget!
+        public ChanceCard draw() {
+            return pickCard();
         }
 
     }
