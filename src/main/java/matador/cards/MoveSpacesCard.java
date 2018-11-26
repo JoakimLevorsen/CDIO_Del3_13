@@ -1,6 +1,8 @@
 package matador.cards;
 
 import matador.JSONKeys;
+import matador.game.Game;
+import matador.game.Player;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,8 +19,8 @@ public class MoveSpacesCard extends ChanceCard {
         }
     }
 
-    public void process() {
-        // TODO: Implementer process
+    public void process(Game in, Player with) {
+
 
     }
 }

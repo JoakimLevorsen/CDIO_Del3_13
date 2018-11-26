@@ -27,8 +27,8 @@ public class GetOutOfJailCard extends ChanceCard {
         this.owner = owner;
     }
 
-    public void process() {
-        // TODO: Implementer process
+    public void process(Game in, Player with) {
+
 
     }
 }
