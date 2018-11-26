@@ -1,13 +1,9 @@
 package matador.game;
 
-import matador.*;
+import matador.JSONKeys;
 import matador.cards.*;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import java.util.ArrayList;
-import java.util.Collections;
-
+import org.json.*;
+import java.util.*;
 
     public class CardManager {
         ArrayList<ChanceCard> drawPile = new ArrayList<ChanceCard>();
