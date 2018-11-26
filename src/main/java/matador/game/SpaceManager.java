@@ -40,4 +40,11 @@ public class SpaceManager {
     public Space getSpace(int index) {
         return fields[index];
     }
+
+    public StartSpace getStartSpace() throws SpaceNotFoundException {
+        for (Space s : fields) {
+            if (s instanceof StartSpace) return (StartSpace)s
+        }
+        throw new SpaceNotFoundException("Startspace not found on this board")
+    }
 }
