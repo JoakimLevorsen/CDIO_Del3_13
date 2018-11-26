@@ -11,9 +11,10 @@ public class GetOutOfJailCard extends ChanceCard {
     private Player owner;
 
 
-    public GetOutOfJailCard(JSONObject JSONCardKey) throws JSONException {
+    public GetOutOfJailCard(JSONObject cardData) throws JSONException {
+        super(cardData);
         try {
-            this.title = JSONCardKey.getString(JSONKeys.TITLE);
+            this.title = cardData.getString(JSONKeys.TITLE);
         } catch (Exception e) {
             throw new JSONException("Read from JSON failed, check formatting.");
         }

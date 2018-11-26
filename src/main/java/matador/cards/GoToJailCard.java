@@ -1,6 +1,6 @@
 package matador.cards;
 
-import matador.game.*
+import matador.game.*;
 import matador.JSONKeys;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,7 +20,7 @@ public class GoToJailCard extends ChanceCard {
     }
 
     public void process(Game in, Player with) {
-        with.
+        with.setBoardPosition(5);
 
     }
 }
