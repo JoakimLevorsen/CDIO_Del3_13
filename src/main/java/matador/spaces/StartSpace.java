@@ -11,4 +11,9 @@ public class StartSpace extends Space
         super(data);
         rewardValue = 2;
     }
+
+    public int getRewardValue() {
+        return rewardValue;
+    }
+
 }

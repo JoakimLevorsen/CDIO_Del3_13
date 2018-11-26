@@ -5,13 +5,13 @@ import org.json.JSONObject;
 import matador.*;
 
 public class Space {
-    public String title;
+    public String name;
 
     public Space(JSONObject data) throws JSONException
     {
         try
         {
-            title = data.getString(JSONKeys.NAME);
+            name = data.getString(JSONKeys.NAME);
         }
         catch (Exception e)
         {
