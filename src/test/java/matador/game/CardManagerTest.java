@@ -1,6 +1,5 @@
 package matador.game;
 
-import matador.cards.ChanceCard;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
 import org.junit.Test;

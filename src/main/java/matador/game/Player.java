@@ -1,7 +1,5 @@
 package matador.game;
 
-import org.json.JSONException;
-
 public class Player {
     public final Account balance;
     private int boardPosition;
