@@ -7,10 +7,10 @@ import matador.spaces.*;
 
 
 public class Game {
-    public Dice dice;
-    public Player[] players;
-    private int turnCounter;
+    public final Dice dice;
+    public final Player[] players;
     public final SpaceManager sManager;
+    private int turnCounter;
 
     public Game(int withPlayers, int diceMax, SpaceManager sManager) {
 

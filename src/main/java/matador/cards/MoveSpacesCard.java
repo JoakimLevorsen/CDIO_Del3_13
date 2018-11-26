@@ -1,24 +1,25 @@
 package matador.cards;
 
 import matador.JSONKeys;
+import matador.game.Game;
+import matador.game.Player;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MoveSpacesCard extends ChanceCard {
-    private String title;
     private int spacesMoved;
     
-    public MoveSpacesCard(JSONObject JSONCardKey) throws JSONException {
+    public MoveSpacesCard(JSONObject cardData) throws JSONException {
+        super(cardData);
         try {
-            this.title = JSONCardKey.getString(JSONKeys.TITLE);
-            this.spacesMoved = JSONCardKey.getInt(JSONKeys.SPACES_MOVED);
+            this.spacesMoved = cardData.getInt(JSONKeys.SPACES_MOVED);
         } catch (Exception e) {
             throw new JSONException("Read from JSON failed, check formatting.");
         }
     }
 
-    public void process() {
-        // TODO: Implementer process
+    public void process(Game in, Player with) {
+        with.moveForward(spacesMoved);
 
     }
 }

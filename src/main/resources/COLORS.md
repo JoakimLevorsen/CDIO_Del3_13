@@ -14,4 +14,4 @@ blue
 gray
 pink
 
-All colors must be written as a String in lowercase.
+All colors must be written as a String in camel-case, exactly as represented above.

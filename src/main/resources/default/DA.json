@@ -211,8 +211,8 @@
         }],
     "cards": [{
             "title": "Ryk frem til Start og modtag M̶2.",
-            "type": 0,
-            "amount": 1
+            "type": 2,
+            "property": 0
         }, 
         {
             "title": "Ryk 5 felter frem.",

@@ -214,8 +214,8 @@
     ],
     "cards": [{
             "title": "Move to Start and receive M̶2.",
-            "type": 0,
-            "amount": 1
+            "type": 2,
+            "property": 0
         },
         {
             "title": "Move forward 5 spaces.",

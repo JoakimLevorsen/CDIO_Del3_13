@@ -19,12 +19,15 @@ public class BoardBuilderTest {
 
     @Test
     public void getColorTest() {
-        BoardBuilder bob = new BoardBuilder();
-        JSONArray spacesDA = jsonDA.getJSONArray(JSONKeys.SPACES);
-        JSONArray spacesEN = jsonEN.getJSONArray(JSONKeys.SPACES);
-        bob.getColor(spacesDA);
-        bob.getColor(spacesEN);
-
+        JSONArray[] spaces = {jsonDA.getJSONArray(JSONKeys.SPACES), jsonEN.getJSONArray(JSONKeys.SPACES)};
+        for (JSONArray a : spaces) {
+            int length = a.length();
+            for (int i = 0; i < length; i++) {
+                String colorString = a.getJSONObject(i).getString(JSONKeys.COLOR);
+                System.out.println(colorString);
+                BoardBuilder.getColor(colorString);
+            }
+        }
     }
     @Test
     public void buildTest() {

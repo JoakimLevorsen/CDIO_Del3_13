@@ -1,7 +1,7 @@
 package matador.game;
 
 public class Player {
-    public Account balance;
+    public final Account balance;
     private int boardPosition;
     private String name;
     public final Game game;
