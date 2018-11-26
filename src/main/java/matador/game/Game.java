@@ -19,7 +19,9 @@ public class Game {
         this.turnCounter = 0;
     }
 
-    public void executeTurn() {}
+    public void executeTurn() {
+        // TODO: overhovedet
+    }
 
     public void incrementTurnCounter() {
         turnCounter++;
