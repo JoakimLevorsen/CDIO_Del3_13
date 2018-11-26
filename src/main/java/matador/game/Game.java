@@ -11,8 +11,9 @@ public class Game {
     public final Player[] players;
     public final SpaceManager sManager;
     private int turnCounter;
+    private UIManager uiManager;
 
-    public Game(int withPlayers, int diceMax, SpaceManager sManager) {
+    public Game(int withPlayers, int diceMax, UIManager uiManager) {
 
         players = new Player[withPlayers];
         for(int i = 0; i < withPlayers; i++) {
@@ -20,7 +21,8 @@ public class Game {
         }
         this.dice = new Dice(diceMax);
         this.turnCounter = 0;
-        this.sManager = sManager;
+        this.uiManager = uiManager;
+        this.sManager = uiManager.getSpaceManager();
     }
 
     public void executeTurn() {
@@ -34,14 +36,20 @@ public class Game {
             ((PropertySpace) newSpace).buy(player);
 
         } else if (newSpace instanceof GoToJailSpace) {
-            player.setBoardPosition(6);
+            try
+            {
+                player.setBoardPosition(sManager.getJailSpaceIndex());
+            } catch (SpaceNotFoundException e)
+            {
+                System.out.println(e.getMessage());
+            }
 
         } else if (newSpace instanceof ChanceSpace) {
             ((ChanceSpace) newSpace).draw();
 
         }
-
-        incrementTurnCounter();
+        
+        uiManager.updateUI(roll,player);
     }
 
     public void incrementTurnCounter() {
