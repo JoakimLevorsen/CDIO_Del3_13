@@ -1,22 +1,25 @@
 package matador.cards;
 
 import matador.JSONKeys;
-import org.json.JSONException;
-import org.json.JSONObject;
+import matador.game.*;
+import org.json.*;
 
 public class PlayersPayMoneyCard extends ChanceCard {
-    private String title;
+    private int value;
 
-    public PlayersPayMoneyCard(JSONObject JSONCardKey) throws JSONException {
+    public PlayersPayMoneyCard(JSONObject cardData) throws JSONException {
+        super(cardData);
         try {
-            this.title = JSONCardKey.getString(JSONKeys.TITLE);
+            this.value = cardData.getInt(JSONKeys.AMOUNT);
         } catch (Exception e) {
             throw new JSONException("Read from JSON failed, check formatting.");
         }
     }
 
-    public void process() {
-        // TODO: Implementer process
-
+    public void process(Game in, Player with) {
+        for(int i = 0; i < in.players.length; i++) {
+            in.players[i].balance.deduct(value);
+        }
+        with.balance.increase(value * in.players.length);
     }
 }
