@@ -1,6 +1,8 @@
 package matador.cards;
 
 import matador.game.*;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class GetOutOfJailCard extends ChanceCard {
@@ -8,8 +10,12 @@ public class GetOutOfJailCard extends ChanceCard {
     private Player owner;
 
 
-    public GetOutOfJailCard(JSONObject JSONCardKey) {
-        this.title = JSONCardKey.getString("title");
+    public GetOutOfJailCard(JSONObject JSONCardKey) throws JSONException {
+        try {
+            this.title = JSONCardKey.getString("title");
+        } catch (Exception e) {
+            throw new JSONException("Read from JSON failed, check formatting.");
+        }
     }
 
     public Player getOwner() {
