@@ -20,7 +20,7 @@ public class GoToJailCard extends ChanceCard {
     }
 
     public void process(Game in, Player with) {
-        with.
+        with.setBoardPosition(5);
 
     }
 }

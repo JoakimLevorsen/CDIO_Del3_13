@@ -23,7 +23,7 @@ public class GoToSpaceCard extends ChanceCard {
 
 
     public void process(Game in, Player with) {
-
+        with.setBoardPosition();
 
     }
 }

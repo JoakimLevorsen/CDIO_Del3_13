@@ -10,10 +10,11 @@ public class MoveSpacesCard extends ChanceCard {
     private String title;
     private int spacesMoved;
     
-    public MoveSpacesCard(JSONObject JSONCardKey) throws JSONException {
+    public MoveSpacesCard(JSONObject cardData) throws JSONException {
+        super(cardData);
         try {
-            this.title = JSONCardKey.getString(JSONKeys.TITLE);
-            this.spacesMoved = JSONCardKey.getInt(JSONKeys.SPACES_MOVED);
+            this.title = cardData.getString(JSONKeys.TITLE);
+            this.spacesMoved = cardData.getInt(JSONKeys.SPACES_MOVED);
         } catch (Exception e) {
             throw new JSONException("Read from JSON failed, check formatting.");
         }
