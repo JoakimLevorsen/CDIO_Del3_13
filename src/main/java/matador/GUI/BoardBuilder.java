@@ -8,7 +8,7 @@ import org.json.*;
 class BoardBuilder {
 
     public static Color getColor(String JSONColor) throws JSONException {
-        switch (JSONColor.toLowerCase()) {
+        switch (JSONColor) {
             case "white": return Color.WHITE;
             case "black": return Color.BLACK;
             case "red": return Color.RED;
@@ -22,7 +22,7 @@ class BoardBuilder {
             case "blue": return Color.BLUE;
             case "gray": return Color.GRAY;
             case "pink": return Color.PINK;
-            default: throw new JSONException("Read from JSON failed, check formatting.");
+            default: throw new JSONException("Read from JSON failed, check formatting. Color not found: " + JSONColor);
         }
     }
 
@@ -34,13 +34,14 @@ class BoardBuilder {
             // GUI_Street(TITLE, SUBTEXT, DESCRIPTION, RENT, BG_COLOR, FG_COLOR);
 
             for (int i = 0; i < spaces.length(); i++) {
-                int spaceType = spaces.getJSONObject(i).getInt(JSONKeys.TYPE);
-                String image = spaces.getJSONObject(i).getString(JSONKeys.IMAGE);
-                String title = spaces.getJSONObject(i).getString(JSONKeys.NAME);
-                String rent = spaces.getJSONObject(i).getString(JSONKeys.VALUE_STRING);
-                String description = spaces.getJSONObject(i).getString(JSONKeys.MESSAGE);
-                Color BG_COLOR = getColor(spaces.getJSONObject(i).getString(JSONKeys.COLOR));
-                Color FG_COLOR = getColor(spaces.getJSONObject(i).getString(JSONKeys.TEXT_COLOR));
+                JSONObject space = spaces.getJSONObject(i);
+                int spaceType = space.getInt(JSONKeys.TYPE);
+                String image = space.has(JSONKeys.IMAGE) ? space.getString(JSONKeys.IMAGE) : "";
+                String title = space.getString(JSONKeys.NAME);
+                String rent = space.has(JSONKeys.VALUE_STRING) ? space.getString(JSONKeys.VALUE_STRING) : "";
+                String description = space.getString(JSONKeys.MESSAGE);
+                Color BG_COLOR = getColor(space.getString(JSONKeys.COLOR));
+                Color FG_COLOR = getColor(space.getString(JSONKeys.TEXT_COLOR));
 
                 switch (spaceType) {
                     case 0: board[i] = new GUI_Start(title, description, rent, BG_COLOR, FG_COLOR); break;
