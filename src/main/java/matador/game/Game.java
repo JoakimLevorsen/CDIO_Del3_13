@@ -29,7 +29,15 @@ public class Game {
         player.moveForward(roll);
         int newPosition = player.getBoardPosition();
         Space newSpace = sManager.getSpace(newPosition);
-        if (newSpace instanceof StartSpace) { player.balance.increase(((StartSpace) newSpace).getRewardValue());
+
+        if (newSpace instanceof PropertySpace) {
+            ((PropertySpace) newSpace).buy(player);
+
+        } else if (newSpace instanceof GoToJailSpace) {
+            player.setBoardPosition(6);
+
+        } else if (newSpace instanceof ChanceSpace) {
+            ((ChanceSpace) newSpace).draw();
 
         }
 
