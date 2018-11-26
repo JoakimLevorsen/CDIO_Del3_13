@@ -10,9 +10,24 @@ public class Player {
         boardPosition = 0;
         balance = new Account(cash);
     }
+    public void moveForward(int spaces) {
+
+        if (spaces > 0) {
+            int newposition = boardPosition += spaces;
+            if (newposition > 23) {
+                newposition = newposition - 24;
+            }
+            boardPosition = newposition;
+        }
+    }
 
     public int getBoardPosition() {
         return boardPosition;
+    }
+
+    public void setBoardPosition(int position)
+    {
+        boardPosition = position;
     }
 
     public String getName(){
