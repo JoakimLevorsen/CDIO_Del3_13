@@ -9,7 +9,7 @@ public class GoToJailCard extends ChanceCard {
     private int property;
 
     public GoToJailCard(JSONObject cardData) throws JSONException {
-       super(cardData);
+        super(cardData);
         try {
             this.property = cardData.getInt(JSONKeys.PROPERTY);
         } catch (Exception e) {
