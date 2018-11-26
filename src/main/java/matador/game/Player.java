@@ -1,5 +1,7 @@
 package matador.game;
 
+import org.json.JSONException;
+
 public class Player {
     public final Account balance;
     private int boardPosition;
@@ -19,7 +21,11 @@ public class Player {
             int newposition = boardPosition += spaces;
             if (newposition > 23) {
                 newposition = newposition - 24;
-                balance.increase(game.sManager.getStartSpace().rewardValue);
+                try {
+                    balance.increase(game.sManager.getStartSpace().rewardValue);
+                } catch (Exception e) {
+                    throw new JSONException("Read from JSON failed, check formatting.");
+                }
             }
             boardPosition = newposition;
         }
