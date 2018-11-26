@@ -13,8 +13,8 @@ public class JSONKeys {
     public static final String TYPE = "type";
     public static final String SPACES = "spaces";
     public static final String NAME = "name";
-    public static final String COST = "cost";
-    public static final String COST_STRING = "costString";
+    public static final String VALUE = "value";
+    public static final String VALUE_STRING = "valueString";
     public static final String MESSAGE = "message";
     public static final String COLOR = "color";
     public static final String TEXT_COLOR = "textColor";
@@ -23,5 +23,6 @@ public class JSONKeys {
     public static final String TITLE = "title";
     public static final String PROPERTY = "property";
     public static final String AMOUNT = "amount";
+    public static final String SPACES_MOVED = "spacesMoved";
 
 }

@@ -8,7 +8,7 @@ import org.json.*;
 class BoardBuilder {
 
     public static Color getColor(String JSONColor) throws JSONException {
-        switch (JSONColor) {
+        switch (JSONColor.toLowerCase()) {
             case "white": return Color.WHITE;
             case "black": return Color.BLACK;
             case "red": return Color.RED;
@@ -26,18 +26,18 @@ class BoardBuilder {
         }
     }
 
-    public static GUI_Field[] build(JSONObject jsonData) throws JSONException {
+    public static GUI_Field[] build(JSONObject JSONData) throws JSONException {
         // Building a game board.
         try {
             GUI_Field[] board = new GUI_Field[24];
-            JSONArray spaces = jsonData.getJSONArray(JSONKeys.SPACES);
+            JSONArray spaces = JSONData.getJSONArray(JSONKeys.SPACES);
             // GUI_Street(TITLE, SUBTEXT, DESCRIPTION, RENT, BG_COLOR, FG_COLOR);
 
             for (int i = 0; i < spaces.length(); i++) {
                 int spaceType = spaces.getJSONObject(i).getInt(JSONKeys.TYPE);
                 String image = spaces.getJSONObject(i).getString(JSONKeys.IMAGE);
                 String title = spaces.getJSONObject(i).getString(JSONKeys.NAME);
-                String rent = spaces.getJSONObject(i).getString(JSONKeys.COST_STRING);
+                String rent = spaces.getJSONObject(i).getString(JSONKeys.VALUE_STRING);
                 String description = spaces.getJSONObject(i).getString(JSONKeys.MESSAGE);
                 Color BG_COLOR = getColor(spaces.getJSONObject(i).getString(JSONKeys.COLOR));
                 Color FG_COLOR = getColor(spaces.getJSONObject(i).getString(JSONKeys.TEXT_COLOR));
@@ -48,7 +48,7 @@ class BoardBuilder {
                     case 2: board[i] = new GUI_Street(title, rent, description, rent, BG_COLOR, FG_COLOR); break;
                     case 3: board[i] = new GUI_Jail(image, title, description, rent, BG_COLOR, FG_COLOR); break;
                     case 4: board[i] = new GUI_Jail(image, title, description, rent, BG_COLOR, FG_COLOR); break;
-                    case 5: board[i] = new GUI_Chance(title, description, rent, BG_COLOR, FG_COLOR); break;
+                    case 5: board[i] = new GUI_Chance(title, "", description, BG_COLOR, FG_COLOR); break;
                     default: throw new JSONException("Read from JSON failed, check formatting.");
                 }
             }

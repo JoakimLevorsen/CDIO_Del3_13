@@ -10,201 +10,204 @@
     "ownedBy": "Owned by ",
     "spaces": [{
             "name": "Start",
-            "message": "Receive M̶2 when you pass start",
             "type": 1,
+            "message": "Receive M̶2 when you pass start",
             "color": "white",
             "textColor": "red"
         },
         {
             "name": "Burger Bar",
-            "cost": 1,
-            "message": "En god burger til en god pris.",
-            "costString": "M̶1",
             "type": 2,
+            "message": "A good burger for a good price.",
+            "value": 1,
+            "valueString": "M̶1",
             "color": "darkGray",
             "textColor": "black"
         },
         {
             "name": "Pizzeria",
-            "cost": 1,
-            "message": "Great pizza for cheap.",
-            "costString": "-100",
             "type": 2,
+            "message": "Great pizza for cheap.",
+            "value": 1,
+            "valueString": "-100",
             "color": "darkGray",
             "textColor": "black"
         },
         {
             "name": "Chance",
-            "message": "Pick a card!",
             "type": 5,
+            "message": "Pick a card!",
             "color": "lightGray",
             "textColor": "black"
         },
         {
             "name": "Sweet Shop",
-            "cost": 1,
-            "message": "Amazing candystore. Open 24/7.",
-            "costString": "M̶1",
             "type": 2,
+            "message": "Amazing candystore. Open 24/7.",
+            "value": 1,
+            "valueString": "M̶1",
             "color": "cyan",
             "textColor": "black"
         },
         {
             "name": "Ice Cream Parlour",
-            "cost": 1,
-            "message": "Good ol'fashioned ice cream.",
-            "costString": "M̶1",
             "type": 2,
+            "message": "Good ol'fashioned ice cream.",
+            "value": 1,
+            "valueString": "M̶1",
             "color": "cyan",
             "textColor": "black"
         },
         {
             "name": "Jail",
-            "message": "Just visiting.",
             "type": 3,
+            "message": "Just visiting.",
             "color": "white",
             "textColor": "black",
             "image": "default"
         },
         {
             "name": "Museum",
-            "cost": 2,
-            "message":"Dinos and mummies are always hot.",
-            "costString": "M̶2",
             "type": 2,
+            "message":"Dinos and mummies are always hot.",
+            "value": 2,
+            "valueString": "M̶2",
             "color": "magenta",
             "textColor": "black"
         },
         {
             "name": "Library",
-            "cost": 2,
-            "message": "An oasis of knowledge and ps2 games.",
-            "costString": "M̶2",
             "type": 2,
+            "message": "An oasis of knowledge and PS2 games.",
+            "value": 2,
+            "valueString": "M̶2",
             "color": "magenta",
             "textColor": "black"
         },
         {
             "name": "Chance",
             "type": 5,
+            "message": "Pick a card!",
             "color": "lightGray",
             "textColor": "black"
         },
         {
             "name": "Skater Park",
-            "cost": 2,
-            "message": "Kick flips are free, sodas cost.",
-            "costString": "M̶2",
             "type": 2,
+            "message": "Kick flips are free, sodas aren't.",
+            "value": 2,
+            "valueString": "M̶2",
             "color": "orange",
             "textColor": "black"
         },
         {
             "name": "Swimming Pool",
-            "cost": 2,
-            "message": "Get a refreshing swim!",
-            "costString": "M̶2",
             "type": 2,
+            "message": "Have a refreshing swim!",
+            "value": 2,
+            "valueString": "M̶2",
             "color": "orange",
             "textColor": "black"
         },
         {
             "name": "Free Parking",
-            "message": "Relax with a Red Bull read Stack Overflow!",
             "type": 1,
+            "message": "Relax with a Red Bull and read Stack Overflow!",
             "color": "white",
             "textColor": "black",
             "image": "default"
         },
         {
             "name": "Casino",
-            "cost": 3,
-            "message": "Any game imaginable is here.",
-            "costString": "M̶3",
             "type": 2,
+            "message": "Any game imaginable is here.",
+            "value": 3,
+            "valueString": "M̶3",
             "color": "red",
             "textColor": "black"
         },
         {
             "name": "Cinema",
-            "cost": 3,
-            "message": "The old cinema has the best popcorn in town.",
-            "costString": "M̶3",
             "type": 2,
+            "message": "The old cinema has the best popcorn in town.",
+            "value": 3,
+            "valueString": "M̶3",
             "color": "red",
             "textColor": "black"
         },
         {
             "name": "Chance",
             "type": 5,
+            "message": "Pick a card!",
             "color": "lightGray",
             "textColor": "black"
         },
         {
             "name": "Toy Store",
-            "cost": 3,
-            "message": "7 floors of madness and fun.",
-            "costString": "M̶3",
             "type": 2,
+            "message": "7 floors of madness and fun.",
+            "value": 3,
+            "valueString": "M̶3",
             "color": "yellow",
             "textColor": "black"
         },
         {
             "name": "Pet Store",
-            "cost": 3,
-            "message": "Adoreable pets in all shapes.",
-            "costString": "M̶3",
             "type": 2,
+            "message": "Adorable pets in all shapes and sizes.",
+            "value": 3,
+            "valueString": "M̶3",
             "color": "yellow",
             "textColor": "black"
         },
         {
             "name": "Go to jail",
-            "message": "You got caught cheating!",
             "type": 4,
+            "message": "You got caught cheating!",
             "color": "white",
             "textColor": "black",
             "image": "default"
         },
         {
             "name": "Bowling Alley",
-            "cost": 4,
-            "message": "Fun for everybody!",
-            "costString": "M̶4",
             "type": 2,
+            "message": "Fun for everybody!",
+            "value": 4,
+            "valueString": "M̶4",
             "color": "green",
             "textColor": "black"
         },
         {
             "name": "Zoo",
-            "cost": 4,
-            "message": "Everything from lions to polar bears.",
-            "costString": "M̶4",
             "type": 2,
+            "message": "Everything from lions to polar bears.",
+            "value": 4,
+            "valueString": "M̶4",
             "color": "green",
             "textColor": "black"
         },
         {
             "name": "Chance",
             "type": 5,
+            "message": "Pick a card!",
             "color": "lightGray",
             "textColor": "black"
         },
         {
             "name": "Water Park",
-            "cost": 5,
-            "message": "Water slides everywhere you go!",
-            "costString": "M̶5",
             "type": 2,
+            "message": "Water slides everywhere you go!",
+            "value": 5,
+            "valueString": "M̶5",
             "color": "blue",
             "textColor": "black"
         },
         {
             "name": "Boardwalk",
-            "cost": 5,
-            "message": "The best place for a romantic walk.",
-            "costString": "M̶5",
             "type": 2,
+            "message": "The best place for a romantic walk.",
+            "value": 5,
+            "valueString": "M̶5",
             "color": "blue",
             "textColor": "black"
         }
@@ -299,9 +302,8 @@
             "amount": -2
         },
         {
-            "title": "You cheated in Bingo! Move to jail! Next turn you must pay to get out unless you have a \"Get out of jail\" card.",
+            "title": "You cheated in Bingo! Move to jail! To be released, you must pay M̶1 or use your \"Get out of jail free\" card next turn.",
             "type": 6,
-            "amount": 1,
             "property": 6
         },
         {
