@@ -303,8 +303,7 @@
         },
         {
             "title": "You cheated in Bingo! Move to jail! To be released, you must pay M̶1 or use your \"Get out of jail free\" card next turn.",
-            "type": 6,
-            "property": 6
+            "type": 6
         },
         {
             "title": "Move forward 1 space.",
