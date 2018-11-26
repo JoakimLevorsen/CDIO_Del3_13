@@ -19,7 +19,13 @@ public class Player {
             int newposition = boardPosition += spaces;
             if (newposition > 23) {
                 newposition = newposition - 24;
-                balance.increase(game.sManager.getStartSpace().rewardValue);
+                try
+                {
+                    balance.increase(game.sManager.getStartSpace().rewardValue);
+                } catch (SpaceNotFoundException e)
+                {
+                    System.out.println(e.getMessage());
+                }
             }
             boardPosition = newposition;
         }
