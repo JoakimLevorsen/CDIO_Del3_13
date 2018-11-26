@@ -20,34 +20,18 @@ import java.util.Collections;
 
             for (int i = 0; i < cards.length(); i++){
 
-                switch(cards.getJSONObject(i).getInt("type")){
-                    case 0:
-                        drawPile.add(new GoToStartCard(cards.getJSONObject(i)));
-                        break;
-                    case 1:
-                        drawPile.add(new MoveSpacesCard(cards.getJSONObject(i)));
-                        break;
-                    case 2:
-                        drawPile.add(new GoToSpaceCard(cards.getJSONObject(i)));
-                            break;
-                    case 3:
-                        drawPile.add(new GetLoseMoneyCard(cards.getJSONObject(i)));
-                        break;
-                    case 4:
-                        drawPile.add(new PlayersPayMoneyCard(cards.getJSONObject(i)));
-                        break;
-                    case 5:
-                        drawPile.add(new GetOutOfJailCard(cards.getJSONObject(i)));
-                        break;
-                    case 6:
-                        drawPile.add(new GoToJailCard(cards.getJSONObject(i)));
-                        break;
-                    default:
-                        throw new JSONException("Could not interpret card.\"type\" index from JSON");
+                switch(cards.getJSONObject(i).getInt(JSONKeys.TYPE)){
+                    case 0: drawPile.add(new GoToStartCard(cards.getJSONObject(i))); break;
+                    case 1: drawPile.add(new MoveSpacesCard(cards.getJSONObject(i))); break;
+                    case 2: drawPile.add(new GoToSpaceCard(cards.getJSONObject(i))); break;
+                    case 3: drawPile.add(new GetLoseMoneyCard(cards.getJSONObject(i))); break;
+                    case 4: drawPile.add(new PlayersPayMoneyCard(cards.getJSONObject(i))); break;
+                    case 5: drawPile.add(new GetOutOfJailCard(cards.getJSONObject(i))); break;
+                    case 6: drawPile.add(new GoToJailCard(cards.getJSONObject(i))); break;
+                    default: throw new JSONException("Read from JSON failed, check formatting.");
                 }
             }
             shuffleCards();
-
         }
 
         public ChanceCard pickCard(){
@@ -61,14 +45,11 @@ import java.util.Collections;
                 discardPile.add(drawPile.get(0));
             }
             drawPile.remove(0);
-
             return cardPickedUp;
-
         }
 
         public void shuffleCards(){
             Collections.shuffle(drawPile);
-
         }
 
         public void turnPile(){
@@ -77,13 +58,11 @@ import java.util.Collections;
                 discardPile.clear();
                 shuffleCards();
             }
-
         }
 
         public void draw(){
-            pickCard().process(); // eller sådan noget!
+            // pickCard().process(); eller sådan noget!
         }
-
     }
 
 
