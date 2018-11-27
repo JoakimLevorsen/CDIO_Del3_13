@@ -1,11 +1,16 @@
 package matador.game;
 
+import java.util.ArrayList;
+
+import matador.spaces.PropertySpace;
+
 public class Player {
     public final Account balance;
     private int boardPosition;
     private int previousPosition;
     private String name;
     public final Game game;
+    private ArrayList<PropertySpace> property;
 
     public Player(int cash, String name, Game game) {
         this.name = name;
@@ -13,6 +18,11 @@ public class Player {
         this.previousPosition = 0;
         this.balance = new Account(cash);
         this.game = game;
+        this.property = new ArrayList<PropertySpace>();
+    }
+
+    public void buyProperty(PropertySpace item) {
+        property.add(item);
     }
 
     public void moveForward(int spaces) {
