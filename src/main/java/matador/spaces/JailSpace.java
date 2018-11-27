@@ -11,6 +11,10 @@ public class JailSpace extends Space {
         super(data);
     }
 
+    public boolean isInJail(Player player) {
+        return prisoners.contains(player);
+    }
+
     public void jailPlayer(Player jailee) {
         prisoners.add(jailee);
     }

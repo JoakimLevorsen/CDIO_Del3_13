@@ -22,8 +22,17 @@ public class Game {
     }
 
     public void executeTurn() {
-        int roll = dice.rollDice();
         Player player = players[turnCounter];
+        // Check if current space is jail and if player is in jail
+        Space currentSpace = sManager.getSpace(player.getBoardPosition());
+        if (currentSpace instanceof JailSpace) {
+            JailSpace j = (JailSpace)currentSpace;
+            if (j.isInJail(player)) {
+                // TODO: Do thing if player in jail?
+            }
+        }
+
+        int roll = dice.rollDice();
         player.moveForward(roll);
         int newPosition = player.getBoardPosition();
         Space newSpace = sManager.getSpace(newPosition);
@@ -34,6 +43,7 @@ public class Game {
         } else if (newSpace instanceof GoToJailSpace) {
             try {
                 player.setBoardPosition(sManager.getJailSpaceIndex());
+                sManager.getJailSpace().jailPlayer(player);
             } catch (SpaceNotFoundException e) {
                 System.out.println(e.getMessage());
             }
