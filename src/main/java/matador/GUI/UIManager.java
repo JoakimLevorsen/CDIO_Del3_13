@@ -78,7 +78,24 @@ public class UIManager {
     }
 
     public void updateUI(int dice, Player currentPlayer) {
-        // TODO: Tjek for bankrupcies
+
+        for (int i = 0; i < game.players.length ; i++ ){
+            if (game.players[i].balance.getBalance() < 0)
+            {
+                int largest = game.players[0].balance.getBalance();
+                int winnerIndex = 0;
+                for (int j = 0; j < game.players.length; j++)
+                {
+                    if (game.players[j].balance.getBalance() > largest)
+                    {
+                        largest = game.players[j].balance.getBalance();
+                        winnerIndex = j;
+                    }
+                }
+                playerDidLose(game.players[winnerIndex]);
+                return;
+            }
+        }
 
         // TODO: Tjek bræt for ejere n such
 
