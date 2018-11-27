@@ -13,9 +13,6 @@ public class Account {
 
     public void deduct(int by) {
         balance -= Math.abs(by);
-        if (balance < 0) {
-            balance = 0;
-        }
     }
 
     public int getBalance() {
