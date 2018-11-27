@@ -31,7 +31,7 @@ public class SpaceManager {
             case 4:
                 fields[i] = new GoToJailSpace(data.getJSONArray(JSONKeys.SPACES).getJSONObject(i));
             case 5:
-                fields[i] = new ChanceSpace(data.getJSONArray(JSONKeys.SPACES).getJSONObject(i), manager);
+                fields[i] = new ChanceSpace(data.getJSONArray(JSONKeys.SPACES).getJSONObject(i), cardManager);
 
             }
         }

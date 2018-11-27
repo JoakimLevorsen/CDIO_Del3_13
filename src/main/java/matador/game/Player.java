@@ -3,6 +3,8 @@ package matador.game;
 import java.util.ArrayList;
 
 import matador.spaces.PropertySpace;
+import java.util.*;
+import matador.cards.*;
 
 public class Player {
     public final Account balance;
@@ -11,6 +13,7 @@ public class Player {
     private String name;
     public final Game game;
     private ArrayList<PropertySpace> property;
+    private Optional<GetOutOfJailCard> myJailCard;
 
     public Player(int cash, String name, Game game) {
         this.name = name;
@@ -41,16 +44,24 @@ public class Player {
         }
     }
 
-    public int getBoardPosition() {
-        return boardPosition;
-    }
-
     public int getPreviousPosition() {
         return previousPosition;
     }
 
+    public int getBoardPosition() {
+        return boardPosition;
+    }
+
     public void setBoardPosition(int position) {
         boardPosition = position;
+    }
+
+    public Optional<GetOutOfJailCard> getMyJailCard() {
+        return myJailCard;
+    }
+
+    public void setMyJailCard(GetOutOfJailCard jailCard) {
+        myJailCard = Optional.of(jailCard);
     }
 
     public String getName() {

@@ -1,7 +1,7 @@
 package matador.game;
 
 import matador.GUI.*;
-import matador.cards.ChanceCard;
+import matador.cards.*;
 import matador.spaces.*;
 
 public class Game {
@@ -9,8 +9,8 @@ public class Game {
     public final Player[] players;
     public final SpaceManager sManager;
     public final CardManager cardManager;
-    private int turnCounter;
     private UIManager uiManager;
+    private int turnCounter;
 
     public Game(int withPlayers, int diceMax, UIManager uiManager) {
         players = new Player[withPlayers];
@@ -31,7 +31,22 @@ public class Game {
         if (currentSpace instanceof JailSpace) {
             JailSpace j = (JailSpace)currentSpace;
             if (j.isInJail(player)) {
-                // TODO: Do thing if player in jail?
+                if(player.getMyJailCard().isPresent()) {
+                    try {
+                        j.releasePlayer(player);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    cardManager.addCardToPile(player.getMyJailCard().get());
+                    return;
+                }
+                player.balance.deduct(1);
+                try {
+                    j.releasePlayer(player);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+                return;
             }
         }
 
