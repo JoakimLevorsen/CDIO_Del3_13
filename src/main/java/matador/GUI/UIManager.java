@@ -79,6 +79,13 @@ public class UIManager {
     }
 
     public void updateUI(int dice, Player currentPlayer) {
+        // TODO: Tjek for bankrupcies
+
+        // TODO: Tjek bræt for ejere n such
+
+        // TODO: Flyt brik
+
+        // TODO: Display chancecards n such
     }
 
     public void playerDidLose(Player player) {
