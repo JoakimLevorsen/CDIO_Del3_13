@@ -16,6 +16,7 @@ public class UIManager {
     private GUI_Player[] players;
     private Game game;
     private SpaceManager kirk;
+    public final CardManager cardManager;
     private JSONObject jsonData;
     private GUI_Field[] board;
     private int numberOfPlayers, diceMax = 6, startBalance;
@@ -43,6 +44,7 @@ public class UIManager {
             board = BoardBuilder.build(jsonData);
             gooey = new GUI(board);
             kirk = new SpaceManager(jsonData);
+            cardManager = kirk.cardManager;
 
             // Get number of guiPlayers between 2 and 4 (both incl.)
             numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
