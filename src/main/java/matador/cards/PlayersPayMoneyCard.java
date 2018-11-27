@@ -17,7 +17,7 @@ public class PlayersPayMoneyCard extends ChanceCard {
     }
 
     public void process(Game in, Player with) {
-        for(int i = 0; i < in.players.length; i++) {
+        for (int i = 0; i < in.players.length; i++) {
             in.players[i].balance.deduct(value);
         }
         with.balance.increase(value * in.players.length);

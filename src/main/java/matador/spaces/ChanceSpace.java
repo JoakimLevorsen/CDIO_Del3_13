@@ -4,17 +4,15 @@ import org.json.JSONObject;
 import matador.game.*;
 import matador.cards.*;
 
-public class ChanceSpace extends Space
-{
+public class ChanceSpace extends Space {
     private CardManager manager;
 
-    public ChanceSpace (JSONObject data, CardManager manager)
-    {
+    public ChanceSpace(JSONObject data, CardManager manager) {
         super(data);
         this.manager = manager;
     }
-    public ChanceCard draw()
-    {
-      return null; // manager.draw();
+
+    public ChanceCard draw() {
+        return null; // manager.draw();
     }
 }

@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 public class MoveSpacesCard extends ChanceCard {
     private int spacesMoved;
-    
+
     public MoveSpacesCard(JSONObject cardData) throws JSONException {
         super(cardData);
         try {

@@ -70,7 +70,7 @@
         {
             "name": "Museet",
             "type": 2,
-            "message":"Hold børnefødselsdag i museet og få kloge børn!",
+            "message": "Hold børnefødselsdag i museet og få kloge børn!",
             "value": 2,
             "valueString": "M̶2",
             "color": "magenta",
@@ -208,12 +208,13 @@
             "valueString": "M̶5",
             "color": "blue",
             "textColor": "black"
-        }],
+        }
+    ],
     "cards": [{
             "title": "Ryk frem til Start og modtag M̶2.",
             "type": 2,
             "property": 0
-        }, 
+        },
         {
             "title": "Ryk 5 felter frem.",
             "type": 1,
@@ -306,5 +307,6 @@
             "title": "Ryk 1 felt frem.",
             "type": 1,
             "spacesMoved": 1
-        }]
+        }
+    ]
 }

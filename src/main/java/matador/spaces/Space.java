@@ -7,19 +7,13 @@ import matador.*;
 public class Space {
     public String name;
 
-    public Space(JSONObject data) throws JSONException
-    {
-        try
-        {
+    public Space(JSONObject data) throws JSONException {
+        try {
             name = data.getString(JSONKeys.NAME);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("Read from JSON failed, check formatting");
             e.printStackTrace();
             throw new JSONException(e);
         }
-
     }
-
 }

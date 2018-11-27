@@ -17,7 +17,7 @@ public class BoardBuilderTest {
 
     @Test
     public void getColorTest() {
-        JSONArray[] spaces = {jsonDA.getJSONArray(JSONKeys.SPACES), jsonEN.getJSONArray(JSONKeys.SPACES)};
+        JSONArray[] spaces = { jsonDA.getJSONArray(JSONKeys.SPACES), jsonEN.getJSONArray(JSONKeys.SPACES) };
         for (JSONArray a : spaces) {
             int length = a.length();
             for (int i = 0; i < length; i++) {
@@ -27,12 +27,13 @@ public class BoardBuilderTest {
             }
         }
     }
+
     @Test
     public void buildTest() {
         BoardBuilder.build(jsonDA);
         BoardBuilder.build(jsonEN);
-
     }
+
     // Helper method for reading json files
     public String readFile(String fileName) {
         String result = "";
@@ -43,6 +44,5 @@ public class BoardBuilderTest {
             e.printStackTrace();
         }
         return result;
-
     }
 }

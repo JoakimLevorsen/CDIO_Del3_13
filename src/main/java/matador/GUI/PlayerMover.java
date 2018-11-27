@@ -7,7 +7,7 @@ class PlayerMover {
     static void move(GUI_Player currentPlayer, GUI wGui, int fromPosition, int newPosition) {
         for (int i = fromPosition; i < (newPosition); i++) {
             int j = i;
-            if (j > 23){
+            if (j > 23) {
                 j = i - 24; // If at position 24 (out of bounds) go 24 back
             }
             wGui.getFields()[j].setCar(currentPlayer, false);
@@ -20,7 +20,7 @@ class PlayerMover {
     }
 
     private static void waitForIt() {
-        //Sleep timer, takes a 1 second pause
+        // Sleep timer, takes a 1 second pause
         try {
             Thread.sleep(444);
         } catch (InterruptedException ex) {

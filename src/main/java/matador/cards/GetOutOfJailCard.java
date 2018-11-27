@@ -7,7 +7,6 @@ import org.json.JSONObject;
 public class GetOutOfJailCard extends ChanceCard {
     private Player owner;
 
-
     public GetOutOfJailCard(JSONObject cardData) throws JSONException {
         super(cardData);
     }
@@ -20,5 +19,6 @@ public class GetOutOfJailCard extends ChanceCard {
         this.owner = owner;
     }
 
-    public void process(Game in, Player with) {}
+    public void process(Game in, Player with) {
+    }
 }

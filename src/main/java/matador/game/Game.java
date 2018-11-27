@@ -3,7 +3,6 @@ package matador.game;
 import matador.GUI.*;
 import matador.spaces.*;
 
-
 public class Game {
     public final Dice dice;
     public final Player[] players;
@@ -12,10 +11,9 @@ public class Game {
     private UIManager uiManager;
 
     public Game(int withPlayers, int diceMax, UIManager uiManager) {
-
         players = new Player[withPlayers];
-        for(int i = 0; i < withPlayers; i++) {
-            //players[i] = new Player();
+        for (int i = 0; i < withPlayers; i++) {
+            // players[i] = new Player();
         }
         this.dice = new Dice(diceMax);
         this.turnCounter = 0;
@@ -34,11 +32,9 @@ public class Game {
             ((PropertySpace) newSpace).buy(player);
 
         } else if (newSpace instanceof GoToJailSpace) {
-            try
-            {
+            try {
                 player.setBoardPosition(sManager.getJailSpaceIndex());
-            } catch (SpaceNotFoundException e)
-            {
+            } catch (SpaceNotFoundException e) {
                 System.out.println(e.getMessage());
             }
 
@@ -46,8 +42,8 @@ public class Game {
             ((ChanceSpace) newSpace).draw();
 
         }
-        
-        uiManager.updateUI(roll,player);
+
+        uiManager.updateUI(roll, player);
     }
 
     public void incrementTurnCounter() {

@@ -24,14 +24,13 @@ public class UIManager {
         new UIManager();
     }
 
-    public UIManager () {
+    public UIManager() {
         // Constructor
 
         // Let user choose language, and get corresponding json language object
         GUI langChooseGui = new GUI(new GUI_Field[0]);
 
-        boolean langChoice = langChooseGui.getUserLeftButtonPressed("Please choose a language:",
-                "English", "Dansk");
+        boolean langChoice = langChooseGui.getUserLeftButtonPressed("Please choose a language:", "English", "Dansk");
 
         langChooseGui.close();
 
@@ -53,17 +52,19 @@ public class UIManager {
             }
 
         } catch (Exception e) {
-            gooey.showMessage("There was a problem with your resources. Try reinstalling the application.\n " +
-                    "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
+            gooey.showMessage("There was a problem with your resources. Try reinstalling the application.\n "
+                    + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
             System.out.println("Read from JSON failed, check formatting");
             e.printStackTrace();
         }
         startGame();
     }
 
-    public void nextTurn() {}
+    public void nextTurn() {
+    }
 
-    public void displayDiceRoll(int roll) {}
+    public void displayDiceRoll(int roll) {
+    }
 
     private void startGame() {
         // Make game and keep playing it until won
@@ -83,13 +84,14 @@ public class UIManager {
         return kirk;
     }
 
-    public void updateUI(int dice, Player currentPlayer) {}
+    public void updateUI(int dice, Player currentPlayer) {
+    }
 
     public void playerDidLose(Player player) {
         gooey.displayChanceCard(jsonData.getString(JSONKeys.WIN_MESSAGE));
         boolean quit = gooey.getUserLeftButtonPressed(jsonData.getString(JSONKeys.PLAY_AGAIN_MESSAGE),
-                jsonData.getString(JSONKeys.QUIT),jsonData.getString(JSONKeys.PLAY_AGAIN_BUTTON));
-        if (quit){
+                jsonData.getString(JSONKeys.QUIT), jsonData.getString(JSONKeys.PLAY_AGAIN_BUTTON));
+        if (quit) {
             System.exit(0);
         } else {
             for (int i = 0; i < board.length; i++) {
@@ -99,14 +101,15 @@ public class UIManager {
         }
     }
 
-    public void setOwned(int ownedSpace, Player player){
-        // Puts a house on it, updates "label" with playername, and sets a border in the guiPlayers color.
+    public void setOwned(int ownedSpace, Player player) {
+        // Puts a house on it, updates "label" with playername, and sets a border in the
+        // guiPlayers color.
         try {
-        ((GUI_Street)board[ownedSpace]).setHouses(1);
-        ((GUI_Ownable)board[ownedSpace]).setOwnableLabel(jsonData.getString(JSONKeys.OWNED_BY));
-        ((GUI_Ownable)board[ownedSpace]).setOwnerName(player.getName());
-        ((GUI_Ownable)board[ownedSpace]).setBorder(PlayerAdder.getColors(game.getTurnCounter()));
-        } catch (ClassCastException ownableException){
+            ((GUI_Street) board[ownedSpace]).setHouses(1);
+            ((GUI_Ownable) board[ownedSpace]).setOwnableLabel(jsonData.getString(JSONKeys.OWNED_BY));
+            ((GUI_Ownable) board[ownedSpace]).setOwnerName(player.getName());
+            ((GUI_Ownable) board[ownedSpace]).setBorder(PlayerAdder.getColors(game.getTurnCounter()));
+        } catch (ClassCastException ownableException) {
             System.out.println("Problem with casting space subclasses.");
         }
     }

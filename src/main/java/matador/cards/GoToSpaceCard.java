@@ -18,7 +18,6 @@ public class GoToSpaceCard extends ChanceCard {
         }
     }
 
-
     public void process(Game in, Player with) {
         int withBoardPosition = with.getBoardPosition();
         if (withBoardPosition != property) {

@@ -13,7 +13,6 @@ public class CardManagerTest {
     JSONObject jsonDA = new JSONObject(DA);
     JSONObject jsonEN = new JSONObject(EN);
 
-
     @Test
     public void constructorTest() {
         // For visual inspection: building deck with DA.json
@@ -39,7 +38,8 @@ public class CardManagerTest {
         for (int i = 0; i < totalCards; i++) {
             testCards.pickCard();
         }
-        // discardPile should be all cards - 1 after all cards are picked up, GetOutOfJail kept by player
+        // discardPile should be all cards - 1 after all cards are picked up,
+        // GetOutOfJail kept by player
         assertEquals((totalCards - 1), testCards.discardPile.size());
         // drawPile should be 0
         assertEquals(0, testCards.drawPile.size());
@@ -57,7 +57,8 @@ public class CardManagerTest {
             testCards.pickCard();
 
         }
-        // Should be all cards - 2, GetOutOfJail kept by player, one card moved to discardPile
+        // Should be all cards - 2, GetOutOfJail kept by player, one card moved to
+        // discardPile
         assertEquals((totalCards - 2), testCards.drawPile.size());
         assertEquals(testCards.discardPile.size(), (1));
 

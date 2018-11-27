@@ -18,5 +18,5 @@ abstract public class ChanceCard {
     }
 
     abstract public void process(Game in, Player with);
-    
+
 }

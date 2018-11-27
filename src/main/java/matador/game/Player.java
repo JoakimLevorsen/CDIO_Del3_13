@@ -11,19 +11,16 @@ public class Player {
         this.boardPosition = 0;
         this.balance = new Account(cash);
         this.game = game;
-
     }
-    public void moveForward(int spaces) {
 
+    public void moveForward(int spaces) {
         if (spaces > 0) {
             int newposition = boardPosition += spaces;
             if (newposition > 23) {
                 newposition = newposition - 24;
-                try
-                {
+                try {
                     balance.increase(game.sManager.getStartSpace().rewardValue);
-                } catch (SpaceNotFoundException e)
-                {
+                } catch (SpaceNotFoundException e) {
                     System.out.println(e.getMessage());
                 }
             }
@@ -35,13 +32,11 @@ public class Player {
         return boardPosition;
     }
 
-    public void setBoardPosition(int position)
-    {
+    public void setBoardPosition(int position) {
         boardPosition = position;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 }
-

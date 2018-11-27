@@ -69,7 +69,7 @@
         {
             "name": "Museum",
             "type": 2,
-            "message":"Dinos and mummies are always hot.",
+            "message": "Dinos and mummies are always hot.",
             "value": 2,
             "valueString": "M̶2",
             "color": "magenta",

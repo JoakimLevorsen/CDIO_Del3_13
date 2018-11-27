@@ -18,9 +18,9 @@ public class GetLoseMoneyCard extends ChanceCard {
     }
 
     public void process(Game in, Player with) {
-        if(value > 0) {
+        if (value > 0) {
             with.balance.increase(value);
-        } else if(value < 0) {
+        } else if (value < 0) {
             with.balance.deduct(value);
         }
     }
