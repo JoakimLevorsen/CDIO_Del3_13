@@ -1,11 +1,15 @@
 package matador.game;
 
+import java.util.*;
+import matador.cards.*;
+
 public class Player {
     public final Account balance;
     private int boardPosition;
     private int previousPosition;
     private String name;
     public final Game game;
+    private Optional<GetOutOfJailCard> myJailCard;
 
     public Player(int cash, String name, Game game) {
         this.name = name;
@@ -31,16 +35,24 @@ public class Player {
         }
     }
 
-    public int getBoardPosition() {
-        return boardPosition;
-    }
-
     public int getPreviousPosition() {
         return previousPosition;
     }
 
+    public int getBoardPosition() {
+        return boardPosition;
+    }
+
     public void setBoardPosition(int position) {
         boardPosition = position;
+    }
+
+    public Optional<GetOutOfJailCard> getMyJailCard() {
+        return myJailCard;
+    }
+
+    public void setMyJailCard(GetOutOfJailCard jailCard) {
+        myJailCard = Optional.of(jailCard);
     }
 
     public String getName() {
