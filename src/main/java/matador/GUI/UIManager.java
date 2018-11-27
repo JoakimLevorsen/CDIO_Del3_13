@@ -59,13 +59,7 @@ public class UIManager {
         }
         startGame();
     }
-
-    public void nextTurn() {
-    }
-
-    public void displayDiceRoll(int roll) {
-    }
-
+    
     private void startGame() {
         // Make game and keep playing it until won
 
