@@ -53,13 +53,13 @@ public class UIManager {
                 numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
             }
 
+            startGame();
         } catch (Exception e) {
             gooey.showMessage("There was a problem with your resources. Try reinstalling the application.\n "
                     + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
             System.out.println("Read from JSON failed, check formatting");
             e.printStackTrace();
         }
-        startGame();
     }
     
     private void startGame() {
@@ -80,7 +80,24 @@ public class UIManager {
     }
 
     public void updateUI(int dice, Player currentPlayer) {
-        // TODO: Tjek for bankrupcies
+
+        for (int i = 0; i < game.players.length ; i++ ){
+            if (game.players[i].balance.getBalance() < 0)
+            {
+                int largest = game.players[0].balance.getBalance();
+                int winnerIndex = 0;
+                for (int j = 0; j < game.players.length; j++)
+                {
+                    if (game.players[j].balance.getBalance() > largest)
+                    {
+                        largest = game.players[j].balance.getBalance();
+                        winnerIndex = j;
+                    }
+                }
+                playerDidLose(game.players[winnerIndex]);
+                return;
+            }
+        }
 
         // TODO: Tjek bræt for ejere n such
 
