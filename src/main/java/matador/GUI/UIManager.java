@@ -53,13 +53,13 @@ public class UIManager {
                 numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
             }
 
+            startGame();
         } catch (Exception e) {
             gooey.showMessage("There was a problem with your resources. Try reinstalling the application.\n "
                     + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
             System.out.println("Read from JSON failed, check formatting");
             e.printStackTrace();
         }
-        startGame();
     }
     
     private void startGame() {
