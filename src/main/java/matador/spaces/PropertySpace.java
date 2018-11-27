@@ -25,13 +25,9 @@ public class PropertySpace extends Space {
         }
     }
 
-    public boolean buy(Player buyer) {
-        if (buyer.balance.getBalance() < value || !owner.isPresent()) {
-            return false;
-        }
+    public void buy(Player buyer) {
         owner = Optional.of(buyer);
         buyer.balance.deduct(value);
-        return true;
     }
 
     public void reset() {

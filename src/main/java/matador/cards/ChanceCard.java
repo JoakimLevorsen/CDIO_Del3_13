@@ -7,7 +7,7 @@ import matador.game.*;
 
 abstract public class ChanceCard {
 
-    final String title;
+    public final String title;
 
     public ChanceCard(JSONObject cardData) throws JSONException {
         try {

@@ -3,18 +3,21 @@ package matador.game;
 public class Player {
     public final Account balance;
     private int boardPosition;
+    private int previousPosition;
     private String name;
     public final Game game;
 
     public Player(int cash, String name, Game game) {
         this.name = name;
         this.boardPosition = 0;
+        this.previousPosition = 0;
         this.balance = new Account(cash);
         this.game = game;
     }
 
     public void moveForward(int spaces) {
         if (spaces > 0) {
+            previousPosition = boardPosition;
             int newposition = boardPosition += spaces;
             if (newposition > 23) {
                 newposition = newposition - 24;
@@ -30,6 +33,10 @@ public class Player {
 
     public int getBoardPosition() {
         return boardPosition;
+    }
+
+    public int getPreviousPosition() {
+        return previousPosition;
     }
 
     public void setBoardPosition(int position) {

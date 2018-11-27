@@ -1,6 +1,7 @@
 package matador.GUI;
 
 import matador.*;
+import matador.cards.ChanceCard;
 import matador.game.*;
 import gui_fields.*;
 import gui_main.GUI;
@@ -12,8 +13,7 @@ import org.apache.commons.io.IOUtils;
 
 public class UIManager {
     private GUI gooey;
-    private GUI_Player[] guiPlayers;
-    private Player[] players;
+    private GUI_Player[] players;
     private Game game;
     private SpaceManager kirk;
     private JSONObject jsonData;
@@ -67,8 +67,7 @@ public class UIManager {
         gooey = new GUI(board);
 
         game = new Game(numberOfPlayers, diceMax, this);
-        players = game.players;
-        addPlayers(players);
+        addPlayers(game.players);
 
         gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
         game.executeTurn();
@@ -84,8 +83,15 @@ public class UIManager {
         // TODO: Tjek bræt for ejere n such
 
         // TODO: Flyt brik
+        PlayerMover.move(players[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
 
         // TODO: Display chancecards n such
+
+        // TODO: Increment turn counter fra game
+    }
+
+    public void displayMessage(ChanceCard card) {
+        gooey.displayChanceCard(card.title);
     }
 
     public void playerDidLose(Player player) {
@@ -131,6 +137,6 @@ public class UIManager {
 
     private void addPlayers(Player[] players) {
         // Puts 2 - 4 guiPlayers on the board and stores an array of guiPlayers
-        this.guiPlayers = PlayerAdder.add(numberOfPlayers, gooey, players[0].balance.getBalance());
+        this.players = PlayerAdder.add(numberOfPlayers, gooey, players[0].balance.getBalance());
     }
 }

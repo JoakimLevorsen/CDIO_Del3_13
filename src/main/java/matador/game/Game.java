@@ -1,6 +1,7 @@
 package matador.game;
 
 import matador.GUI.*;
+import matador.cards.ChanceCard;
 import matador.spaces.*;
 
 public class Game {
@@ -49,8 +50,9 @@ public class Game {
             }
 
         } else if (newSpace instanceof ChanceSpace) {
-            ((ChanceSpace) newSpace).draw();
-
+            ChanceCard card = ((ChanceSpace) newSpace).draw();
+            uiManager.displayMessage(card);
+            card.process(this, player);
         }
 
         uiManager.updateUI(roll, player);
