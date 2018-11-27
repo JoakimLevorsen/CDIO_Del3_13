@@ -7,9 +7,10 @@ import matador.spaces.*;
 
 public class SpaceManager {
     private Space[] fields;
+    public final CardManager cardManager;
 
     public SpaceManager(JSONObject data) throws JSONException {
-        matador.game.CardManager manager = new matador.game.CardManager(data);
+        cardManager = new matador.game.CardManager(data);
         fields = new Space[data.getJSONArray(JSONKeys.SPACES).length()];
 
         for (int i = 0; i < data.getJSONArray(JSONKeys.SPACES).length(); i++) {

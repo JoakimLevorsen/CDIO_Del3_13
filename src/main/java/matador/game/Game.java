@@ -8,6 +8,7 @@ public class Game {
     public final Dice dice;
     public final Player[] players;
     public final SpaceManager sManager;
+    public final CardManager cardManager;
     private int turnCounter;
     private UIManager uiManager;
 
@@ -20,6 +21,7 @@ public class Game {
         this.turnCounter = 0;
         this.uiManager = uiManager;
         this.sManager = uiManager.getSpaceManager();
+        this.cardManager = uiManager.cardManager;
     }
 
     public void executeTurn() {
