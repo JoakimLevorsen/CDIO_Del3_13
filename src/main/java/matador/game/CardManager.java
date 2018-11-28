@@ -42,38 +42,33 @@ public class CardManager {
         shuffleCards();
     }
 
-    public ChanceCard pickCard() {
+    public ChanceCard draw() {
         // turn pile if needed
-        turnPile();
+        if (drawPile.isEmpty()) {
+            turnPile();
+        }
         // Pick up a card
-        ChanceCard cardPickedUp = drawPile.get(0);
-
+        ChanceCard cardDrawn = drawPile.get(0);
         // Move card to discard if not "Get out of jail" (Remember to add back to
         // discard when played)
-        if (!(cardPickedUp instanceof GetOutOfJailCard)) {
-            discardPile.add(drawPile.get(0));
+        if (!(cardDrawn instanceof GetOutOfJailCard)) {
+            discardCard(drawPile.get(0));
         }
         drawPile.remove(0);
-        return cardPickedUp;
+        return cardDrawn;
     }
 
     public void shuffleCards() {
         Collections.shuffle(drawPile);
     }
 
-    public void addCardToPile(ChanceCard card) {
+    public void discardCard(ChanceCard card) {
         discardPile.add(card);
     }
 
     public void turnPile() {
-        if (drawPile.isEmpty()) {
-            drawPile.addAll(discardPile);
-            discardPile.clear();
-            shuffleCards();
-        }
-    }
-
-    public ChanceCard draw() {
-        return pickCard();
+        drawPile.addAll(discardPile);
+        discardPile.clear();
+        shuffleCards();
     }
 }

@@ -11,8 +11,4 @@ public class ChanceSpace extends Space {
         super(data);
         this.manager = manager;
     }
-
-    public ChanceCard draw() {
-        return null; // manager.draw();
-    }
 }

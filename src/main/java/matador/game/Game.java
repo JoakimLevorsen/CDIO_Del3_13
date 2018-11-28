@@ -37,7 +37,7 @@ public class Game {
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
-                    cardManager.addCardToPile(player.getMyJailCard().get());
+                    cardManager.discardCard(player.getMyJailCard().get());
                     return;
                 }
                 player.balance.deduct(1);
