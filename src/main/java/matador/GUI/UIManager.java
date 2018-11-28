@@ -3,10 +3,12 @@ package matador.GUI;
 import matador.*;
 import matador.cards.ChanceCard;
 import matador.game.*;
+import matador.spaces.PropertySpace;
 import gui_fields.*;
 import gui_main.GUI;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.io.*;
 
 import org.json.*;
@@ -91,22 +93,27 @@ public class UIManager {
         for (int i = 0; i < game.players.length ; i++ ){
             if (game.players[i].balance.getBalance() < 0)
             {
-                ArrayList<Player> winnerList = new ArrayList<Player>();
-                for (int j = 0; j < game.players.length; j++)
-                {
-                    int largestAmount = winnerList.size() == 0 ? 0 : winnerList.get(0).balance.getBalance();
-                    if (game.players[j].balance.getBalance() > largestAmount)
-                    {
-                        winnerList = new ArrayList<Player>();
-                        winnerList.add(game.players[j]);
-                    } else if (game.players[j].balance.getBalance() == largestAmount) {
-                        winnerList.add(game.players[j]);
-                    }
-                }
+                Comparator<Player> getRichestPlayer = (a, b) -> a.balance.getBalance() < b.balance.getBalance() ? -1 : (a.balance.getBalance() == b.balance.getBalance() ? 0 : 1);
+                ArrayList<Player> winnerList = ArrayFunctions.getBiggest(game.players, getRichestPlayer);
+                int listSize = winnerList.size();
                 if (winnerList.size() == 1) {
                     playerDidLose(winnerList.get(0));
                 } else {
                     // TODO: Find den med mest egendom
+                    int[] PropertyValue = new int[listSize];
+                    for (Player winner : winnerList) {
+                        // Sell all players property
+                        for (PropertySpace pSpace: winner.getProperty()) {
+                            winner.balance.increase(pSpace.value);
+                        }
+                    }
+                    ArrayList<Player> propertyWinners = ArrayFunctions.getBiggest(winnerList, getRichestPlayer);
+                    // Tjek på property winners om en eller flere har vundet
+                    if (propertyWinners.size() == 1) {
+                        playerDidLose(propertyWinners.get(0));
+                    } else {
+                        // TODO: Klar hvis flere spillere har samme antal egendom.
+                    }
                 }
                 return;
             }
