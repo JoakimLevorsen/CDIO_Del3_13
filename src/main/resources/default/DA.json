@@ -89,6 +89,7 @@
         {
             "name": "Chance",
             "type": 5,
+            "message": "Tag et chancekort.",
             "color": "lightGray",
             "textColor": "black"
         },
@@ -139,6 +140,7 @@
         {
             "name": "Chance",
             "type": 5,
+            "message": "Tag et chancekort.",
             "color": "lightGray",
             "textColor": "black"
         },
@@ -189,6 +191,7 @@
         {
             "name": "Chance",
             "type": 5,
+            "message": "Tag et chancekort.",
             "color": "lightGray",
             "textColor": "black"
         },
