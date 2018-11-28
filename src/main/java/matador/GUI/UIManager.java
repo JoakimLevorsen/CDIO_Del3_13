@@ -14,7 +14,7 @@ import org.apache.commons.io.IOUtils;
 
 public class UIManager {
     private GUI gooey;
-    private GUI_Player[] players;
+    private GUI_Player[] guiPlayers;
     private Game game;
     private SpaceManager kirk;
     public final CardManager cardManager;
@@ -53,6 +53,7 @@ public class UIManager {
                 gooey.showMessage(jsonData.getString(JSONKeys.INVALID_PLAYER_NUM));
                 numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
             }
+            setStartBalance(numberOfPlayers);
 
             startGame();
         } catch (Exception e) {
@@ -66,11 +67,15 @@ public class UIManager {
     
     private void startGame() {
         // Make game and keep playing it until won
+        String[] playerNames = new String[numberOfPlayers];
+        for (int i = 0; i < numberOfPlayers; i++) {
+            playerNames[i] = gooey.getUserString(jsonData.getString(JSONKeys.YOUR_NAME_HERE));
+        }
 
         gooey.close();
         gooey = new GUI(board);
 
-        game = new Game(numberOfPlayers, diceMax, this);
+        game = new Game(numberOfPlayers, diceMax, this, playerNames);
         addPlayers(game.players);
 
         gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
@@ -110,7 +115,7 @@ public class UIManager {
         // TODO: Tjek bræt for ejere n such
 
         // TODO: Flyt brik
-        PlayerMover.move(players[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
+        PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
 
         // TODO: Display chancecards n such
 
@@ -164,6 +169,22 @@ public class UIManager {
 
     private void addPlayers(Player[] players) {
         // Puts 2 - 4 guiPlayers on the board and stores an array of guiPlayers
-        this.players = PlayerAdder.add(numberOfPlayers, gooey, players[0].balance.getBalance());
+        this.guiPlayers = PlayerAdder.add(numberOfPlayers, gooey, startBalance);
+    }
+
+    public void setStartBalance(int numberOfPlayers) {
+        if (numberOfPlayers == 2) {
+            startBalance = 20;
+        } else if (numberOfPlayers == 3) {
+            startBalance = 18;
+        } else if (numberOfPlayers == 4) {
+            startBalance = 16;
+        } else {
+            System.out.println("Invalid number of players.");
+        }
+    }
+
+    public int getStartBalance() {
+        return startBalance;
     }
 }

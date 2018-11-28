@@ -12,10 +12,10 @@ public class Game {
     private UIManager uiManager;
     private int turnCounter;
 
-    public Game(int withPlayers, int diceMax, UIManager uiManager) {
+    public Game(int withPlayers, int diceMax, UIManager uiManager, String[] playerNames) {
         players = new Player[withPlayers];
         for (int i = 0; i < withPlayers; i++) {
-            // players[i] = new Player();
+            players[i] = new Player(uiManager.getStartBalance(), playerNames[i], this);
         }
         this.dice = new Dice(diceMax);
         this.turnCounter = 0;

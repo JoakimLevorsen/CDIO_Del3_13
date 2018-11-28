@@ -7,7 +7,7 @@ import gui_main.GUI;
 import java.awt.*;
 
 class PlayerAdder {
-    static Color[] colors = { Color.yellow, Color.RED, Color.blue, Color.green };;
+    static Color[] colors = { Color.YELLOW, Color.RED, Color.BLUE, Color.GREEN };;
 
     static GUI_Player[] add(int numOfPlayers, GUI wGui, int defaultBalance) {
         // Make 3 arrays to build players from, then makes 'numOfPlayers' players with

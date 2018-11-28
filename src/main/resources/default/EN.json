@@ -2,6 +2,7 @@
     "gameTitle": "Monopoly Junior",
     "choosePlayerNum": "Please enter number of players between 2 and 4 (both incl.).",
     "invalidPlayerNum": "You have entered an invalid number of players. Number of players is limited to between 2 and 4 (both incl.).",
+    "yourNameHere": "What is the players name?",
     "rollDice": "Roll the dice, ",
     "winMessage": "Amazing! The winner of this epic adventure is ",
     "playAgainMessage": "Do you want to play again?",
