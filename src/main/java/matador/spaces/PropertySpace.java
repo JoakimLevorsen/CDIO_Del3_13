@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class PropertySpace extends Space {
     private Optional<Player> owner;
-    private final int value;
+    public final int value;
     private String color;
 
     public PropertySpace(JSONObject data) throws JSONException {
