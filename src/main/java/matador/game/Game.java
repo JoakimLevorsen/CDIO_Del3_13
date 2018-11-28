@@ -67,7 +67,7 @@ public class Game {
             }
 
         } else if (newSpace instanceof ChanceSpace) {
-            ChanceCard card = ((ChanceSpace) newSpace).draw();
+            ChanceCard card = cardManager.draw();
             uiManager.displayMessage(card);
             card.process(this, player);
         }

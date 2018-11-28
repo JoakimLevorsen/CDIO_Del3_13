@@ -60,6 +60,7 @@ public class UIManager {
                     + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
             System.out.println("Read from JSON failed, check formatting");
             e.printStackTrace();
+            System.exit(0);
         }
     }
     
