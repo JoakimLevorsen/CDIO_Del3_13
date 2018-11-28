@@ -94,7 +94,6 @@ public class UIManager {
                 if (winnerList.size() == 1) {
                     playerDidLose(winnerList.get(0));
                 } else {
-                    // TODO: Find den med mest egendom
                     int[] PropertyValue = new int[listSize];
                     for (Player winner : winnerList) {
                         // Sell all players property
