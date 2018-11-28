@@ -14,25 +14,39 @@ public class SpaceManager {
         fields = new Space[data.getJSONArray(JSONKeys.SPACES).length()];
 
         for (int i = 0; i < data.getJSONArray(JSONKeys.SPACES).length(); i++) {
-            // fields[i] = new Space(data.getJSONArray(JSONKeys.TYPE).getJSONObject(i));
-            data.getJSONArray(JSONKeys.TYPE).getJSONObject(i);
-            int type = data.getJSONArray(JSONKeys.SPACES).getJSONObject(i).getInt(JSONKeys.TYPE);
+            int type;
+            JSONObject myData;
+            try {
+                myData = data.getJSONArray(JSONKeys.SPACES).getJSONObject(i);
+                type = myData.getInt(JSONKeys.TYPE);
+            } catch (Exception e) {
+                throw new JSONException("Could not read type from space at index " + i);
+            }
 
-            switch (type) {
-            case 0:
-                fields[i] = new StartSpace(data.getJSONArray(JSONKeys.SPACES).getJSONObject(i));
-                break;
-            case 1:
-                fields[i] = new ParkingSpace(data.getJSONArray(JSONKeys.SPACES).getJSONObject(i));
-            case 2:
-                fields[i] = new PropertySpace(data.getJSONArray(JSONKeys.SPACES).getJSONObject(i));
-            case 3:
-                fields[i] = new JailSpace(data.getJSONArray(JSONKeys.SPACES).getJSONObject(i));
-            case 4:
-                fields[i] = new GoToJailSpace(data.getJSONArray(JSONKeys.SPACES).getJSONObject(i));
-            case 5:
-                fields[i] = new ChanceSpace(data.getJSONArray(JSONKeys.SPACES).getJSONObject(i), cardManager);
-
+            try {
+                switch (type) {
+                case 0:
+                    fields[i] = new StartSpace(myData);
+                    break;
+                case 1:
+                    fields[i] = new ParkingSpace(myData);
+                    break;
+                case 2:
+                    fields[i] = new PropertySpace(myData);
+                    break;
+                case 3:
+                    fields[i] = new JailSpace(myData);
+                    break;
+                case 4:
+                    fields[i] = new GoToJailSpace(myData);
+                    break;
+                case 5:
+                    fields[i] = new ChanceSpace(myData, cardManager);
+                    break;
+                }
+            } catch (JSONException e) {
+                System.out.println("Could not create space at index " + i);
+                throw e;
             }
         }
     }

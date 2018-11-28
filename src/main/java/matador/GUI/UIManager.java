@@ -47,7 +47,6 @@ public class UIManager {
             board = BoardBuilder.build(jsonData);
             gooey = new GUI(board);
             kirk = new SpaceManager(jsonData);
-            cardManager = kirk.cardManager;
 
             // Get number of guiPlayers between 2 and 4 (both incl.)
             numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
@@ -55,16 +54,17 @@ public class UIManager {
                 gooey.showMessage(jsonData.getString(JSONKeys.INVALID_PLAYER_NUM));
                 numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
             }
-            setStartBalance(numberOfPlayers);
-
-            startGame();
         } catch (Exception e) {
             gooey.showMessage("There was a problem with your resources. Try reinstalling the application.\n "
-                    + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
+                + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
             System.out.println("Read from JSON failed, check formatting");
             e.printStackTrace();
             System.exit(0);
         }
+
+        cardManager = kirk.cardManager;
+        setStartBalance(numberOfPlayers);
+        startGame();
     }
     
     private void startGame() {
