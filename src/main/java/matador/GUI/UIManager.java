@@ -78,7 +78,7 @@ public class UIManager {
         gooey = new GUI(board);
 
         game = new Game(numberOfPlayers, diceMax, this, playerNames);
-        addPlayers(game.players);
+        this.guiPlayers = PlayerAdder.add(numberOfPlayers, gooey, startBalance, playerNames);
 
         gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
         game.executeTurn();
@@ -181,11 +181,6 @@ public class UIManager {
         }
 
         return result;
-    }
-
-    private void addPlayers(Player[] players) {
-        // Puts 2 - 4 guiPlayers on the board and stores an array of guiPlayers
-        this.guiPlayers = PlayerAdder.add(numberOfPlayers, gooey, startBalance);
     }
 
     public void setStartBalance(int numberOfPlayers) {
