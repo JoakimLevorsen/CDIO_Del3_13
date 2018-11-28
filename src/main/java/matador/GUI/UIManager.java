@@ -3,7 +3,7 @@ package matador.GUI;
 import matador.*;
 import matador.cards.ChanceCard;
 import matador.game.*;
-import matador.spaces.PropertySpace;
+import matador.spaces.*;
 import gui_fields.*;
 import gui_main.GUI;
 
@@ -119,6 +119,16 @@ public class UIManager {
         }
 
         // TODO: Tjek bræt for ejere n such
+        for (int i = 0; i < board.length; i++) {
+            GUI_Field field = board[i];
+            Space space = kirk.getSpace(i);
+            if (space instanceof PropertySpace) {
+                PropertySpace pSpace = (PropertySpace)space;
+                if (pSpace.getOwner().isPresent()) {
+                    field.setSubText(pSpace.getOwner().get().getName());
+                }
+            }
+        }
 
         // TODO: Flyt brik
         PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());

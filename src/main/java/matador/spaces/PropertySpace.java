@@ -10,7 +10,7 @@ import java.util.Optional;
 public class PropertySpace extends Space {
     private Optional<Player> owner;
     public final int value;
-    private String color;
+    public final String color;
 
     public PropertySpace(JSONObject data) throws JSONException {
         super(data);
@@ -29,6 +29,10 @@ public class PropertySpace extends Space {
         owner = Optional.of(buyer);
         buyer.balance.deduct(value);
         buyer.buyProperty(this);
+    }
+
+    public Optional<Player> getOwner() {
+        return owner;
     }
 
     public void reset() {
