@@ -6,6 +6,7 @@ import matador.game.*;
 import gui_fields.*;
 import gui_main.GUI;
 
+import java.util.ArrayList;
 import java.io.*;
 
 import org.json.*;
@@ -84,17 +85,23 @@ public class UIManager {
         for (int i = 0; i < game.players.length ; i++ ){
             if (game.players[i].balance.getBalance() < 0)
             {
-                int largest = game.players[0].balance.getBalance();
-                int winnerIndex = 0;
+                ArrayList<Player> winnerList = new ArrayList<Player>();
                 for (int j = 0; j < game.players.length; j++)
                 {
-                    if (game.players[j].balance.getBalance() > largest)
+                    int largestAmount = winnerList.size() == 0 ? 0 : winnerList.get(0).balance.getBalance();
+                    if (game.players[j].balance.getBalance() > largestAmount)
                     {
-                        largest = game.players[j].balance.getBalance();
-                        winnerIndex = j;
+                        winnerList = new ArrayList<Player>();
+                        winnerList.add(game.players[j]);
+                    } else if (game.players[j].balance.getBalance() == largestAmount) {
+                        winnerList.add(game.players[j]);
                     }
                 }
-                playerDidLose(game.players[winnerIndex]);
+                if (winnerList.size() == 1) {
+                    playerDidLose(winnerList.get(0));
+                } else {
+                    // TODO: Find den med mest egendom
+                }
                 return;
             }
         }

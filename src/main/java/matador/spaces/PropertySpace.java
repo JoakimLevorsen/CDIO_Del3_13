@@ -28,6 +28,7 @@ public class PropertySpace extends Space {
     public void buy(Player buyer) {
         owner = Optional.of(buyer);
         buyer.balance.deduct(value);
+        buyer.buyProperty(this);
     }
 
     public void reset() {

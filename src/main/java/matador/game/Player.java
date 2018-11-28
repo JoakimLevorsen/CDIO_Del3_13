@@ -1,5 +1,8 @@
 package matador.game;
 
+import java.util.ArrayList;
+
+import matador.spaces.PropertySpace;
 import java.util.*;
 import matador.cards.*;
 
@@ -9,6 +12,7 @@ public class Player {
     private int previousPosition;
     private String name;
     public final Game game;
+    private ArrayList<PropertySpace> property;
     private Optional<GetOutOfJailCard> myJailCard;
 
     public Player(int cash, String name, Game game) {
@@ -17,6 +21,11 @@ public class Player {
         this.previousPosition = 0;
         this.balance = new Account(cash);
         this.game = game;
+        this.property = new ArrayList<PropertySpace>();
+    }
+
+    public void buyProperty(PropertySpace item) {
+        property.add(item);
     }
 
     public void moveForward(int spaces) {
