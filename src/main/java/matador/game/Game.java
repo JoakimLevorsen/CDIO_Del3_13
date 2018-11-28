@@ -80,7 +80,7 @@ public class Game {
         if (turnCounter == players.length) {
             turnCounter = 0;
         }
-        System.out.println("Incrementing turn to" + turnCounter);
+        System.out.println("Incrementing turn to " + turnCounter + ".");
     }
 
     public int getTurnCounter() {

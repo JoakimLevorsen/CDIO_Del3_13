@@ -26,16 +26,17 @@ public class CardManagerTest {
 
         // Building card deck with EN.json
         CardManager testCardsEnglish = new CardManager(jsonEN);
-        System.out.println("Construction with language EN complete.");
+        System.out.println("Construction with language EN complete.\n");
+
     }
 
     @Test
-    public void drawTest() {
+    public void pickCardTest() {
         CardManager testCards = new CardManager(jsonDA);
         int totalCards = testCards.drawPile.size();
 
         for (int i = 0; i < totalCards; i++) {
-            testCards.draw();
+            testCards.pickCard();
         }
         // discardPile should be all cards - 1 after all cards are picked up,
         // GetOutOfJail kept by player
@@ -43,7 +44,8 @@ public class CardManagerTest {
         // drawPile should be 0
         assertEquals(0, testCards.drawPile.size());
 
-        System.out.println("pickCard test as expected.");
+        System.out.println("pickCard test as expected.\n");
+
     }
 
     @Test
@@ -52,15 +54,15 @@ public class CardManagerTest {
         int totalCards = testCards.drawPile.size();
 
         for (int i = 0; i < (totalCards + 1); i++) {
-            testCards.draw();
-        }
+            testCards.pickCard();
 
+        }
         // Should be all cards - 2, GetOutOfJail kept by player, one card moved to
         // discardPile
         assertEquals((totalCards - 2), testCards.drawPile.size());
         assertEquals(testCards.discardPile.size(), (1));
 
-        System.out.println("turnPile test as expected");
+        System.out.println("turnPile test as expected.\n");
     }
 
     // Helper method for reading json files
