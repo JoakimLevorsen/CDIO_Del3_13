@@ -1,7 +1,7 @@
 package matador.game;
 
 public class Dice {
-    public int maxFaceValue;
+    public final int maxFaceValue;
 
     public Dice(int maxFaceValue) {
         this.maxFaceValue = maxFaceValue;
