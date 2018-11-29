@@ -1,5 +1,7 @@
 package matador.game;
 
+import org.json.Property;
+
 import matador.GUI.*;
 import matador.cards.*;
 import matador.spaces.*;
@@ -61,7 +63,13 @@ public class Game {
 
     public void handleLandingOn(Space newSpace, Player player) {
         if (newSpace instanceof PropertySpace) {
-            ((PropertySpace) newSpace).buy(player);
+            if (((PropertySpace) newSpace).getOwner().isPresent()) {
+                Player owner = ((PropertySpace) newSpace).getOwner().get();
+                player.balance.deduct(((PropertySpace) newSpace).value);
+                owner.balance.increase(((PropertySpace) newSpace).value);
+            } else {
+                ((PropertySpace) newSpace).buy(player);
+            }
         } else if (newSpace instanceof GoToJailSpace) {
             try {
                 player.setBoardPosition(sManager.getJailSpaceIndex());
