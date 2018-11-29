@@ -84,6 +84,15 @@ public class UIManager {
         game.executeTurn();
     }
 
+    public GUI_Player getPlayerFor(Player player) {
+        for (int i = 0; i < guiPlayers.length; i++) {
+            if (game.players[i] == player) {
+                return guiPlayers[i];
+            }
+        }
+        return null;
+    }
+
     public SpaceManager getSpaceManager() {
         return kirk;
     }
@@ -143,6 +152,10 @@ public class UIManager {
 
     public void displayMessage(ChanceCard card) {
         gooey.displayChanceCard(card.title);
+    }
+
+    public GUI getGUI() {
+        return gooey;
     }
 
     public void playerDidLose(Player player) {

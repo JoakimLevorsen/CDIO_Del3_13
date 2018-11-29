@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import matador.spaces.PropertySpace;
 import java.util.*;
 import matador.cards.*;
+import matador.GUI.*;
 
 public class Player {
     public final Account balance;
@@ -53,7 +54,9 @@ public class Player {
     }
 
     public void setBoardPosition(int position) {
+        previousPosition = boardPosition;
         boardPosition = position;
+        PlayerMover.move(game.uiManager.getPlayerFor(this), game.uiManager.getGUI(), previousPosition, boardPosition);
     }
 
     public Optional<GetOutOfJailCard> getMyJailCard() {
