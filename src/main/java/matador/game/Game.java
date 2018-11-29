@@ -56,7 +56,12 @@ public class Game {
         player.moveForward(roll);
         int newPosition = player.getBoardPosition();
         Space newSpace = sManager.getSpace(newPosition);
+        this.handleLandingOn(newSpace, player);
+        
+        uiManager.updateUI(roll, player);
+    }
 
+    public void handleLandingOn(Space newSpace, Player player) {
         if (newSpace instanceof PropertySpace) {
             if (((PropertySpace) newSpace).getOwner().isPresent()) {
                 Player owner = ((PropertySpace) newSpace).getOwner().get();
@@ -77,7 +82,11 @@ public class Game {
             uiManager.displayMessage(card);
             card.process(this, player);
         }
-        uiManager.updateUI(roll, player);
+    }
+
+    public void movePlayerTo(int toPosition, int fromPosition, Player player) {
+        PlayerMover.move(uiManager.getPlayerFor(player), uiManager.getGUI(), fromPosition, toPosition);
+        handleLandingOn(this.sManager.getSpace(toPosition), player);
     }
 
     public void incrementTurnCounter() {

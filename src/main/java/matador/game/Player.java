@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import matador.spaces.PropertySpace;
 import java.util.*;
 import matador.cards.*;
-import matador.GUI.*;
 
 public class Player {
     public final Account balance;
@@ -45,6 +44,21 @@ public class Player {
         }
     }
 
+    public void moveForwardAlsoInUI(int spaces) {
+        previousPosition = boardPosition;
+        int newposition = boardPosition += spaces;
+        if (newposition > 23) {
+            newposition = newposition - 24;
+            try {
+                balance.increase(game.sManager.getStartSpace().rewardValue);
+            } catch (SpaceNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        boardPosition = newposition;
+        game.movePlayerTo(boardPosition, previousPosition, this);
+    }
+
     public int getPreviousPosition() {
         return previousPosition;
     }
@@ -56,7 +70,7 @@ public class Player {
     public void setBoardPosition(int position) {
         previousPosition = boardPosition;
         boardPosition = position;
-        PlayerMover.move(game.uiManager.getPlayerFor(this), game.uiManager.getGUI(), previousPosition, boardPosition);
+        game.movePlayerTo(boardPosition, previousPosition, this);
     }
 
     public Optional<GetOutOfJailCard> getMyJailCard() {

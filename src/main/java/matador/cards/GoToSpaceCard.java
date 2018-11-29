@@ -25,7 +25,7 @@ public class GoToSpaceCard extends ChanceCard {
             if (spaces < 0) {
                 spaces = 24 - Math.abs(spaces);
             }
-            with.moveForward(spaces);
+            with.moveForwardAlsoInUI(spaces);
         }
     }
 }
