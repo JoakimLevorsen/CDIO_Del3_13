@@ -141,10 +141,6 @@ public class UIManager {
         // TODO: Flyt brik
         PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
 
-        // TODO: Display chancecards n such
-
-        // TODO: Increment turn counter fra game
-
         game.incrementTurnCounter();
         game.executeTurn();
     }
