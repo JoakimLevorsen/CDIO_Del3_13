@@ -119,6 +119,7 @@ public class UIManager {
                         playerDidLose(propertyWinners.get(0));
                     } else {
                         // TODO: Klar hvis flere spillere har samme antal egjendom.
+                        throw new JSONException("MORE THAN ONE PLAYER ONE, WAAAAAAT");
                     }
                 }
                 return;
