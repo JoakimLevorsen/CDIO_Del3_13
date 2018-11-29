@@ -13,6 +13,7 @@ public class JailSpace extends Space {
     public JailSpace(JSONObject data) {
         super(data);
         this.bail = data.getInt(JSONKeys.VALUE);
+        this.prisoners = new ArrayList<Player>();
     }
 
     public boolean isInJail(Player player) {
