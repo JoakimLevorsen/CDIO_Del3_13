@@ -80,7 +80,7 @@ public class UIManager {
         game = new Game(numberOfPlayers, diceMax, this, playerNames);
         this.guiPlayers = PlayerAdder.add(numberOfPlayers, gooey, startBalance, playerNames);
 
-        gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
+        gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE) + game.players[game.getTurnCounter()].getName());
         game.executeTurn();
     }
 
@@ -147,7 +147,7 @@ public class UIManager {
         PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
 
         game.incrementTurnCounter();
-        gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
+        gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE) + game.players[game.getTurnCounter()].getName());
         game.executeTurn();
     }
 
