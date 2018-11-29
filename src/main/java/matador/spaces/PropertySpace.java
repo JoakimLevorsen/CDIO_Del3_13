@@ -11,12 +11,14 @@ public class PropertySpace extends Space {
     private Optional<Player> owner;
     public final int value;
     public final String color;
+    public final String message;
 
     public PropertySpace(JSONObject data) throws JSONException {
         super(data);
         try {
-            value = data.getInt(JSONKeys.VALUE);
-            color = data.getString(JSONKeys.COLOR);
+            this.value = data.getInt(JSONKeys.VALUE);
+            this.color = data.getString(JSONKeys.COLOR);
+            this.message = data.getString(JSONKeys.MESSAGE);
             this.owner = Optional.empty();
         } catch (Exception e) {
             System.out.println("Read from JSON failed, check formatting");
