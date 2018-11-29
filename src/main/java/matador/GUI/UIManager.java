@@ -124,7 +124,6 @@ public class UIManager {
                 }
                 return;
             }
-            game.executeTurn();
         }
 
         // Mark sold fields
@@ -134,7 +133,7 @@ public class UIManager {
             if (space instanceof PropertySpace) {
                 PropertySpace pSpace = (PropertySpace)space;
                 if (pSpace.getOwner().isPresent()) {
-                    field.setDescription(pSpace.message + "\n Owned by " + pSpace.getOwner().get().getName());
+                    field.setTitle(pSpace.name + jsonData.getString(JSONKeys.OWNED_BY) + pSpace.getOwner().get().getName());
                 }
             }
         }
@@ -148,6 +147,7 @@ public class UIManager {
         PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
 
         game.incrementTurnCounter();
+        gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
         game.executeTurn();
     }
 
