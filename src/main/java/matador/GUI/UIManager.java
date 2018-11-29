@@ -126,7 +126,7 @@ public class UIManager {
             }
         }
 
-        // TODO: Tjek bræt for ejere n such
+        // Mark sold fields
         for (int i = 0; i < board.length; i++) {
             GUI_Field field = board[i];
             Space space = kirk.getSpace(i);
@@ -138,7 +138,12 @@ public class UIManager {
             }
         }
 
-        // TODO: Flyt brik
+        // Update all users bankaccount
+        for (int i = 0; i < game.players.length; i++) {
+            guiPlayers[i].setBalance(game.players[i].balance.getBalance());
+        }
+
+        // Flyt brik
         PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
 
         // TODO: Display chancecards n such
