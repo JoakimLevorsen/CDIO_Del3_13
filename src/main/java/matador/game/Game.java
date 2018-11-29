@@ -9,7 +9,7 @@ public class Game {
     public final Player[] players;
     public final SpaceManager sManager;
     public final CardManager cardManager;
-    private UIManager uiManager;
+    public final UIManager uiManager;
     private int turnCounter;
 
     public Game(int withPlayers, int diceMax, UIManager uiManager, String[] playerNames) {
