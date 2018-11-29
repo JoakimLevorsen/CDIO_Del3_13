@@ -99,7 +99,7 @@ public class UIManager {
 
     public void updateUI(int dice, Player currentPlayer) {
 
-        for (int i = 0; i < game.players.length ; i++ ){
+        for (int i = 0; i < game.players.length ; i++ ) {
             if (game.players[i].balance.getBalance() < 0)
             {
                 Comparator<Player> getRichestPlayer = (a, b) -> a.balance.getBalance() < b.balance.getBalance() ? -1 : (a.balance.getBalance() == b.balance.getBalance() ? 0 : 1);
@@ -124,6 +124,7 @@ public class UIManager {
                 }
                 return;
             }
+            game.executeTurn();
         }
 
         // Mark sold fields
@@ -145,10 +146,6 @@ public class UIManager {
 
         // Flyt brik
         PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
-
-        // TODO: Display chancecards n such
-
-        // TODO: Increment turn counter fra game
 
         game.incrementTurnCounter();
         game.executeTurn();
