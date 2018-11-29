@@ -104,7 +104,6 @@ public class UIManager {
             {
                 Comparator<Player> getRichestPlayer = (a, b) -> a.balance.getBalance() < b.balance.getBalance() ? -1 : (a.balance.getBalance() == b.balance.getBalance() ? 0 : 1);
                 ArrayList<Player> winnerList = ArrayFunctions.getBiggest(game.players, getRichestPlayer);
-                int listSize = winnerList.size();
                 if (winnerList.size() == 1) {
                     playerDidLose(winnerList.get(0));
                 } else {
@@ -119,7 +118,7 @@ public class UIManager {
                     if (propertyWinners.size() == 1) {
                         playerDidLose(propertyWinners.get(0));
                     } else {
-                        // TODO: Klar hvis flere spillere har samme antal egendom.
+                        // TODO: Klar hvis flere spillere har samme antal egjendom.
                     }
                 }
                 return;
