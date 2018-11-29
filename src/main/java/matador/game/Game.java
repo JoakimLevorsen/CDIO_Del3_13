@@ -78,6 +78,7 @@ public class Game {
 
     public void movePlayerTo(int toPosition, int fromPosition, Player player) {
         PlayerMover.move(uiManager.getPlayerFor(player), uiManager.getGUI(), fromPosition, toPosition);
+        handleLandingOn(this.sManager.getSpace(toPosition), player);
     }
 
     public void incrementTurnCounter() {
