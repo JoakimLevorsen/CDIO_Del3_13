@@ -1,7 +1,5 @@
 package matador.game;
 
-import org.json.Property;
-
 import matador.GUI.*;
 import matador.cards.*;
 import matador.spaces.*;
