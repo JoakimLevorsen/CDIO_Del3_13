@@ -57,7 +57,6 @@ public class Game {
 
         if (newSpace instanceof PropertySpace) {
             ((PropertySpace) newSpace).buy(player);
-
         } else if (newSpace instanceof GoToJailSpace) {
             try {
                 player.setBoardPosition(sManager.getJailSpaceIndex());
@@ -65,13 +64,11 @@ public class Game {
             } catch (SpaceNotFoundException e) {
                 System.out.println(e.getMessage());
             }
-
         } else if (newSpace instanceof ChanceSpace) {
             ChanceCard card = cardManager.draw();
             uiManager.displayMessage(card);
             card.process(this, player);
         }
-
         uiManager.updateUI(roll, player);
     }
 
