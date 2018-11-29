@@ -4,6 +4,8 @@
     "invalidPlayerNum": "Du har indtastet et ugyldigt antal spillere. Antallet af spillere er begrænset til mellem 2 og 4 (begge inkl.).",
     "yourNameHere": "Angiv en spillers navn.",
     "rollDice": "Kast terningerne, ",
+    "spaceOwned": "En anden spiller ejer dette felt. Du betaler derfor leje til dem.",
+    "spaceUnowned": "Dette felt er ledigt! Du køber det og tilføjer det til dit imperium!",
     "winMessage": "Fantastisk! Vinderen af dette episke eventyr er ",
     "playAgainMessage": "Vil du spille igen?",
     "quit": "Afslut",
@@ -98,14 +100,14 @@
         {
             "name": "Skaterpark",
             "type": 2,
-            "message": "Skateparken er gratis, men sodavandet koster.",
+            "message": "Skaterparken er gratis, men sodavandet koster.",
             "value": 2,
             "valueString": "M̶2",
             "color": "orange",
             "textColor": "black"
         },
         {
-            "name": "Pool",
+            "name": "Swimming Pool",
             "type": 2,
             "message": "Tag dig en svømmer for ̶M̶2",
             "value": 2,
@@ -182,9 +184,9 @@
             "textColor": "black"
         },
         {
-            "name": "Zoo",
+            "name": "Zoologisk Have",
             "type": 2,
-            "message": "Zoo er en af de helt store turistattraktioner i byen.",
+            "message": "Zoologisk Have er en af de helt store turistattraktioner i byen.",
             "value": 4,
             "valueString": "M̶4",
             "color": "green",
@@ -261,7 +263,7 @@
             "property": 16
         },
         {
-            "title": "Ryk frem til Zoo og kig på alle dyrene. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
+            "title": "Ryk frem til Zoologisk Have og kig på alle dyrene. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 20
         },
