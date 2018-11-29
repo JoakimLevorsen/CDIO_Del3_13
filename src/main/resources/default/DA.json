@@ -64,6 +64,8 @@
             "name": "Fængsel",
             "type": 3,
             "message": "På besøg",
+            "value": 1,
+            "valueString": "M̶1",
             "color": "white",
             "textColor": "black",
             "image": "default"

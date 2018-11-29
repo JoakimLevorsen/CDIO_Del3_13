@@ -40,7 +40,7 @@ public class Game {
                     cardManager.discardCard(player.getMyJailCard().get());
                     return;
                 }
-                player.balance.deduct(1);
+                player.balance.deduct(j.bail);
                 try {
                     j.releasePlayer(player);
                 } catch (Exception e) {
