@@ -125,7 +125,7 @@ public class UIManager {
             if (space instanceof PropertySpace) {
                 PropertySpace pSpace = (PropertySpace)space;
                 if (pSpace.getOwner().isPresent()) {
-                    field.setSubText(pSpace.getOwner().get().getName());
+                    field.setDescription(pSpace.message + "\n Owned by " + pSpace.getOwner().get().getName());
                 }
             }
         }
@@ -136,6 +136,9 @@ public class UIManager {
         // TODO: Display chancecards n such
 
         // TODO: Increment turn counter fra game
+
+        game.incrementTurnCounter();
+        game.executeTurn();
     }
 
     public void displayMessage(ChanceCard card) {
