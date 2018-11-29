@@ -56,7 +56,7 @@ public class UIManager {
             }
         } catch (Exception e) {
             gooey.showMessage("There was a problem with your resources. Try reinstalling the application.\n "
-                + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
+                    + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
             System.out.println("Read from JSON failed, check formatting");
             e.printStackTrace();
             System.exit(0);
@@ -66,7 +66,7 @@ public class UIManager {
         setStartBalance(numberOfPlayers);
         startGame();
     }
-    
+
     private void startGame() {
         // Make game and keep playing it until won
         String[] playerNames = new String[numberOfPlayers];
@@ -99,17 +99,17 @@ public class UIManager {
 
     public void updateUI(int dice, Player currentPlayer) {
 
-        for (int i = 0; i < game.players.length ; i++ ) {
-            if (game.players[i].balance.getBalance() < 0)
-            {
-                Comparator<Player> getRichestPlayer = (a, b) -> a.balance.getBalance() < b.balance.getBalance() ? -1 : (a.balance.getBalance() == b.balance.getBalance() ? 0 : 1);
+        for (int i = 0; i < game.players.length; i++) {
+            if (game.players[i].balance.getBalance() < 0) {
+                Comparator<Player> getRichestPlayer = (a, b) -> a.balance.getBalance() < b.balance.getBalance() ? -1
+                        : (a.balance.getBalance() == b.balance.getBalance() ? 0 : 1);
                 ArrayList<Player> winnerList = ArrayFunctions.getBiggest(game.players, getRichestPlayer);
                 if (winnerList.size() == 1) {
                     playerDidLose(winnerList.get(0));
                 } else {
                     for (Player winner : winnerList) {
                         // Sell all players property
-                        for (PropertySpace pSpace: winner.getProperty()) {
+                        for (PropertySpace pSpace : winner.getProperty()) {
                             winner.balance.increase(pSpace.value);
                         }
                     }
@@ -130,9 +130,14 @@ public class UIManager {
             GUI_Field field = board[i];
             Space space = kirk.getSpace(i);
             if (space instanceof PropertySpace) {
-                PropertySpace pSpace = (PropertySpace)space;
+                PropertySpace pSpace = (PropertySpace) space;
                 if (pSpace.getOwner().isPresent()) {
+<<<<<<< HEAD
                     field.setDescription(pSpace.message + jsonData.getString(JSONKeys.OWNED_BY) + pSpace.getOwner().get().getName());
+=======
+                    field.setTitle(
+                            pSpace.name + jsonData.getString(JSONKeys.OWNED_BY) + pSpace.getOwner().get().getName());
+>>>>>>> fa7c8b85efb1c5429d741d6161eda6cad0ca8db5
                 }
             }
         }
@@ -143,7 +148,8 @@ public class UIManager {
         }
 
         // Flyt brik
-        PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
+        PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(),
+                currentPlayer.getBoardPosition());
 
         game.incrementTurnCounter();
         gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE) + game.players[game.getTurnCounter()].getName());
