@@ -50,7 +50,7 @@ public class UIManager {
 
             // Get number of guiPlayers between 2 and 4 (both incl.)
             numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
-            if (numberOfPlayers > 4 || numberOfPlayers < 2) {
+            while (numberOfPlayers > 4 || numberOfPlayers < 2) {
                 gooey.showMessage(jsonData.getString(JSONKeys.INVALID_PLAYER_NUM));
                 numberOfPlayers = gooey.getUserInteger(jsonData.getString(JSONKeys.CHOOSE_PLAYER_NUM));
             }
