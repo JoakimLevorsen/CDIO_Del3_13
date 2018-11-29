@@ -63,6 +63,8 @@
             "name": "Jail",
             "type": 3,
             "message": "Just visiting.",
+            "value": 1,
+            "valueString": "M̶1",
             "color": "white",
             "textColor": "black",
             "image": "default"
