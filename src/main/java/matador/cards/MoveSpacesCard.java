@@ -19,6 +19,6 @@ public class MoveSpacesCard extends ChanceCard {
     }
 
     public void process(Game in, Player with) {
-        with.moveForward(spacesMoved);
+        with.moveForwardAlsoInUI(spacesMoved);
     }
 }

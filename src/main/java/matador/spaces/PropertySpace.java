@@ -10,13 +10,15 @@ import java.util.Optional;
 public class PropertySpace extends Space {
     private Optional<Player> owner;
     public final int value;
-    private String color;
+    public final String color;
+    public final String message;
 
     public PropertySpace(JSONObject data) throws JSONException {
         super(data);
         try {
-            value = data.getInt(JSONKeys.VALUE);
-            color = data.getString(JSONKeys.COLOR);
+            this.value = data.getInt(JSONKeys.VALUE);
+            this.color = data.getString(JSONKeys.COLOR);
+            this.message = data.getString(JSONKeys.MESSAGE);
             this.owner = Optional.empty();
         } catch (Exception e) {
             System.out.println("Read from JSON failed, check formatting");
@@ -29,6 +31,10 @@ public class PropertySpace extends Space {
         owner = Optional.of(buyer);
         buyer.balance.deduct(value);
         buyer.buyProperty(this);
+    }
+
+    public Optional<Player> getOwner() {
+        return owner;
     }
 
     public void reset() {

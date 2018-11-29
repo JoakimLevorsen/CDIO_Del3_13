@@ -44,6 +44,21 @@ public class Player {
         }
     }
 
+    public void moveForwardAlsoInUI(int spaces) {
+        previousPosition = boardPosition;
+        int newposition = boardPosition += spaces;
+        if (newposition > 23) {
+            newposition = newposition - 24;
+            try {
+                balance.increase(game.sManager.getStartSpace().rewardValue);
+            } catch (SpaceNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        boardPosition = newposition;
+        game.movePlayerTo(boardPosition, previousPosition, this);
+    }
+
     public int getPreviousPosition() {
         return previousPosition;
     }
@@ -53,7 +68,9 @@ public class Player {
     }
 
     public void setBoardPosition(int position) {
+        previousPosition = boardPosition;
         boardPosition = position;
+        game.movePlayerTo(boardPosition, previousPosition, this);
     }
 
     public Optional<GetOutOfJailCard> getMyJailCard() {

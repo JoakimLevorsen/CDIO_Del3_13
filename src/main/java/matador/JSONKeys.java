@@ -6,6 +6,8 @@ public class JSONKeys {
     public static final String INVALID_PLAYER_NUM = "invalidPlayerNum";
     public static final String YOUR_NAME_HERE = "yourNameHere";
     public static final String ROLL_DICE = "rollDice";
+    public static final String SPACE_OWNED = "spaceOwned";
+    public static final String SPACE_UNOWNED = "spaceUnowned";
     public static final String WIN_MESSAGE = "winMessage";
     public static final String PLAY_AGAIN_MESSAGE = "playAgainMessage";
     public static final String PLAY_AGAIN_BUTTON = "playAgainButton";

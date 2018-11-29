@@ -1,14 +1,19 @@
 package matador.spaces;
 
-import org.json.JSONObject;
+import org.json.*;
+
+import matador.JSONKeys;
 import matador.game.*;
 import java.util.ArrayList;
 
 public class JailSpace extends Space {
     private ArrayList<Player> prisoners;
+    public final int bail;
 
     public JailSpace(JSONObject data) {
         super(data);
+        this.bail = data.getInt(JSONKeys.VALUE);
+        this.prisoners = new ArrayList<Player>();
     }
 
     public boolean isInJail(Player player) {

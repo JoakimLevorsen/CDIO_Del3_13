@@ -3,8 +3,8 @@ package matador.GUI;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 
-class PlayerMover {
-    static void move(GUI_Player currentPlayer, GUI wGui, int fromPosition, int newPosition) {
+public class PlayerMover {
+    public static void move(GUI_Player currentPlayer, GUI wGui, int fromPosition, int newPosition) {
         for (int i = fromPosition; i < (newPosition); i++) {
             int j = i;
             if (j > 23) {

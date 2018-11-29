@@ -59,22 +59,22 @@ class BoardBuilder {
 
                 switch (spaceType) {
                 case 0:
-                    board[i] = new GUI_Start(title, description, rent, BG_COLOR, FG_COLOR);
+                    board[i] = new GUI_Start(rent, description, title, BG_COLOR, FG_COLOR);
                     break;
                 case 1:
-                    board[i] = new GUI_Refuge(image, title, description, rent, BG_COLOR, FG_COLOR);
+                    board[i] = new GUI_Refuge(image, description, title, rent, BG_COLOR, FG_COLOR);
                     break;
                 case 2:
                     board[i] = new GUI_Street(title, rent, description, rent, BG_COLOR, FG_COLOR);
                     break;
                 case 3:
-                    board[i] = new GUI_Jail(image, title, description, rent, BG_COLOR, FG_COLOR);
+                    board[i] = new GUI_Jail(image, "", title, description, BG_COLOR, FG_COLOR);
                     break;
                 case 4:
-                    board[i] = new GUI_Jail(image, title, description, rent, BG_COLOR, FG_COLOR);
+                    board[i] = new GUI_Jail(image, "", title, description, BG_COLOR, FG_COLOR);
                     break;
                 case 5:
-                    board[i] = new GUI_Chance(title, "", description, BG_COLOR, FG_COLOR);
+                    board[i] = new GUI_Chance("?", title, description, BG_COLOR, FG_COLOR);
                     break;
                 default:
                     throw new JSONException("Read from JSON failed, check formatting.");

@@ -1,5 +1,8 @@
 package matador.game;
 
+import org.json.*;
+
+import matador.JSONKeys;
 import matador.GUI.*;
 import matador.cards.*;
 import matador.spaces.*;
@@ -9,8 +12,9 @@ public class Game {
     public final Player[] players;
     public final SpaceManager sManager;
     public final CardManager cardManager;
-    private UIManager uiManager;
+    public final UIManager uiManager;
     private int turnCounter;
+    private JSONObject jsonData;
 
     public Game(int withPlayers, int diceMax, UIManager uiManager, String[] playerNames) {
         players = new Player[withPlayers];
@@ -29,9 +33,9 @@ public class Game {
         // Check if current space is jail and if player is in jail
         Space currentSpace = sManager.getSpace(player.getBoardPosition());
         if (currentSpace instanceof JailSpace) {
-            JailSpace j = (JailSpace)currentSpace;
+            JailSpace j = (JailSpace) currentSpace;
             if (j.isInJail(player)) {
-                if(player.getMyJailCard().isPresent()) {
+                if (player.getMyJailCard().isPresent()) {
                     try {
                         j.releasePlayer(player);
                     } catch (Exception e) {
@@ -40,7 +44,7 @@ public class Game {
                     cardManager.discardCard(player.getMyJailCard().get());
                     return;
                 }
-                player.balance.deduct(1);
+                player.balance.deduct(j.bail);
                 try {
                     j.releasePlayer(player);
                 } catch (Exception e) {
@@ -54,10 +58,22 @@ public class Game {
         player.moveForward(roll);
         int newPosition = player.getBoardPosition();
         Space newSpace = sManager.getSpace(newPosition);
+        this.handleLandingOn(newSpace, player);
 
+        uiManager.updateUI(roll, player);
+    }
+
+    public void handleLandingOn(Space newSpace, Player player) {
         if (newSpace instanceof PropertySpace) {
-            ((PropertySpace) newSpace).buy(player);
-
+            if (((PropertySpace) newSpace).getOwner().isPresent()) {
+                uiManager.getGUI().showMessage(uiManager.getJSONData().getString(JSONKeys.SPACE_OWNED));
+                Player owner = ((PropertySpace) newSpace).getOwner().get();
+                player.balance.deduct(((PropertySpace) newSpace).value);
+                owner.balance.increase(((PropertySpace) newSpace).value);
+            } else {
+                uiManager.getGUI().showMessage(uiManager.getJSONData().getString(JSONKeys.SPACE_UNOWNED));
+                ((PropertySpace) newSpace).buy(player);
+            }
         } else if (newSpace instanceof GoToJailSpace) {
             try {
                 player.setBoardPosition(sManager.getJailSpaceIndex());
@@ -65,14 +81,16 @@ public class Game {
             } catch (SpaceNotFoundException e) {
                 System.out.println(e.getMessage());
             }
-
         } else if (newSpace instanceof ChanceSpace) {
             ChanceCard card = cardManager.draw();
             uiManager.displayMessage(card);
             card.process(this, player);
         }
+    }
 
-        uiManager.updateUI(roll, player);
+    public void movePlayerTo(int toPosition, int fromPosition, Player player) {
+        PlayerMover.move(uiManager.getPlayerFor(player), uiManager.getGUI(), fromPosition, toPosition);
+        handleLandingOn(this.sManager.getSpace(toPosition), player);
     }
 
     public void incrementTurnCounter() {

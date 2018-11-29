@@ -2,13 +2,15 @@
     "gameTitle": "Monopoly Junior",
     "choosePlayerNum": "Please enter number of players between 2 and 4 (both incl.).",
     "invalidPlayerNum": "You have entered an invalid number of players. Number of players is limited to between 2 and 4 (both incl.).",
-    "yourNameHere": "What is the players name?",
+    "yourNameHere": "Enter a player's name.",
     "rollDice": "Roll the dice, ",
+    "spaceOwned": "Another player owns this space. You pay them rent.",
+    "spaceUnowned": "This space is unowned! You buy it and add it to your empire!",
     "winMessage": "Amazing! The winner of this epic adventure is ",
     "playAgainMessage": "Do you want to play again?",
     "quit": "Quit",
     "playAgainButton": "Play again!",
-    "ownedBy": "Owned by ",
+    "ownedBy": "\nOwned by ",
     "spaces": [{
             "name": "Start",
             "type": 1,
@@ -30,7 +32,7 @@
             "type": 2,
             "message": "Great pizza for cheap.",
             "value": 1,
-            "valueString": "-100",
+            "valueString": "M̶1",
             "color": "darkGray",
             "textColor": "black"
         },
@@ -63,6 +65,8 @@
             "name": "Jail",
             "type": 3,
             "message": "Just visiting.",
+            "value": 1,
+            "valueString": "M̶1",
             "color": "white",
             "textColor": "black",
             "image": "default"
@@ -224,7 +228,7 @@
             "spacesMoved": 5
         },
         {
-            "title": "Move to the Water Park and have a swim. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "title": "Move to the Water Park and have a swim. If the space is unowned, you can buy it! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 22
         },
@@ -243,22 +247,22 @@
             "type": 5
         },
         {
-            "title": "Move to the Burger Bar and ease your hunger. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "title": "Move to the Burger Bar and ease your hunger. If the space is unowned, you can buy it! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 1
         },
         {
-            "title": "Move to the Library and find your favourite book. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "title": "Move to the Library and find your favourite book. If the space is unowned, you can buy it! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 8
         },
         {
-            "title": "Move to the Toy Store and pick the teddy bear you want. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "title": "Move to the Toy Store and pick the teddy bear you want. If the space is unowned, you can buy it! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 16
         },
         {
-            "title": "Move to the Zoo and have a look at all the animals. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "title": "Move to the Zoo and have a look at all the animals. If the space is unowned, you can buy it! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 20
         },
@@ -278,12 +282,12 @@
             "amount": 1
         },
         {
-            "title": "Move to the Cinema and watch a good film. If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "title": "Move to the Cinema and watch a good film. If the space is unowned, you can buy it! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 14
         },
         {
-            "title": "Move to the Ice Cream Parlour and eat the largest ice cream they have! If the space is unowned, you get it for free! Otherwise, you must pay the owner.",
+            "title": "Move to the Ice Cream Parlour and eat the largest ice cream they have! If the space is unowned, you can buy it! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 5
         },

@@ -3,7 +3,7 @@ package matador.GUI;
 import matador.*;
 import matador.cards.ChanceCard;
 import matador.game.*;
-import matador.spaces.PropertySpace;
+import matador.spaces.*;
 import gui_fields.*;
 import gui_main.GUI;
 
@@ -56,7 +56,7 @@ public class UIManager {
             }
         } catch (Exception e) {
             gooey.showMessage("There was a problem with your resources. Try reinstalling the application.\n "
-                + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
+                    + "Der opstod et problem med dine ressourcer. Prøv at reinstallere programmet.");
             System.out.println("Read from JSON failed, check formatting");
             e.printStackTrace();
             System.exit(0);
@@ -66,7 +66,7 @@ public class UIManager {
         setStartBalance(numberOfPlayers);
         startGame();
     }
-    
+
     private void startGame() {
         // Make game and keep playing it until won
         String[] playerNames = new String[numberOfPlayers];
@@ -78,10 +78,19 @@ public class UIManager {
         gooey = new GUI(board);
 
         game = new Game(numberOfPlayers, diceMax, this, playerNames);
-        addPlayers(game.players);
+        this.guiPlayers = PlayerAdder.add(numberOfPlayers, gooey, startBalance, playerNames);
 
-        gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE));
+        gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE) + game.players[game.getTurnCounter()].getName());
         game.executeTurn();
+    }
+
+    public GUI_Player getPlayerFor(Player player) {
+        for (int i = 0; i < guiPlayers.length; i++) {
+            if (game.players[i] == player) {
+                return guiPlayers[i];
+            }
+        }
+        return null;
     }
 
     public SpaceManager getSpaceManager() {
@@ -90,19 +99,17 @@ public class UIManager {
 
     public void updateUI(int dice, Player currentPlayer) {
 
-        for (int i = 0; i < game.players.length ; i++ ){
-            if (game.players[i].balance.getBalance() < 0)
-            {
-                Comparator<Player> getRichestPlayer = (a, b) -> a.balance.getBalance() < b.balance.getBalance() ? -1 : (a.balance.getBalance() == b.balance.getBalance() ? 0 : 1);
+        for (int i = 0; i < game.players.length; i++) {
+            if (game.players[i].balance.getBalance() < 0) {
+                Comparator<Player> getRichestPlayer = (a, b) -> a.balance.getBalance() < b.balance.getBalance() ? -1
+                        : (a.balance.getBalance() == b.balance.getBalance() ? 0 : 1);
                 ArrayList<Player> winnerList = ArrayFunctions.getBiggest(game.players, getRichestPlayer);
-                int listSize = winnerList.size();
                 if (winnerList.size() == 1) {
                     playerDidLose(winnerList.get(0));
                 } else {
-                    int[] PropertyValue = new int[listSize];
                     for (Player winner : winnerList) {
                         // Sell all players property
-                        for (PropertySpace pSpace: winner.getProperty()) {
+                        for (PropertySpace pSpace : winner.getProperty()) {
                             winner.balance.increase(pSpace.value);
                         }
                     }
@@ -111,25 +118,46 @@ public class UIManager {
                     if (propertyWinners.size() == 1) {
                         playerDidLose(propertyWinners.get(0));
                     } else {
-                        // TODO: Klar hvis flere spillere har samme antal egendom.
+                        // TODO: Klar hvis flere spillere har samme antal egjendom.
+                        throw new JSONException("MORE THAN ONE PLAYER ONE, WAAAAAAT");
                     }
                 }
                 return;
             }
         }
 
-        // TODO: Tjek bræt for ejere n such
+        // Mark sold fields
+        for (int i = 0; i < board.length; i++) {
+            GUI_Field field = board[i];
+            Space space = kirk.getSpace(i);
+            if (space instanceof PropertySpace) {
+                PropertySpace pSpace = (PropertySpace) space;
+                if (pSpace.getOwner().isPresent()) {
+                    field.setDescription(pSpace.message + jsonData.getString(JSONKeys.OWNED_BY) + pSpace.getOwner().get().getName());
+                }
+            }
+        }
 
-        // TODO: Flyt brik
-        PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(), currentPlayer.getBoardPosition());
+        // Update all users bankaccount
+        for (int i = 0; i < game.players.length; i++) {
+            guiPlayers[i].setBalance(game.players[i].balance.getBalance());
+        }
 
-        // TODO: Display chancecards n such
+        // Flyt brik
+        PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(),
+                currentPlayer.getBoardPosition());
 
-        // TODO: Increment turn counter fra game
+        game.incrementTurnCounter();
+        gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE) + game.players[game.getTurnCounter()].getName());
+        game.executeTurn();
     }
 
     public void displayMessage(ChanceCard card) {
         gooey.displayChanceCard(card.title);
+    }
+
+    public GUI getGUI() {
+        return gooey;
     }
 
     public void playerDidLose(Player player) {
@@ -173,11 +201,6 @@ public class UIManager {
         return result;
     }
 
-    private void addPlayers(Player[] players) {
-        // Puts 2 - 4 guiPlayers on the board and stores an array of guiPlayers
-        this.guiPlayers = PlayerAdder.add(numberOfPlayers, gooey, startBalance);
-    }
-
     public void setStartBalance(int numberOfPlayers) {
         if (numberOfPlayers == 2) {
             startBalance = 20;
@@ -192,5 +215,9 @@ public class UIManager {
 
     public int getStartBalance() {
         return startBalance;
+    }
+
+    public JSONObject getJSONData() {
+        return jsonData;
     }
 }

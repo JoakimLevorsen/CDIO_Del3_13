@@ -2,13 +2,15 @@
     "gameTitle": "Monopoly Junior",
     "choosePlayerNum": "Angiv antallet af spillere mellem 2 og 4 (begge inkl.).",
     "invalidPlayerNum": "Du har indtastet et ugyldigt antal spillere. Antallet af spillere er begrænset til mellem 2 og 4 (begge inkl.).",
-    "yourNameHere": "Hvad er spillerens navn?",
+    "yourNameHere": "Angiv en spillers navn.",
     "rollDice": "Kast terningerne, ",
+    "spaceOwned": "En anden spiller ejer dette felt. Du betaler derfor leje til dem.",
+    "spaceUnowned": "Dette felt er ledigt! Du køber det og tilføjer det til dit imperium!",
     "winMessage": "Fantastisk! Vinderen af dette episke eventyr er ",
     "playAgainMessage": "Vil du spille igen?",
     "quit": "Afslut",
     "playAgainButton": "Spil igen!",
-    "ownedBy": "Ejet af ",
+    "ownedBy": "\nEjet af ",
     "spaces": [{
             "name": "Start",
             "type": 1,
@@ -17,7 +19,7 @@
             "textColor": "red"
         },
         {
-            "name": "Burgerbaren",
+            "name": "Burgerbar",
             "type": 2,
             "message": "En god burger til en god pris.",
             "value": 1,
@@ -27,7 +29,7 @@
 
         },
         {
-            "name": "Pizzeriaet",
+            "name": "Pizzeria",
             "type": 2,
             "message": "Ægte italiensk pizza for næsten ingen penge.",
             "value": 1,
@@ -43,7 +45,7 @@
             "textColor": "black"
         },
         {
-            "name": "Slikbutikken",
+            "name": "Slikbutik",
             "type": 2,
             "message": "Billigere slik fås ikke i byen.",
             "value": 1,
@@ -52,7 +54,7 @@
             "textColor": "black"
         },
         {
-            "name": "Iskiosken",
+            "name": "Iskiosk",
             "type": 2,
             "message": "Gammeldaws is med det hele.",
             "value": 1,
@@ -64,12 +66,14 @@
             "name": "Fængsel",
             "type": 3,
             "message": "På besøg",
+            "value": 1,
+            "valueString": "M̶1",
             "color": "white",
             "textColor": "black",
             "image": "default"
         },
         {
-            "name": "Museet",
+            "name": "Museum",
             "type": 2,
             "message": "Hold børnefødselsdag i museet og få kloge børn!",
             "value": 2,
@@ -78,7 +82,7 @@
             "textColor": "black"
         },
         {
-            "name": "Biblioteket",
+            "name": "Bibliotek",
             "type": 2,
             "message": "Betal dine gebyrer, når du alligevel er forbi!",
             "value": 2,
@@ -89,20 +93,21 @@
         {
             "name": "Chance",
             "type": 5,
+            "message": "Tag et chancekort.",
             "color": "lightGray",
             "textColor": "black"
         },
         {
-            "name": "Skaterparken",
+            "name": "Skaterpark",
             "type": 2,
-            "message": "Skateparken er gratis, men sodavandet koster.",
+            "message": "Skaterparken er gratis, men sodavandet koster.",
             "value": 2,
             "valueString": "M̶2",
             "color": "orange",
             "textColor": "black"
         },
         {
-            "name": "Swimmingpoolen",
+            "name": "Swimming Pool",
             "type": 2,
             "message": "Tag dig en svømmer for ̶M̶2",
             "value": 2,
@@ -119,18 +124,18 @@
             "image": "default"
         },
         {
-            "name": "Spillehallen",
+            "name": "Spillehal",
             "type": 2,
-            "message": "Her kan man spille de sidste spil, som eks DTU-matador!",
+            "message": "Her kan man spille de sidste nye spil, f.eks. DTU-matador!",
             "value": 3,
             "valueString": "M̶3",
             "color": "red",
             "textColor": "black"
         },
         {
-            "name": "Biografen",
+            "name": "Biograf",
             "type": 2,
-            "message": "Biografen med 43 sale. Der er penge i de popcorn!",
+            "message": "Biografen har 43 sale. Der er penge i de popcorn!",
             "value": 3,
             "valueString": "M̶3",
             "color": "red",
@@ -139,11 +144,12 @@
         {
             "name": "Chance",
             "type": 5,
+            "message": "Tag et chancekort.",
             "color": "lightGray",
             "textColor": "black"
         },
         {
-            "name": "Legetøjsbutikken",
+            "name": "Legetøjsbutik",
             "type": 2,
             "message": "Flot legetøjsbutik med masser af aktiviteter for de mindste.",
             "value": 3,
@@ -152,7 +158,7 @@
             "textColor": "black"
         },
         {
-            "name": "Dyrehandlen",
+            "name": "Dyrehandel",
             "type": 2,
             "message": "Kæledyr i alle prisklasser.",
             "value": 3,
@@ -169,7 +175,7 @@
             "image": "default"
         },
         {
-            "name": "Bowlinghallen",
+            "name": "Bowlinghal",
             "type": 2,
             "message": "Bowling går aldri helt af mode.",
             "value": 4,
@@ -180,7 +186,7 @@
         {
             "name": "Zoologisk Have",
             "type": 2,
-            "message": "Zoo er en af de helt store turistattraktioner i byen.",
+            "message": "Zoologisk Have er en af de helt store turistattraktioner i byen.",
             "value": 4,
             "valueString": "M̶4",
             "color": "green",
@@ -189,11 +195,12 @@
         {
             "name": "Chance",
             "type": 5,
+            "message": "Tag et chancekort.",
             "color": "lightGray",
             "textColor": "black"
         },
         {
-            "name": "Vandlandet",
+            "name": "Vandland",
             "type": 2,
             "message": "Der er ikke sparet på noget i det nye vandland midt i København!",
             "value": 5,
@@ -202,7 +209,7 @@
             "textColor": "black"
         },
         {
-            "name": "Strandpromenaden",
+            "name": "Promenade",
             "type": 2,
             "message": "Byens fineste gade. Frisk luft, hav og økologisk kaffe.",
             "value": 5,
@@ -222,7 +229,7 @@
             "spacesMoved": 5
         },
         {
-            "title": "Ryk frem til Vandlandet og tag en dukkert. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "title": "Ryk frem til Vandlandet og tag en dukkert. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 22
         },
@@ -241,22 +248,22 @@
             "type": 5
         },
         {
-            "title": "Ryk frem til Burgerbaren og stil din sult. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "title": "Ryk frem til Burgerbaren og stil din sult. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 1
         },
         {
-            "title": "Ryk frem til Biblioteket og find din yndlingsbog. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "title": "Ryk frem til Biblioteket og find din yndlingsbog. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 8
         },
         {
-            "title": "Ryk frem til Legetøjsbutikken og vælg den bamse du helst vil have. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "title": "Ryk frem til Legetøjsbutikken og vælg den bamse du helst vil have. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 16
         },
         {
-            "title": "Ryk frem til Zoologisk Have og kig på alle dyrene. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "title": "Ryk frem til Zoologisk Have og kig på alle dyrene. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 20
         },
@@ -276,12 +283,12 @@
             "amount": 1
         },
         {
-            "title": "Ryk frem til Biografen og se en god film. Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "title": "Ryk frem til Biografen og se en god film. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 14
         },
         {
-            "title": "Ryk frem til Iskiosken og spis den største is de har! Hvis feltet er ledigt, får du det gratis! Ellers skal du betale til ejeren.",
+            "title": "Ryk frem til Iskiosken og spis den største is de har! Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
             "type": 2,
             "property": 5
         },
