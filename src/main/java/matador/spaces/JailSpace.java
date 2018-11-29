@@ -1,6 +1,6 @@
 package matador.spaces;
 
-import org.json.JSONObject;
+import org.json.*;
 
 import matador.JSONKeys;
 import matador.game.*;
