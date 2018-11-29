@@ -29,9 +29,9 @@ public class Game {
         // Check if current space is jail and if player is in jail
         Space currentSpace = sManager.getSpace(player.getBoardPosition());
         if (currentSpace instanceof JailSpace) {
-            JailSpace j = (JailSpace)currentSpace;
+            JailSpace j = (JailSpace) currentSpace;
             if (j.isInJail(player)) {
-                if(player.getMyJailCard().isPresent()) {
+                if (player.getMyJailCard().isPresent()) {
                     try {
                         j.releasePlayer(player);
                     } catch (Exception e) {
@@ -55,7 +55,7 @@ public class Game {
         int newPosition = player.getBoardPosition();
         Space newSpace = sManager.getSpace(newPosition);
         this.handleLandingOn(newSpace, player);
-        
+
         uiManager.updateUI(roll, player);
     }
 
