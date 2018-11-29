@@ -1,6 +1,5 @@
 package matador.spaces;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import matador.JSONKeys;

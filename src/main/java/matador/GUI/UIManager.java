@@ -108,7 +108,6 @@ public class UIManager {
                 if (winnerList.size() == 1) {
                     playerDidLose(winnerList.get(0));
                 } else {
-                    int[] PropertyValue = new int[listSize];
                     for (Player winner : winnerList) {
                         // Sell all players property
                         for (PropertySpace pSpace: winner.getProperty()) {
