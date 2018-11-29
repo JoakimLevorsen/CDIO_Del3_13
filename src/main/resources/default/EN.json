@@ -4,6 +4,8 @@
     "invalidPlayerNum": "You have entered an invalid number of players. Number of players is limited to between 2 and 4 (both incl.).",
     "yourNameHere": "Enter a player's name.",
     "rollDice": "Roll the dice, ",
+    "spaceOwned": "Another player owns this space. You pay them rent.",
+    "spaceUnowned": "This space is unowned! You buy it and add it to your empire!",
     "winMessage": "Amazing! The winner of this epic adventure is ",
     "playAgainMessage": "Do you want to play again?",
     "quit": "Quit",
@@ -51,7 +53,7 @@
             "textColor": "black"
         },
         {
-            "name": "Kiosk",
+            "name": "Ice Cream Parlour",
             "type": 2,
             "message": "Good ol'fashioned ice cream.",
             "value": 1,
@@ -104,7 +106,7 @@
             "textColor": "black"
         },
         {
-            "name": "Pool",
+            "name": "Swimming Pool",
             "type": 2,
             "message": "Have a refreshing swim!",
             "value": 2,
@@ -285,7 +287,7 @@
             "property": 14
         },
         {
-            "title": "Move to the Kiosk and eat the largest ice cream they have! If the space is unowned, you can buy it! Otherwise, you must pay the owner.",
+            "title": "Move to the Ice Cream Parlour and eat the largest ice cream they have! If the space is unowned, you can buy it! Otherwise, you must pay the owner.",
             "type": 2,
             "property": 5
         },

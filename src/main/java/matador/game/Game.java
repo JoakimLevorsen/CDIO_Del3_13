@@ -1,5 +1,8 @@
 package matador.game;
 
+import org.json.*;
+
+import matador.JSONKeys;
 import matador.GUI.*;
 import matador.cards.*;
 import matador.spaces.*;
@@ -11,6 +14,7 @@ public class Game {
     public final CardManager cardManager;
     public final UIManager uiManager;
     private int turnCounter;
+    private JSONObject jsonData;
 
     public Game(int withPlayers, int diceMax, UIManager uiManager, String[] playerNames) {
         players = new Player[withPlayers];
@@ -62,10 +66,12 @@ public class Game {
     public void handleLandingOn(Space newSpace, Player player) {
         if (newSpace instanceof PropertySpace) {
             if (((PropertySpace) newSpace).getOwner().isPresent()) {
+                uiManager.getGUI().showMessage(uiManager.getJSONData().getString(JSONKeys.SPACE_OWNED));
                 Player owner = ((PropertySpace) newSpace).getOwner().get();
                 player.balance.deduct(((PropertySpace) newSpace).value);
                 owner.balance.increase(((PropertySpace) newSpace).value);
             } else {
+                uiManager.getGUI().showMessage(uiManager.getJSONData().getString(JSONKeys.SPACE_UNOWNED));
                 ((PropertySpace) newSpace).buy(player);
             }
         } else if (newSpace instanceof GoToJailSpace) {

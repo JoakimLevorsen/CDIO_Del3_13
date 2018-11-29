@@ -133,8 +133,7 @@ public class UIManager {
             if (space instanceof PropertySpace) {
                 PropertySpace pSpace = (PropertySpace) space;
                 if (pSpace.getOwner().isPresent()) {
-                    field.setTitle(
-                            pSpace.name + jsonData.getString(JSONKeys.OWNED_BY) + pSpace.getOwner().get().getName());
+                    field.setDescription(pSpace.message + jsonData.getString(JSONKeys.OWNED_BY) + pSpace.getOwner().get().getName());
                 }
             }
         }
@@ -216,5 +215,9 @@ public class UIManager {
 
     public int getStartBalance() {
         return startBalance;
+    }
+
+    public JSONObject getJSONData() {
+        return jsonData;
     }
 }
