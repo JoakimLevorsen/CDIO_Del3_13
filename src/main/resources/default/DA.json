@@ -26,7 +26,7 @@
             "value": 1,
             "valueString": "M̶1",
             "color": "darkGray",
-            "textColor": "black"
+            "textColor": "white"
 
         },
         {
@@ -36,7 +36,7 @@
             "value": 1,
             "valueString": "M̶1",
             "color": "darkGray",
-            "textColor": "black"
+            "textColor": "white"
         },
         {
             "name": "Chance",
@@ -207,7 +207,7 @@
             "value": 5,
             "valueString": "M̶5",
             "color": "blue",
-            "textColor": "black"
+            "textColor": "white"
         },
         {
             "name": "Promenade",
@@ -216,7 +216,7 @@
             "value": 5,
             "valueString": "M̶5",
             "color": "blue",
-            "textColor": "black"
+            "textColor": "white"
         }
     ],
     "cards": [{
