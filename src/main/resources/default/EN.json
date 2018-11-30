@@ -2,7 +2,7 @@
     "gameTitle": "Monopoly Junior",
     "choosePlayerNum": "Please enter number of players between 2 and 4 (both incl.).",
     "invalidPlayerNum": "You have entered an invalid number of players. Number of players is limited to between 2 and 4 (both incl.).",
-    "yourNameHere": "Enter a player's name.",
+    "yourNameHere": "Enter the name for player ",
     "rollDice": "Roll the dice, ",
     "spaceOwned": "Another player owns this space. You pay them rent.",
     "spaceUnowned": "This space is unowned! You buy it and add it to your empire!",
@@ -14,7 +14,7 @@
     "ownedBy": "\nOwned by ",
     "spaces": [{
             "name": "Start",
-            "type": 1,
+            "type": 0,
             "message": "Receive M̶2 when you pass start",
             "color": "white",
             "textColor": "red"

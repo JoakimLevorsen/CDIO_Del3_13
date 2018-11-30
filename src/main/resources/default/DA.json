@@ -2,7 +2,7 @@
     "gameTitle": "Monopoly Junior",
     "choosePlayerNum": "Angiv antallet af spillere mellem 2 og 4 (begge inkl.).",
     "invalidPlayerNum": "Du har indtastet et ugyldigt antal spillere. Antallet af spillere er begrænset til mellem 2 og 4 (begge inkl.).",
-    "yourNameHere": "Angiv en spillers navn.",
+    "yourNameHere": "Angiv navnet for spiller ",
     "rollDice": "Kast terningerne, ",
     "spaceOwned": "En anden spiller ejer dette felt. Du betaler derfor leje til dem.",
     "spaceUnowned": "Dette felt er ledigt! Du køber det og tilføjer det til dit imperium!",
@@ -14,7 +14,7 @@
     "ownedBy": "\nEjet af ",
     "spaces": [{
             "name": "Start",
-            "type": 1,
+            "type": 0,
             "message": "Modtag M̶2 når du passerer start",
             "color": "white",
             "textColor": "red"

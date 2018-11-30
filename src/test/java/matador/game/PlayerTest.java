@@ -2,7 +2,6 @@ package matador.game;
 
 import matador.GUI.UIManager;
 import matador.game.Game;
-import matador.game.Player;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

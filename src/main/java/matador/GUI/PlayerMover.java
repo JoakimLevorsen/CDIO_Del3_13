@@ -5,7 +5,8 @@ import gui_main.GUI;
 
 public class PlayerMover {
     public static void move(GUI_Player currentPlayer, GUI wGui, int fromPosition, int newPosition) {
-        for (int i = fromPosition; i < (newPosition); i++) {
+        int destination = newPosition < fromPosition ? newPosition + 24 : newPosition;
+        for (int i = fromPosition; i < destination; i++) {
             int j = i;
             if (j > 23) {
                 j = i - 24; // If at position 24 (out of bounds) go 24 back

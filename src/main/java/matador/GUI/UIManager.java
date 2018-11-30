@@ -71,7 +71,7 @@ public class UIManager {
         // Make game and keep playing it until won
         String[] playerNames = new String[numberOfPlayers];
         for (int i = 0; i < numberOfPlayers; i++) {
-            playerNames[i] = gooey.getUserString(jsonData.getString(JSONKeys.YOUR_NAME_HERE));
+            playerNames[i] = gooey.getUserString(jsonData.getString(JSONKeys.YOUR_NAME_HERE) + (i + 1));
         }
 
         gooey.close();
