@@ -118,8 +118,12 @@ public class UIManager {
                     if (propertyWinners.size() == 1) {
                         playerDidLose(propertyWinners.get(0));
                     } else {
-                        // TODO: Klar hvis flere spillere har samme antal ejendom.
-                        throw new JSONException("MORE THAN ONE PLAYER ONE, WAAAAAAT");
+                        // Hvis flere spillere har samme balance efter salg af ejendomme, vindere de spillere med den højeste balance
+                        String winners = "\n";
+                        for (int index = 0; index < propertyWinners.size(); index++) {
+                            winners = winners + propertyWinners.get(index).getName() + "\n";
+                        }
+                        gooey.showMessage(jsonData.getString(JSONKeys.SEVERAL_WINNERS) + winners);
                     }
                 }
                 return;
