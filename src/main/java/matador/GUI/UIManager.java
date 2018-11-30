@@ -10,7 +10,6 @@ import gui_main.GUI;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.io.*;
-import java.lang.reflect.Array;
 
 import org.json.*;
 import org.apache.commons.io.IOUtils;
