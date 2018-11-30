@@ -15,13 +15,10 @@ public class GoToJailCard extends ChanceCard {
     public void process(Game in, Player with) {
         try {
             with.setBoardPosition(in.sManager.getJailSpaceIndex());
+            JailSpace jail = in.sManager.getJailSpace();
+            jail.jailPlayer(with);
         } catch (Exception e) {
             throw new JSONException("Read from JSON failed, check formatting.");
-        }
-        Space currentSpace = in.sManager.getSpace(with.getBoardPosition());
-        if (currentSpace instanceof JailSpace) {
-            JailSpace j = (JailSpace) currentSpace;
-            j.jailPlayer(with);
         }
     }
 }

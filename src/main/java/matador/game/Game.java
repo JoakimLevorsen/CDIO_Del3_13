@@ -32,32 +32,29 @@ public class Game {
         Player player = players[turnCounter];
         // Check if current space is jail and if player is in jail
         Space currentSpace = sManager.getSpace(player.getBoardPosition());
-        if (currentSpace instanceof JailSpace) {
+        if (currentSpace instanceof JailSpace && ((JailSpace) currentSpace).isInJail(player)) {
             JailSpace j = (JailSpace) currentSpace;
-            if (j.isInJail(player)) {
-                if (player.getMyJailCard().isPresent()) {
-                    try {
-                        j.releasePlayer(player);
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    cardManager.discardCard(player.getMyJailCard().get());
-                    return;
+            if (player.getMyJailCard().isPresent()) {
+                try {
+                    j.releasePlayer(player);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
                 }
+                cardManager.discardCard(player.getMyJailCard().get());
+            } else {
                 player.balance.deduct(j.bail);
                 try {
                     j.releasePlayer(player);
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
-                return;
             }
+        } else {
+            int roll = dice.rollDice();
+            player.moveForwardAlsoInUI(roll);
+
+            uiManager.updateUI(roll, player);
         }
-
-        int roll = dice.rollDice();
-        player.moveForwardAlsoInUI(roll);
-
-        uiManager.updateUI(roll, player);
     }
 
     public void handleLandingOn(Space newSpace, Player player) {
@@ -77,6 +74,7 @@ public class Game {
                 sManager.getJailSpace().jailPlayer(player);
             } catch (SpaceNotFoundException e) {
                 System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
             }
         } else if (newSpace instanceof ChanceSpace) {
             ChanceCard card = cardManager.draw();
