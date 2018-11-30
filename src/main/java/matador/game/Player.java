@@ -22,6 +22,7 @@ public class Player {
         this.balance = new Account(cash);
         this.game = game;
         this.property = new ArrayList<PropertySpace>();
+        this.myJailCard = Optional.empty();
     }
 
     public void buyProperty(PropertySpace item) {
