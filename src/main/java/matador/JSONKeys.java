@@ -9,6 +9,7 @@ public class JSONKeys {
     public static final String SPACE_OWNED = "spaceOwned";
     public static final String SPACE_UNOWNED = "spaceUnowned";
     public static final String WIN_MESSAGE = "winMessage";
+    public static final String SEVERAL_WINNERS = "severalWinners";
     public static final String PLAY_AGAIN_MESSAGE = "playAgainMessage";
     public static final String PLAY_AGAIN_BUTTON = "playAgainButton";
     public static final String QUIT = "quit";

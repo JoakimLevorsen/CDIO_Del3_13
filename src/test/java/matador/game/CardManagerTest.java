@@ -31,12 +31,12 @@ public class CardManagerTest {
     }
 
     @Test
-    public void pickCardTest() {
+    public void drawTest() {
         CardManager testCards = new CardManager(jsonDA);
         int totalCards = testCards.drawPile.size();
 
         for (int i = 0; i < totalCards; i++) {
-            testCards.pickCard();
+            testCards.draw();
         }
         // discardPile should be all cards - 1 after all cards are picked up,
         // GetOutOfJail kept by player
@@ -54,7 +54,7 @@ public class CardManagerTest {
         int totalCards = testCards.drawPile.size();
 
         for (int i = 0; i < (totalCards + 1); i++) {
-            testCards.pickCard();
+            testCards.draw();
 
         }
         // Should be all cards - 2, GetOutOfJail kept by player, one card moved to

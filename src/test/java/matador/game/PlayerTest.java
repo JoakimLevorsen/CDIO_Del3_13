@@ -1,7 +1,7 @@
 package matador.game;
 
 import matador.GUI.UIManager;
-import matador.Game.Game;
+import matador.game.Game;
 import matador.game.Player;
 import org.junit.Test;
 
