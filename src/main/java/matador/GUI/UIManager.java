@@ -105,7 +105,8 @@ public class UIManager {
                         : (a.balance.getBalance() == b.balance.getBalance() ? 0 : 1);
                 ArrayList<Player> winnerList = ArrayFunctions.getBiggest(game.players, getRichestPlayer);
                 if (winnerList.size() == 1) {
-                    playerDidLose(winnerList.get(0));
+                    gooey.displayChanceCard(jsonData.getString(JSONKeys.WIN_MESSAGE) + winnerList.get(0).getName());
+                    endGame();
                 } else {
                     for (Player winner : winnerList) {
                         // Sell all players property
@@ -116,7 +117,8 @@ public class UIManager {
                     ArrayList<Player> propertyWinners = ArrayFunctions.getBiggest(winnerList, getRichestPlayer);
                     // Tjek på property winners om en eller flere har vundet
                     if (propertyWinners.size() == 1) {
-                        playerDidLose(propertyWinners.get(0));
+                        gooey.displayChanceCard(jsonData.getString(JSONKeys.WIN_MESSAGE) + propertyWinners.get(0).getName());
+                        endGame();
                     } else {
                         // Hvis flere spillere har samme balance efter salg af ejendomme, vindere de spillere med den højeste balance
                         String winners = "\n";
@@ -124,9 +126,9 @@ public class UIManager {
                             winners = winners + propertyWinners.get(index).getName() + "\n";
                         }
                         gooey.showMessage(jsonData.getString(JSONKeys.SEVERAL_WINNERS) + winners);
+                        endGame();
                     }
                 }
-                return;
             }
         }
 
@@ -147,10 +149,6 @@ public class UIManager {
             guiPlayers[i].setBalance(game.players[i].balance.getBalance());
         }
 
-        // Flyt brik
-        PlayerMover.move(guiPlayers[game.getTurnCounter()], gooey, currentPlayer.getPreviousPosition(),
-                currentPlayer.getBoardPosition());
-
         game.incrementTurnCounter();
         gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE) + game.players[game.getTurnCounter()].getName());
         game.executeTurn();
@@ -164,8 +162,7 @@ public class UIManager {
         return gooey;
     }
 
-    public void playerDidLose(Player player) {
-        gooey.displayChanceCard(jsonData.getString(JSONKeys.WIN_MESSAGE));
+    public void endGame() {
         boolean quit = gooey.getUserLeftButtonPressed(jsonData.getString(JSONKeys.PLAY_AGAIN_MESSAGE),
                 jsonData.getString(JSONKeys.QUIT), jsonData.getString(JSONKeys.PLAY_AGAIN_BUTTON));
         if (quit) {

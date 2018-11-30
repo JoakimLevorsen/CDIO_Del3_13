@@ -55,7 +55,7 @@ public class Game {
         }
 
         int roll = dice.rollDice();
-        player.moveForward(roll);
+        player.moveForwardAlsoInUI(roll);
         int newPosition = player.getBoardPosition();
         Space newSpace = sManager.getSpace(newPosition);
         this.handleLandingOn(newSpace, player);
