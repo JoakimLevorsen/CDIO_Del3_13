@@ -9,26 +9,26 @@ public class AccountTest {
     @Test
     public void increase() {
         //Positiv test
-        matador.game.Account konto = new matador.game.Account(1000);
-        konto.increase(3000);
-        assertEquals(4000, konto.getBalance());
+        matador.game.Account konto = new matador.game.Account(10);
+        konto.increase(2);
+        assertEquals(12, konto.getBalance());
 
         //Negativ test
-        matador.game.Account konto2 = new matador.game.Account(1000);
-        konto2.increase(-3000);
-        assertNotEquals(-2000, konto2.getBalance());
+        matador.game.Account konto2 = new matador.game.Account(10);
+        konto2.increase(-2);
+        assertNotEquals(8, konto2.getBalance());
     }
 
     @Test
     public void deduct() {
         //Positiv test
-        matador.game.Account konto = new matador.game.Account(1000);
-        konto.deduct(3000);
-        assertEquals(0,konto.getBalance());
+        matador.game.Account konto = new matador.game.Account(10);
+        konto.deduct(2);
+        assertEquals(8,konto.getBalance());
 
         //Negativ test
-        matador.game.Account konto2 = new matador.game.Account(1000);
-        konto2.deduct(-3000);
-        assertNotEquals(4000, konto2.getBalance());
+        matador.game.Account konto2 = new matador.game.Account(10);
+        konto2.deduct(-2);
+        assertNotEquals(12, konto2.getBalance());
     }
 }
