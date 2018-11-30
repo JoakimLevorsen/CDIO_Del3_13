@@ -4,7 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import matador.*;
 
-public class Space {
+abstract public class Space {
     public String name;
 
     public Space(JSONObject data) throws JSONException {
