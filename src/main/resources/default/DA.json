@@ -1,0 +1,322 @@
+{
+    "gameTitle": "Monopoly Junior",
+    "choosePlayerNum": "Angiv antallet af spillere mellem 2 og 4 (begge inkl.).",
+    "invalidPlayerNum": "Du har indtastet et ugyldigt antal spillere. Antallet af spillere er begrænset til mellem 2 og 4 (begge inkl.).",
+    "yourNameHere": "Angiv navnet for spiller ",
+    "rollDice": "Kast terningerne, ",
+    "spaceOwned": "En anden spiller ejer dette felt. Du betaler derfor leje til dem.",
+    "spaceUnowned": "Dette felt er ledigt! Du køber det og tilføjer det til dit imperium!",
+    "goToJail": "Du blev taget i at snyde og sendes i fængsel. Du modtager ikke M̶2 når du passerer Start.",
+    "winMessage": "Fantastisk! Vinderen er ",
+    "severalWinners": "Efter at have solgt alle spilleres ejendomme, står det lige! Vinderene er:",
+    "playAgainMessage": "Vil du spille igen?",
+    "quit": "Afslut",
+    "playAgainButton": "Spil igen!",
+    "ownedBy": "\nEjet af ",
+    "spaces": [{
+            "name": "Start",
+            "type": 0,
+            "message": "Modtag M̶2 når du passerer Start",
+            "color": "white",
+            "textColor": "red"
+        },
+        {
+            "name": "Burgerbar",
+            "type": 2,
+            "message": "En god burger til en god pris.",
+            "value": 1,
+            "valueString": "M̶1",
+            "color": "darkGray",
+            "textColor": "white"
+
+        },
+        {
+            "name": "Pizzeria",
+            "type": 2,
+            "message": "Ægte italiensk pizza for næsten ingen penge.",
+            "value": 1,
+            "valueString": "M̶1",
+            "color": "darkGray",
+            "textColor": "white"
+        },
+        {
+            "name": "Chance",
+            "type": 5,
+            "message": "Tag et chancekort.",
+            "color": "lightGray",
+            "textColor": "black"
+        },
+        {
+            "name": "Slikbutik",
+            "type": 2,
+            "message": "Billigere slik fås ikke i byen.",
+            "value": 1,
+            "valueString": "M̶1",
+            "color": "cyan",
+            "textColor": "black"
+        },
+        {
+            "name": "Iskiosk",
+            "type": 2,
+            "message": "Gammeldaws is med det hele.",
+            "value": 1,
+            "valueString": "M̶1",
+            "color": "cyan",
+            "textColor": "black"
+        },
+        {
+            "name": "Fængsel",
+            "type": 3,
+            "message": "På besøg",
+            "value": 1,
+            "valueString": "M̶1",
+            "color": "white",
+            "textColor": "black",
+            "image": "default"
+        },
+        {
+            "name": "Museum",
+            "type": 2,
+            "message": "Hold børnefødselsdag i museet og få kloge børn!",
+            "value": 2,
+            "valueString": "M̶2",
+            "color": "magenta",
+            "textColor": "black"
+        },
+        {
+            "name": "Bibliotek",
+            "type": 2,
+            "message": "Betal dine gebyrer, når du alligevel er forbi!",
+            "value": 2,
+            "valueString": "M̶2",
+            "color": "magenta",
+            "textColor": "black"
+        },
+        {
+            "name": "Chance",
+            "type": 5,
+            "message": "Tag et chancekort.",
+            "color": "lightGray",
+            "textColor": "black"
+        },
+        {
+            "name": "Skaterpark",
+            "type": 2,
+            "message": "Skaterparken er gratis, men sodavandet koster.",
+            "value": 2,
+            "valueString": "M̶2",
+            "color": "orange",
+            "textColor": "black"
+        },
+        {
+            "name": "Swimming Pool",
+            "type": 2,
+            "message": "Tag dig en svømmer for ̶M̶2",
+            "value": 2,
+            "valueString": "M̶2",
+            "color": "orange",
+            "textColor": "black"
+        },
+        {
+            "name": "Gratis Parkering",
+            "type": 1,
+            "message": "Tag dig en Red Bull og læs om Swing på Stack Overflow!",
+            "color": "white",
+            "textColor": "black",
+            "image": "default"
+        },
+        {
+            "name": "Spillehal",
+            "type": 2,
+            "message": "Her kan man spille de sidste nye spil, f.eks. DTU-matador!",
+            "value": 3,
+            "valueString": "M̶3",
+            "color": "red",
+            "textColor": "black"
+        },
+        {
+            "name": "Biograf",
+            "type": 2,
+            "message": "Biografen har 43 sale. Der er penge i de popcorn!",
+            "value": 3,
+            "valueString": "M̶3",
+            "color": "red",
+            "textColor": "black"
+        },
+        {
+            "name": "Chance",
+            "type": 5,
+            "message": "Tag et chancekort.",
+            "color": "lightGray",
+            "textColor": "black"
+        },
+        {
+            "name": "Legetøjsbutik",
+            "type": 2,
+            "message": "Flot legetøjsbutik med masser af aktiviteter for de mindste.",
+            "value": 3,
+            "valueString": "M̶3",
+            "color": "yellow",
+            "textColor": "black"
+        },
+        {
+            "name": "Dyrehandel",
+            "type": 2,
+            "message": "Kæledyr i alle prisklasser.",
+            "value": 3,
+            "valueString": "M̶3",
+            "color": "yellow",
+            "textColor": "black"
+        },
+        {
+            "name": "Gå i fængsel",
+            "type": 4,
+            "message": "Du rykker til fængslet. Det er alvor denne gang.",
+            "color": "white",
+            "textColor": "black",
+            "image": "default"
+        },
+        {
+            "name": "Bowlinghal",
+            "type": 2,
+            "message": "Bowling går aldri helt af mode.",
+            "value": 4,
+            "valueString": "M̶4",
+            "color": "green",
+            "textColor": "black"
+        },
+        {
+            "name": "Zoologisk Have",
+            "type": 2,
+            "message": "Zoologisk Have er en af de helt store turistattraktioner i byen.",
+            "value": 4,
+            "valueString": "M̶4",
+            "color": "green",
+            "textColor": "black"
+        },
+        {
+            "name": "Chance",
+            "type": 5,
+            "message": "Tag et chancekort.",
+            "color": "lightGray",
+            "textColor": "black"
+        },
+        {
+            "name": "Vandland",
+            "type": 2,
+            "message": "Der er ikke sparet på noget i det nye vandland midt i København!",
+            "value": 5,
+            "valueString": "M̶5",
+            "color": "blue",
+            "textColor": "white"
+        },
+        {
+            "name": "Promenade",
+            "type": 2,
+            "message": "Byens fineste gade. Frisk luft, hav og økologisk kaffe.",
+            "value": 5,
+            "valueString": "M̶5",
+            "color": "blue",
+            "textColor": "white"
+        }
+    ],
+    "cards": [{
+            "title": "Ryk frem til Start og modtag M̶2.",
+            "type": 2,
+            "property": 0
+        },
+        {
+            "title": "Ryk 5 felter frem.",
+            "type": 1,
+            "spacesMoved": 5
+        },
+        {
+            "title": "Ryk frem til Vandlandet og tag en dukkert. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 22
+        },
+        {
+            "title": "Du har spist for meget slik. Betal M̶2 til banken.",
+            "type": 3,
+            "amount": -2
+        },
+        {
+            "title": "Det er din fødselsdag! Alle andre spillere giver dig M̶1. Tillykke!",
+            "type": 4,
+            "amount": 1
+        },
+        {
+            "title": "Du løslades fra fængslet uden omkostninger! Behold dette kort indtil du får brug for det.",
+            "type": 5
+        },
+        {
+            "title": "Ryk frem til Burgerbaren og stil din sult. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 1
+        },
+        {
+            "title": "Ryk frem til Biblioteket og find din yndlingsbog. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 8
+        },
+        {
+            "title": "Ryk frem til Legetøjsbutikken og vælg den bamse du helst vil have. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 16
+        },
+        {
+            "title": "Ryk frem til Zoologisk Have og kig på alle dyrene. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 20
+        },
+        {
+            "title": "Ryk 2 felter frem.",
+            "type": 1,
+            "spacesMoved": 2
+        },
+        {
+            "title": "Din hund er blevet fundet efter den var løbet væk. Betal M̶1 til banken som løsesum.",
+            "type": 3,
+            "amount": -1
+        },
+        {
+            "title": "Du får ekstra lommepenge! Banken betaler dig M̶1.",
+            "type": 3,
+            "amount": 1
+        },
+        {
+            "title": "Ryk frem til Biografen og se en god film. Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 14
+        },
+        {
+            "title": "Ryk frem til Iskiosken og spis den største is de har! Hvis feltet er ledigt, kan du købe det! Ellers skal du betale til ejeren.",
+            "type": 2,
+            "property": 5
+        },
+        {
+            "title": "Du har købt slik til alle i Slikbutikken. Alle andre spillere betaler M̶1 tilbage til dig.",
+            "type": 4,
+            "amount": 1
+        },
+        {
+            "title": "Du har købt en ny legetøjsbil. Betal banken M̶3.",
+            "type": 3,
+            "amount": -3
+        },
+        {
+            "title": "Du har mistet din madpakke. Betal banken M̶2 for en ny.",
+            "type": 3,
+            "amount": -2
+        },
+        {
+            "title": "Du snød i Bingo! Du smides i fængsel og modtager ikke M̶2 når du passerer Start. For at komme ud skal du betale M̶1 eller bruge dit \"Løslades fra fængsel gratis\"-kort næste tur!",
+            "type": 6
+        },
+        {
+            "title": "Ryk 1 felt frem.",
+            "type": 1,
+            "spacesMoved": 1
+        }
+    ]
+}
