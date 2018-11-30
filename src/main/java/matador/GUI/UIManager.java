@@ -97,7 +97,7 @@ public class UIManager {
         return kirk;
     }
 
-    public void updateUI(int dice, Player currentPlayer) {
+    public void updateUI(Player currentPlayer) {
 
         for (int i = 0; i < game.players.length; i++) {
             if (game.players[i].balance.getBalance() < 0) {

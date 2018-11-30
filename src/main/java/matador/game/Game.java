@@ -52,9 +52,8 @@ public class Game {
         } else {
             int roll = dice.rollDice();
             player.moveForwardAlsoInUI(roll);
-
-            uiManager.updateUI(roll, player);
         }
+        uiManager.updateUI(player);
     }
 
     public void handleLandingOn(Space newSpace, Player player) {
