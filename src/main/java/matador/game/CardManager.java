@@ -45,7 +45,9 @@ public class CardManager {
     public ChanceCard draw() {
         // turn pile if needed
         if (drawPile.isEmpty()) {
-            turnPile();
+            drawPile.addAll(discardPile);
+            discardPile.clear();
+            shuffleCards();
         }
         // Pick up a card
         ChanceCard cardDrawn = drawPile.get(0);
@@ -64,11 +66,5 @@ public class CardManager {
 
     public void discardCard(ChanceCard card) {
         discardPile.add(card);
-    }
-
-    public void turnPile() {
-        drawPile.addAll(discardPile);
-        discardPile.clear();
-        shuffleCards();
     }
 }
