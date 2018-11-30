@@ -1,8 +1,6 @@
 package matador.game;
 
-import org.json.*;
 import java.util.Optional;
-
 import matador.JSONKeys;
 import matador.GUI.*;
 import matador.cards.*;
