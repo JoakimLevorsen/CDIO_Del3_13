@@ -55,6 +55,7 @@ public class Game {
         }
 
         int roll = dice.rollDice();
+        uiManager.showDie(roll);
         player.moveForwardAlsoInUI(roll);
 
         uiManager.updateUI(roll, player);

@@ -79,7 +79,6 @@ public class UIManager {
 
         game = new Game(numberOfPlayers, diceMax, this, playerNames);
         this.guiPlayers = PlayerAdder.add(numberOfPlayers, gooey, startBalance, playerNames);
-
         gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE) + game.players[game.getTurnCounter()].getName());
         game.executeTurn();
     }
@@ -97,8 +96,7 @@ public class UIManager {
         return kirk;
     }
 
-    public void updateUI(int dice, Player currentPlayer) {
-
+    public void updateUI(Player currentPlayer) {
         for (int i = 0; i < game.players.length; i++) {
             if (game.players[i].balance.getBalance() < 0) {
                 Comparator<Player> getRichestPlayer = (a, b) -> a.balance.getBalance() < b.balance.getBalance() ? -1
@@ -220,5 +218,9 @@ public class UIManager {
 
     public JSONObject getJSONData() {
         return jsonData;
+    }
+
+    public void showDie (int dice) {
+        gooey.setDie(dice);
     }
 }
