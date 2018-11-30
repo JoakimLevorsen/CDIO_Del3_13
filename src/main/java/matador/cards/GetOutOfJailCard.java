@@ -21,5 +21,6 @@ public class GetOutOfJailCard extends ChanceCard {
     }
 
     public void process(Game in, Player with) {
+        setOwner(with);
     }
 }
