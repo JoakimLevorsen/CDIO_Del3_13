@@ -142,7 +142,8 @@ public class UIManager {
             if (space instanceof PropertySpace) {
                 PropertySpace pSpace = (PropertySpace) space;
                 if (pSpace.getOwner().isPresent()) {
-                    field.setDescription(pSpace.message + jsonData.getString(JSONKeys.OWNED_BY) + pSpace.getOwner().get().getName());
+                    Player owner = pSpace.getOwner().get();
+                    setOwned(i, owner);
                 }
             }
         }
@@ -177,21 +178,21 @@ public class UIManager {
         }
     }
 
-    public void setOwned(int ownedSpace, Player player) {
+    public void setOwned(int propertyIndex, Player player) {
         // Puts a house on it, updates "label" with playername, and sets a border in the
         // guiPlayers color.
         try {
-            ((GUI_Street) board[ownedSpace]).setHouses(1);
-            ((GUI_Ownable) board[ownedSpace]).setOwnableLabel(jsonData.getString(JSONKeys.OWNED_BY));
-            ((GUI_Ownable) board[ownedSpace]).setOwnerName(player.getName());
-            ((GUI_Ownable) board[ownedSpace]).setBorder(PlayerAdder.getColors(game.getTurnCounter()));
+            ((GUI_Street) board[propertyIndex]).setHouses(1);
+            ((GUI_Ownable) board[propertyIndex]).setOwnableLabel(jsonData.getString(JSONKeys.OWNED_BY));
+            ((GUI_Ownable) board[propertyIndex]).setOwnerName(player.getName());
+            ((GUI_Ownable) board[propertyIndex]).setBorder(PlayerAdder.getColors(ArrayFunctions.getIndex(player, game.players)));
         } catch (ClassCastException ownableException) {
             System.out.println("Problem with casting space subclasses.");
         }
     }
 
     public String readFile(String fileName) {
-        // Helper method for reading json files
+        // Helper method for reading JSON files
         String result = "";
 
         ClassLoader classLoader = getClass().getClassLoader();
