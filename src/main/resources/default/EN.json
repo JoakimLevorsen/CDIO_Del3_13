@@ -6,6 +6,7 @@
     "rollDice": "Roll the dice, ",
     "spaceOwned": "Another player owns this space. You pay them rent.",
     "spaceUnowned": "This space is unowned! You buy it and add it to your empire!",
+    "goToJail": "You were caught cheating and you are sent to jail. You will not receive M̶2 when you pass Start.",
     "winMessage": "Amazing! The winner is ",
     "severalWinners": "After selling all players property, we have a tie! The winners are:",
     "playAgainMessage": "Do you want to play again?",
@@ -15,7 +16,7 @@
     "spaces": [{
             "name": "Start",
             "type": 0,
-            "message": "Receive M̶2 when you pass start",
+            "message": "Receive M̶2 when you pass Start",
             "color": "white",
             "textColor": "red"
         },
@@ -308,7 +309,7 @@
             "amount": -2
         },
         {
-            "title": "You cheated in Bingo! Move to jail! To be released, you must pay M̶1 or use your \"Get out of jail free\" card next turn.",
+            "title": "You cheated in Bingo! You are sent to jail and will not receive M̶2 when you pass Start! To be released, you must pay M̶1 or use your \"Get out of jail free\" card next turn.",
             "type": 6
         },
         {

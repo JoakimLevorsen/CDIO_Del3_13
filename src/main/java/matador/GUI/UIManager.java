@@ -95,8 +95,13 @@ public class UIManager {
     public SpaceManager getSpaceManager() {
         return kirk;
     }
-
+    
     public void updateUI(Player currentPlayer) {
+        // Update all users bankaccount
+        for (int i = 0; i < game.players.length; i++) {
+            guiPlayers[i].setBalance(game.players[i].balance.getBalance());
+        }
+
         for (int i = 0; i < game.players.length; i++) {
             if (game.players[i].balance.getBalance() < 0) {
                 Comparator<Player> getRichestPlayer = (a, b) -> a.balance.getBalance() < b.balance.getBalance() ? -1
@@ -142,18 +147,17 @@ public class UIManager {
             }
         }
 
-        // Update all users bankaccount
-        for (int i = 0; i < game.players.length; i++) {
-            guiPlayers[i].setBalance(game.players[i].balance.getBalance());
-        }
-
         game.incrementTurnCounter();
         gooey.showMessage(jsonData.getString(JSONKeys.ROLL_DICE) + game.players[game.getTurnCounter()].getName());
         game.executeTurn();
     }
 
-    public void displayMessage(ChanceCard card) {
+    public void showChanceCard(ChanceCard card) {
         gooey.displayChanceCard(card.title);
+    }
+
+    public void displayMessage(String message) {
+        gooey.showMessage(message);
     }
 
     public GUI getGUI() {

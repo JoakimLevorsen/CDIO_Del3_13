@@ -61,15 +61,16 @@ public class Game {
         if (newSpace instanceof PropertySpace) {
             Optional<Player> optOwner = ((PropertySpace) newSpace).getOwner();
             if (optOwner.isPresent() && optOwner.get() != player) {
-                uiManager.getGUI().showMessage(uiManager.getJSONData().getString(JSONKeys.SPACE_OWNED));
+                uiManager.displayMessage(uiManager.getJSONData().getString(JSONKeys.SPACE_OWNED));
                 player.balance.deduct(((PropertySpace) newSpace).value);
                 optOwner.get().balance.increase(((PropertySpace) newSpace).value);
             } else {
-                uiManager.getGUI().showMessage(uiManager.getJSONData().getString(JSONKeys.SPACE_UNOWNED));
+                uiManager.displayMessage(uiManager.getJSONData().getString(JSONKeys.SPACE_UNOWNED));
                 ((PropertySpace) newSpace).buy(player);
             }
         } else if (newSpace instanceof GoToJailSpace) {
             try {
+                uiManager.displayMessage(uiManager.getJSONData().getString(JSONKeys.GO_TO_JAIL));
                 player.setBoardPosition(sManager.getJailSpaceIndex());
                 sManager.getJailSpace().jailPlayer(player);
             } catch (SpaceNotFoundException e) {
@@ -78,7 +79,7 @@ public class Game {
             }
         } else if (newSpace instanceof ChanceSpace) {
             ChanceCard card = cardManager.draw();
-            uiManager.displayMessage(card);
+            uiManager.showChanceCard(card);
             card.process(this, player);
         }
     }

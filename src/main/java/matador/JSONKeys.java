@@ -8,6 +8,7 @@ public class JSONKeys {
     public static final String ROLL_DICE = "rollDice";
     public static final String SPACE_OWNED = "spaceOwned";
     public static final String SPACE_UNOWNED = "spaceUnowned";
+    public static final String GO_TO_JAIL = "goToJail";
     public static final String WIN_MESSAGE = "winMessage";
     public static final String SEVERAL_WINNERS = "severalWinners";
     public static final String PLAY_AGAIN_MESSAGE = "playAgainMessage";

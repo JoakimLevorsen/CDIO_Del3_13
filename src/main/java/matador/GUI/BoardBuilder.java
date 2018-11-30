@@ -59,7 +59,7 @@ class BoardBuilder {
 
                 switch (spaceType) {
                 case 0:
-                    board[i] = new GUI_Start(rent, description, title, BG_COLOR, FG_COLOR);
+                    board[i] = new GUI_Start(rent, title, description, BG_COLOR, FG_COLOR);
                     break;
                 case 1:
                     board[i] = new GUI_Refuge(image, description, title, rent, BG_COLOR, FG_COLOR);

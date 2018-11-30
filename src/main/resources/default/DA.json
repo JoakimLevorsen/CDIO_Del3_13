@@ -6,6 +6,7 @@
     "rollDice": "Kast terningerne, ",
     "spaceOwned": "En anden spiller ejer dette felt. Du betaler derfor leje til dem.",
     "spaceUnowned": "Dette felt er ledigt! Du køber det og tilføjer det til dit imperium!",
+    "goToJail": "Du blev taget i at snyde og sendes i fængsel. Du modtager ikke M̶2 når du passerer Start.",
     "winMessage": "Fantastisk! Vinderen er ",
     "severalWinners": "Efter at have solgt alle spilleres ejendomme, står det lige! Vinderene er:",
     "playAgainMessage": "Vil du spille igen?",
@@ -15,7 +16,7 @@
     "spaces": [{
             "name": "Start",
             "type": 0,
-            "message": "Modtag M̶2 når du passerer start",
+            "message": "Modtag M̶2 når du passerer Start",
             "color": "white",
             "textColor": "red"
         },
@@ -309,7 +310,7 @@
             "amount": -2
         },
         {
-            "title": "Du snød i Bingo! Ryk til fængslet. For at komme ud skal du betale M̶1 eller bruge dit \"Løslades fra fængsel gratis\"-kort næste tur!",
+            "title": "Du snød i Bingo! Du smides i fængsel og modtager ikke M̶2 når du passerer Start. For at komme ud skal du betale M̶1 eller bruge dit \"Løslades fra fængsel gratis\"-kort næste tur!",
             "type": 6
         },
         {
