@@ -47,4 +47,11 @@ public class ArrayFunctions {
         }
         return biggestItems;
     }
+
+    public static <T> int getIndex(T of, T[] in) {
+        for (int i = 0; i < in.length; i++) {
+            if (in[i] == of) return i;
+        }
+        return -1;
+    }
 }
