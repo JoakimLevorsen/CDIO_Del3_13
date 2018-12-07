@@ -63,6 +63,7 @@ public class Game {
                 player.balance.deduct(((PropertySpace) newSpace).value);
                 optOwner.get().balance.increase(((PropertySpace) newSpace).value);
             } else {
+                // TODO: Du køber dit eget felt igen
                 uiManager.displayMessage(uiManager.getJSONData().getString(JSONKeys.SPACE_UNOWNED));
                 ((PropertySpace) newSpace).buy(player);
             }
