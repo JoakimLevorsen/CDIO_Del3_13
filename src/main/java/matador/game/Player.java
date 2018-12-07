@@ -13,6 +13,7 @@ public class Player {
     private String name;
     public final Game game;
     private ArrayList<PropertySpace> property;
+    // TODO: DETTE BLIVER ALDRIG NULSTILLET OG MAN MISTER IKKE KORTET IGEN.
     private Optional<GetOutOfJailCard> myJailCard;
 
     public Player(int cash, String name, Game game) {
